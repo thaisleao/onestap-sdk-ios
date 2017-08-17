@@ -12,7 +12,7 @@
 		A141A64A1F45FD9100763662 /* OnestapSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A141A63C1F45FD9100763662 /* OnestapSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A141A6591F46378C00763662 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141A6581F46378C00763662 /* JSON.swift */; };
 		A141A65B1F463CA500763662 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141A65A1F463CA500763662 /* Result.swift */; };
-		A141A65F1F463FC300763662 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141A65E1F463FC300763662 /* ApiResponse.swift */; };
+		A141A6621F46421500763662 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141A6611F46421500763662 /* ApiResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +34,7 @@
 		A141A6491F45FD9100763662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A141A6581F46378C00763662 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		A141A65A1F463CA500763662 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		A141A65E1F463FC300763662 /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		A141A6611F46421500763662 /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +98,7 @@
 		A141A6531F46145900763662 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A141A65D1F463FAF00763662 /* API */,
-				A141A6571F461D9700763662 /* Entities */,
+				A141A6601F46420A00763662 /* API */,
 				A141A6581F46378C00763662 /* JSON.swift */,
 				A141A65A1F463CA500763662 /* Result.swift */,
 			);
@@ -121,19 +120,12 @@
 			path = Model/Presentation;
 			sourceTree = "<group>";
 		};
-		A141A6571F461D9700763662 /* Entities */ = {
+		A141A6601F46420A00763662 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A141A6611F46421500763662 /* ApiResponse.swift */,
 			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		A141A65D1F463FAF00763662 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				A141A65E1F463FC300763662 /* ApiResponse.swift */,
-			);
-			path = API;
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A141A65F1F463FC300763662 /* ApiResponse.swift in Sources */,
+				A141A6621F46421500763662 /* ApiResponse.swift in Sources */,
 				A141A65B1F463CA500763662 /* Result.swift in Sources */,
 				A141A6591F46378C00763662 /* JSON.swift in Sources */,
 			);
