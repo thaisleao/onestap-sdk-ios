@@ -10,6 +10,7 @@
 		A141A6431F45FD9100763662 /* OnestapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A141A6391F45FD9100763662 /* OnestapSDK.framework */; };
 		A141A6481F45FD9100763662 /* OnestapSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141A6471F45FD9100763662 /* OnestapSDKTests.swift */; };
 		A141A64A1F45FD9100763662 /* OnestapSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A141A63C1F45FD9100763662 /* OnestapSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A141A6591F46378C00763662 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141A6581F46378C00763662 /* JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		A141A6421F45FD9100763662 /* OnestapSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnestapSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A141A6471F45FD9100763662 /* OnestapSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnestapSDKTests.swift; sourceTree = "<group>"; };
 		A141A6491F45FD9100763662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A141A6581F46378C00763662 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,9 @@
 		A141A63B1F45FD9100763662 /* OnestapSDK */ = {
 			isa = PBXGroup;
 			children = (
+				A141A6531F46145900763662 /* Model */,
+				A141A6561F461B8E00763662 /* Presentation */,
+				A141A6551F46145900763662 /* View */,
 				A141A63C1F45FD9100763662 /* OnestapSDK.h */,
 				A141A63D1F45FD9100763662 /* Info.plist */,
 			);
@@ -84,6 +89,37 @@
 				A141A6491F45FD9100763662 /* Info.plist */,
 			);
 			path = OnestapSDKTests;
+			sourceTree = "<group>";
+		};
+		A141A6531F46145900763662 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A141A6571F461D9700763662 /* Entities */,
+				A141A6581F46378C00763662 /* JSON.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A141A6551F46145900763662 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A141A6561F461B8E00763662 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Presentation;
+			path = Model/Presentation;
+			sourceTree = "<group>";
+		};
+		A141A6571F461D9700763662 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +185,7 @@
 					A141A6381F45FD9100763662 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 8Q54VRJ624;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					A141A6411F45FD9100763662 = {
@@ -198,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A141A6591F46378C00763662 /* JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +362,7 @@
 		A141A64E1F45FD9100763662 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8Q54VRJ624;
@@ -336,6 +375,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.onestap.OnestapSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -343,6 +383,7 @@
 		A141A64F1F45FD9100763662 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8Q54VRJ624;
@@ -362,6 +403,7 @@
 		A141A6511F45FD9100763662 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 8Q54VRJ624;
 				INFOPLIST_FILE = OnestapSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -374,6 +416,7 @@
 		A141A6521F45FD9100763662 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 8Q54VRJ624;
 				INFOPLIST_FILE = OnestapSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
