@@ -15,7 +15,7 @@ protocol InitializableWithData {
 
 // Optionally, if you use JSON you can implement InitializableWithJson protocol
 protocol InitializableWithJson {
-    init(json: [String: Any]) throws
+    init(json: JSON) throws
 }
 
 // Can be thrown when we can't even reach the API
@@ -74,7 +74,7 @@ extension Array: InitializableWithData {
     init(data: Data?) throws {
         guard let data = data,
             let jsonObject = try? JSONSerialization.jsonObject(with: data),
-            let jsonArray = jsonObject as? [[String: Any]] else {
+            let jsonArray = jsonObject as? [JSON] else {
                 throw NSError.createParseError()
         }
         
