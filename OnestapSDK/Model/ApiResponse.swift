@@ -14,7 +14,17 @@ public protocol Response {
 }
 
 extension Response {
-    mutating func initializeResponse(json: JSON) {
+    mutating func initializeResponse(data: Data?) throws {
+        guard let data = data,
+            let jsonObject = try? JSONSerialization.jsonObject(with: data),
+            let json = jsonObject as? JSON else {
+                throw NSError.createParseError()
+        }
+        
+        try self.initializeResponse(json: json)
+    }
+    
+    mutating func initializeResponse(json: JSON) throws {
         guard let success = json["success"] as? Bool else {
             self.success = false
             return
@@ -29,8 +39,8 @@ extension Response {
         
         self.operationReport = []
         
-        let operationReport = operationReportJSON.flatMap({ operationReport in
-            return ApiReport(json: operationReport)
+        let operationReport = try operationReportJSON.flatMap({ operationReport in
+            return try ApiReport(json: operationReport)
         })
         
         self.operationReport = operationReport
@@ -78,7 +88,7 @@ struct ApiParseError: Error {
 
 // This wraps a successful API response and it includes the generic data as well
 // The reason why we need this wrapper is that we want to pass to the client the status code and the raw response as well
-struct ApiResponse<T: InitializableWithData> {
+struct ApiResponse<T: InitializableWithData, Response> {
     let entity: T
     let httpUrlResponse: HTTPURLResponse
     let data: Data?
