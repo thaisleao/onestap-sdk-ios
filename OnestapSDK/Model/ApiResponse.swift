@@ -69,10 +69,15 @@ struct NetworkRequestError: Error {
     }
 }
 
-// Can be thrown when we reach the API but the it returns a 4xx or a 5xx
-struct ApiError: Error {
+// Can be thrown when we reach the API but the it returns a 5xx
+struct ApiGeneralError: Error {
     let data: Data?
     let httpUrlResponse: HTTPURLResponse
+}
+
+// Can be thrown when we reach the API but the it returns a 4xx
+struct ApiError: Error {
+    var operationReport: [ApiReport]
 }
 
 // Can be thrown by InitializableWithData.init(data: Data?) implementations when parsing the data
@@ -90,7 +95,10 @@ struct ApiParseError: Error {
 
 // This wraps a successful API response and it includes the generic data as well
 // The reason why we need this wrapper is that we want to pass to the client the status code and the raw response as well
-struct ApiResponse<T: InitializableWithData, Response> {
+struct ApiResponse<T: InitializableWithData>: Response {
+    var success: Bool = false
+    var operationReport: [ApiReport] = []
+
     let entity: T
     let httpUrlResponse: HTTPURLResponse
     let data: Data?
@@ -100,6 +108,7 @@ struct ApiResponse<T: InitializableWithData, Response> {
             self.entity = try T(data: data)
             self.httpUrlResponse = httpUrlResponse
             self.data = data
+            try initializeResponse(data: data)
         } catch {
             throw ApiParseError(error: error, httpUrlResponse: httpUrlResponse, data: data)
         }

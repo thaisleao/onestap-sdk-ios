@@ -11,10 +11,10 @@ import Foundation
 /// Returns in every response of the API
 public struct ApiReport: InitializableWithData, InitializableWithJson {
     /// Field where the Report is about
-    public private(set) var field: String
+    var field: String
     
     /// Message explaining Field
-    public private(set) var message: String
+    var message: String
     
     init(data: Data?) throws {
         guard let data = data,

@@ -17,6 +17,7 @@
 		A1A31C9D1F4758320060C9DC /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31C9C1F4758320060C9DC /* Token.swift */; };
 		A1A31C9F1F475C990060C9DC /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31C9E1F475C990060C9DC /* Report.swift */; };
 		A1A31CA11F47605F0060C9DC /* ApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CA01F47605F0060C9DC /* ApiToken.swift */; };
+		A1A31CA41F476A910060C9DC /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CA31F476A910060C9DC /* ApiClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		A1A31C9C1F4758320060C9DC /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		A1A31C9E1F475C990060C9DC /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		A1A31CA01F47605F0060C9DC /* ApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiToken.swift; sourceTree = "<group>"; };
+		A1A31CA31F476A910060C9DC /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +134,10 @@
 		A141A6601F46420A00763662 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A1A31CA21F4762680060C9DC /* Manager */,
 				A141A6651F46884A00763662 /* Entities */,
 				A141A6611F46421500763662 /* ApiResponse.swift */,
+				A1A31CA31F476A910060C9DC /* ApiClient.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -162,6 +166,13 @@
 				A1A31CA01F47605F0060C9DC /* ApiToken.swift */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		A1A31CA21F4762680060C9DC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +291,7 @@
 				A141A6671F468DE600763662 /* ApiReport.swift in Sources */,
 				A1A31C9D1F4758320060C9DC /* Token.swift in Sources */,
 				A141A6621F46421500763662 /* ApiResponse.swift in Sources */,
+				A1A31CA41F476A910060C9DC /* ApiClient.swift in Sources */,
 				A1A31CA11F47605F0060C9DC /* ApiToken.swift in Sources */,
 				A141A65B1F463CA500763662 /* Result.swift in Sources */,
 				A141A6591F46378C00763662 /* JSON.swift in Sources */,
