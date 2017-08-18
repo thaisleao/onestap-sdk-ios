@@ -19,6 +19,7 @@
 		A1A31CA11F47605F0060C9DC /* ApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CA01F47605F0060C9DC /* ApiToken.swift */; };
 		A1A31CA41F476A910060C9DC /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CA31F476A910060C9DC /* ApiClient.swift */; };
 		A1A31CA71F4791830060C9DC /* RefreshTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CA61F4791830060C9DC /* RefreshTokenRequest.swift */; };
+		A1A31CA91F4798460060C9DC /* OSTConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CA81F4798460060C9DC /* OSTConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A1A31CA01F47605F0060C9DC /* ApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiToken.swift; sourceTree = "<group>"; };
 		A1A31CA31F476A910060C9DC /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		A1A31CA61F4791830060C9DC /* RefreshTokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshTokenRequest.swift; sourceTree = "<group>"; };
+		A1A31CA81F4798460060C9DC /* OSTConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				A141A6641F46425900763662 /* Entities */,
+				A1A31CA81F4798460060C9DC /* OSTConfiguration.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				A1A31CA41F476A910060C9DC /* ApiClient.swift in Sources */,
 				A1A31CA11F47605F0060C9DC /* ApiToken.swift in Sources */,
 				A141A65B1F463CA500763662 /* Result.swift in Sources */,
+				A1A31CA91F4798460060C9DC /* OSTConfiguration.swift in Sources */,
 				A141A6591F46378C00763662 /* JSON.swift in Sources */,
 				A1A31C9F1F475C990060C9DC /* Report.swift in Sources */,
 			);
