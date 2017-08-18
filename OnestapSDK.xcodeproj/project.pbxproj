@@ -20,6 +20,7 @@
 		A1A31CA41F476A910060C9DC /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CA31F476A910060C9DC /* ApiClient.swift */; };
 		A1A31CA71F4791830060C9DC /* RefreshTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CA61F4791830060C9DC /* RefreshTokenRequest.swift */; };
 		A1A31CA91F4798460060C9DC /* OSTConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CA81F4798460060C9DC /* OSTConfiguration.swift */; };
+		A1A31CAC1F479B5F0060C9DC /* OSTEnvironmentsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CAB1F479B5F0060C9DC /* OSTEnvironmentsEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A1A31CA31F476A910060C9DC /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		A1A31CA61F4791830060C9DC /* RefreshTokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshTokenRequest.swift; sourceTree = "<group>"; };
 		A1A31CA81F4798460060C9DC /* OSTConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTConfiguration.swift; sourceTree = "<group>"; };
+		A1A31CAB1F479B5F0060C9DC /* OSTEnvironmentsEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTEnvironmentsEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		A141A6631F46424500763662 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A1A31CAA1F479B270060C9DC /* Enums */,
 				A141A6641F46425900763662 /* Entities */,
 				A1A31CA81F4798460060C9DC /* OSTConfiguration.swift */,
 			);
@@ -187,6 +190,14 @@
 				A1A31CA61F4791830060C9DC /* RefreshTokenRequest.swift */,
 			);
 			name = Request;
+			sourceTree = "<group>";
+		};
+		A1A31CAA1F479B270060C9DC /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A1A31CAB1F479B5F0060C9DC /* OSTEnvironmentsEnum.swift */,
+			);
+			name = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +318,7 @@
 				A1A31C9D1F4758320060C9DC /* Token.swift in Sources */,
 				A141A6621F46421500763662 /* ApiResponse.swift in Sources */,
 				A1A31CA41F476A910060C9DC /* ApiClient.swift in Sources */,
+				A1A31CAC1F479B5F0060C9DC /* OSTEnvironmentsEnum.swift in Sources */,
 				A1A31CA11F47605F0060C9DC /* ApiToken.swift in Sources */,
 				A141A65B1F463CA500763662 /* Result.swift in Sources */,
 				A1A31CA91F4798460060C9DC /* OSTConfiguration.swift in Sources */,
