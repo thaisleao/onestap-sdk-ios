@@ -26,5 +26,5 @@ public struct OSTConfiguration {
     public let fingerPrintId: String?
     
     /// The environment you want to use our SDK, the options are `sandbox` and `production` environments. The default value is **sandbox**
-    public let environment: String
+    public let environment: OSTEnvironmentEnum
 }

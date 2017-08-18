@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum OSTEnvironmentEnum: String {
+public enum OSTEnvironmentEnum: String {
     /// Sandbox Environment
     case sandbox
     
