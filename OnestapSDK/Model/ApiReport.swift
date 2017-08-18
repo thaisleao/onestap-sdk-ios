@@ -9,18 +9,28 @@
 import Foundation
 
 /// Returns in every response of the API
-public struct ApiReport {
+public struct ApiReport: InitializableWithData, InitializableWithJson {
     /// Field where the Report is about
     public private(set) var field: String
     
     /// Message explaining Field
     public private(set) var message: String
     
-    init?(json: JSON) {
+    init(data: Data?) throws {
+        guard let data = data,
+            let jsonObject = try? JSONSerialization.jsonObject(with: data),
+            let json = jsonObject as? JSON else {
+                throw NSError.createParseError()
+        }
+        
+        try self.init(json: json)
+    }
+    
+    init(json: JSON) throws {
         guard let field = json["field"] as? String,
             let message = json["message"] as? String
             else {
-                return nil
+                throw NSError.createParseError()
         }
         
         self.field = field
