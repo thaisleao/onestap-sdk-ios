@@ -8,11 +8,13 @@
 
 import Foundation
 
-public protocol Response {
+// All API responses have those properties
+protocol Response {
     var success: Bool { get set }
     var operationReport: [ApiReport] { get set }
 }
 
+// Custom initialization to Response properties
 extension Response {
     mutating func initializeResponse(data: Data?) throws {
         guard let data = data,
