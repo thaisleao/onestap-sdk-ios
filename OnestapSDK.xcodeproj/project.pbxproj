@@ -22,6 +22,7 @@
 		A1A31CC11F47A58A0060C9DC /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CBF1F47A58A0060C9DC /* Report.swift */; };
 		A1A31CC21F47A58A0060C9DC /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CC01F47A58A0060C9DC /* Token.swift */; };
 		A1A31CD01F47AA850060C9DC /* OST.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CCF1F47AA850060C9DC /* OST.swift */; };
+		A1A31CD41F47AC090060C9DC /* HttpVerbEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CD31F47AC090060C9DC /* HttpVerbEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		A1A31CBF1F47A58A0060C9DC /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Report.swift; path = OnestapSDK/Report.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CC01F47A58A0060C9DC /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Token.swift; path = OnestapSDK/Token.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CCF1F47AA850060C9DC /* OST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OST.swift; sourceTree = "<group>"; };
+		A1A31CD31F47AC090060C9DC /* HttpVerbEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpVerbEnum.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				A1A31CBD1F47A5790060C9DC /* OSTEnvironmentsEnum.swift */,
+				A1A31CD31F47AC090060C9DC /* HttpVerbEnum.swift */,
 			);
 			name = Enums;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				A1A31CAE1F47A4BD0060C9DC /* RefreshTokenRequest.swift in Sources */,
 				A1A31CBC1F47A52B0060C9DC /* Result.swift in Sources */,
 				A1A31CBE1F47A5790060C9DC /* OSTEnvironmentsEnum.swift in Sources */,
+				A1A31CD41F47AC090060C9DC /* HttpVerbEnum.swift in Sources */,
 				A1A31CB21F47A4D10060C9DC /* ApiToken.swift in Sources */,
 				A1A31CBB1F47A52B0060C9DC /* JSON.swift in Sources */,
 				A1A31CB61F47A4ED0060C9DC /* ApiResponse.swift in Sources */,
