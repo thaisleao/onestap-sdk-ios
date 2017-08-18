@@ -173,7 +173,7 @@
 		A1A31CCD1F47A9560060C9DC /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				A1A31CA51F47915D0060C9DC /* Request */,
+				A1A31CD11F47AAAF0060C9DC /* API */,
 				A1A31CCE1F47A9960060C9DC /* Entities */,
 			);
 			name = Auth;
@@ -186,6 +186,22 @@
 				A1A31CC01F47A58A0060C9DC /* Token.swift */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		A1A31CD11F47AAAF0060C9DC /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A1A31CD21F47AABF0060C9DC /* Manager */,
+				A1A31CA51F47915D0060C9DC /* Request */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		A1A31CD21F47AABF0060C9DC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

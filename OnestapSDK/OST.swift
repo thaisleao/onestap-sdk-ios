@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+public class OST {
+    static var configuration: OSTConfiguration!
+    
+    init(configuration: OSTConfiguration) {
+        OST.configuration = configuration
+    }
+}
