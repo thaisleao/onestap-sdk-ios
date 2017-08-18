@@ -37,3 +37,9 @@ public struct ApiReport: InitializableWithData, InitializableWithJson {
         self.message = message
     }
 }
+
+extension ApiReport {
+    var report: Report {
+        return Report(field: field, message: message)
+    }
+}
