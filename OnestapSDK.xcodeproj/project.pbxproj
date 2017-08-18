@@ -13,6 +13,7 @@
 		A141A6591F46378C00763662 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141A6581F46378C00763662 /* JSON.swift */; };
 		A141A65B1F463CA500763662 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141A65A1F463CA500763662 /* Result.swift */; };
 		A141A6621F46421500763662 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141A6611F46421500763662 /* ApiResponse.swift */; };
+		A141A6671F468DE600763662 /* ApiReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141A6661F468DE600763662 /* ApiReport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		A141A6581F46378C00763662 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		A141A65A1F463CA500763662 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		A141A6611F46421500763662 /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		A141A6661F468DE600763662 /* ApiReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiReport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		A141A6531F46145900763662 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A141A6631F46424500763662 /* Core */,
 				A141A6601F46420A00763662 /* API */,
 				A141A6581F46378C00763662 /* JSON.swift */,
 				A141A65A1F463CA500763662 /* Result.swift */,
@@ -123,9 +126,33 @@
 		A141A6601F46420A00763662 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A141A6651F46884A00763662 /* Entities */,
 				A141A6611F46421500763662 /* ApiResponse.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		A141A6631F46424500763662 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A141A6641F46425900763662 /* Entities */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		A141A6641F46425900763662 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		A141A6651F46884A00763662 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A141A6661F468DE600763662 /* ApiReport.swift */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A141A6671F468DE600763662 /* ApiReport.swift in Sources */,
 				A141A6621F46421500763662 /* ApiResponse.swift in Sources */,
 				A141A65B1F463CA500763662 /* Result.swift in Sources */,
 				A141A6591F46378C00763662 /* JSON.swift in Sources */,

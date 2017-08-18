@@ -8,6 +8,36 @@
 
 import Foundation
 
+public protocol Response {
+    var success: Bool { get set }
+    var operationReport: [ApiReport] { get set }
+}
+
+extension Response {
+    mutating func initializeResponse(json: JSON) {
+        guard let success = json["success"] as? Bool else {
+            self.success = false
+            return
+        }
+        
+        self.success = success
+        
+        guard let operationReportJSON = json["operationReport"] as? [JSON] else {
+            self.operationReport = []
+            return
+        }
+        
+        self.operationReport = []
+        
+        let operationReport = operationReportJSON.flatMap({ operationReport in
+            return ApiReport(json: operationReport)
+        })
+        
+        self.operationReport = operationReport
+    }
+}
+
+
 // All entities that model the API responses can implement this so we can handle all responses in a generic way
 protocol InitializableWithData {
     init(data: Data?) throws
