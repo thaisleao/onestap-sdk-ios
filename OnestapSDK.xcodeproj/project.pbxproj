@@ -22,6 +22,8 @@
 		A14D5D161F4B698D0003A2A4 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D151F4B698D0003A2A4 /* NSError.swift */; };
 		A14D5D181F4B73940003A2A4 /* AccessTokenApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D171F4B73940003A2A4 /* AccessTokenApiRequest.swift */; };
 		A14D5D1A1F4B76520003A2A4 /* VerifyTokenApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D191F4B76520003A2A4 /* VerifyTokenApiRequest.swift */; };
+		A14D5D1C1F4B77910003A2A4 /* RevokeTokenApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D1B1F4B77910003A2A4 /* RevokeTokenApiRequest.swift */; };
+		A14D5D1E1F4B7A4E0003A2A4 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D1D1F4B7A4E0003A2A4 /* GenericResponse.swift */; };
 		A1A31CAE1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CAD1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift */; };
 		A1A31CB11F47A4D10060C9DC /* ApiReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CAF1F47A4D10060C9DC /* ApiReport.swift */; };
 		A1A31CB21F47A4D10060C9DC /* ApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CB01F47A4D10060C9DC /* ApiToken.swift */; };
@@ -65,6 +67,8 @@
 		A14D5D151F4B698D0003A2A4 /* NSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
 		A14D5D171F4B73940003A2A4 /* AccessTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccessTokenApiRequest.swift; path = OnestapSDK/AccessTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
 		A14D5D191F4B76520003A2A4 /* VerifyTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerifyTokenApiRequest.swift; path = OnestapSDK/VerifyTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
+		A14D5D1B1F4B77910003A2A4 /* RevokeTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RevokeTokenApiRequest.swift; path = OnestapSDK/RevokeTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
+		A14D5D1D1F4B7A4E0003A2A4 /* GenericResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericResponse.swift; path = OnestapSDK/GenericResponse.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CAD1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RefreshTokenApiRequest.swift; path = OnestapSDK/RefreshTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CAF1F47A4D10060C9DC /* ApiReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiReport.swift; path = OnestapSDK/ApiReport.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CB01F47A4D10060C9DC /* ApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiToken.swift; path = OnestapSDK/ApiToken.swift; sourceTree = SOURCE_ROOT; };
@@ -168,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				A1A31CBF1F47A58A0060C9DC /* Report.swift */,
+				A14D5D1D1F4B7A4E0003A2A4 /* GenericResponse.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				A1A31CAD1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift */,
 				A14D5D171F4B73940003A2A4 /* AccessTokenApiRequest.swift */,
 				A14D5D191F4B76520003A2A4 /* VerifyTokenApiRequest.swift */,
+				A14D5D1B1F4B77910003A2A4 /* RevokeTokenApiRequest.swift */,
 			);
 			name = Request;
 			path = Model;
@@ -385,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A14D5D1E1F4B7A4E0003A2A4 /* GenericResponse.swift in Sources */,
 				A1A31CAE1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift in Sources */,
 				A1A31CBC1F47A52B0060C9DC /* Result.swift in Sources */,
 				A1A31CBE1F47A5790060C9DC /* OSTEnvironmentsEnum.swift in Sources */,
@@ -392,6 +399,7 @@
 				A1A31CBB1F47A52B0060C9DC /* JSON.swift in Sources */,
 				A1A31CB61F47A4ED0060C9DC /* ApiResponse.swift in Sources */,
 				A14D5D0E1F4B61300003A2A4 /* ApiTokenManager.swift in Sources */,
+				A14D5D1C1F4B77910003A2A4 /* RevokeTokenApiRequest.swift in Sources */,
 				A14D5D091F4B5F5A0003A2A4 /* TokenManager.swift in Sources */,
 				A1A31CD01F47AA850060C9DC /* OST.swift in Sources */,
 				A14D5D181F4B73940003A2A4 /* AccessTokenApiRequest.swift in Sources */,

@@ -1,23 +1,22 @@
 //
-//  RefreshTokenRequest.swift
+//  RevokeTokenApiRequest.swift
 //  OnestapSDK
 //
-//  Created by Munir Wanis on 18/08/17.
+//  Created by Munir Wanis on 21/08/17.
 //  Copyright © 2017 Stone Payments. All rights reserved.
 //
 
 import Foundation
 
-struct RefreshTokenApiRequest: ApiRequest {
+struct RevokeTokenApiRequest: ApiRequest {
     var urlRequest: URLRequest {
         var url: URL! = URL(string: OST.configuration.environment.apiURL)
         
         let parameters = [
-            "grant_type": "refresh_token",
-            "refresh_token": "\(UserDefaults.standard.refreshToken ?? "")",
+            "grant_type": "revoke_token",
+            "access_token": "\(UserDefaults.standard.accessToken ?? "")",
             "client_id": "\(OST.configuration.clientId)",
-            "client_secret": "\(OST.configuration.clientSecret)",
-            "redirect_uri": "\(OST.configuration.redirectUri)"
+            "client_secret": "\(OST.configuration.clientSecret)"
         ]
         
         url.addParameters(parameters)
