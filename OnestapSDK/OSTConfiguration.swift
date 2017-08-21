@@ -16,11 +16,18 @@ public struct OSTConfiguration {
     /// Your Client Secret
     public let clientSecret: String
     
-    /// Your app host registered on URL Types (e. g.: **somehost**://somescheme), where host is everything before `://`.
+    /// Your app host registered on URL Types (e.g.: **somehost**://somescheme), where host is everything before `://`.
     public let host: String
     
     /// Your app scheme (e. g.: somehost://**somescheme**), where host is everything after `://`. You can use anything on scheme.
     public let scheme: String
+    
+    /// Redirect Uri created from `host` + `scheme` combination (e.g.: `host://scheme`)
+    internal var redirectUri: String {
+        get {
+            return "\(host)://\(scheme)"
+        }
+    }
     
     /// Your Finger Print ID if you want to send data to our anti-fraud.
     public let fingerPrintId: String?
