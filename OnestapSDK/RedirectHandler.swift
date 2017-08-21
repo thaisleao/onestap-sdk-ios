@@ -8,7 +8,14 @@
 
 import Foundation
 
-struct RedirectHandler {
+protocol RedirectHandler {
+    init(bundle: [String: Any]?) throws
+    static var state: String { get set }
+    func getLoginUrl(dataKey: String?) -> URL
+    func handleUri(open url: URL) throws
+}
+
+struct RedirectHandlerImplementation: RedirectHandler {
     private let sdkIdentifier = "OnestapSDK"
     private let urlNameKey = "CFBundleURLName"
     private let urlTypeKey = "CFBundleURLTypes"
@@ -17,21 +24,21 @@ struct RedirectHandler {
     private let urlQueryAuthCodeKey = "code"
     private let authorizeOperation = "authorize"
     
-    private var plist: JSON = [:]
-    private var config: [JSON] = [[:]]
+    private var plist: [String: Any] = [:]
+    private var config: [[String: Any]] = [[:]]
     
     internal static var state: String = ""
     
     /// Scheme used for DeepLinking
-    let urlScheme: String
+    private let urlScheme: String
     
-    init(bundle jsonArray: JSON?) throws {
+    init(bundle: [String: Any]?) throws {
         
-        guard let plist = jsonArray else {
+        guard let plist = bundle else {
             throw OSTErrors.plistNotFound
         }
         
-        guard let config = plist[urlTypeKey] as? [JSON], !config.isEmpty else {
+        guard let config = plist[urlTypeKey] as? [[String: Any]], !config.isEmpty else {
             throw OSTErrors.configNotFound
         }
         
@@ -60,12 +67,12 @@ struct RedirectHandler {
         self.urlScheme = urlScheme.lowercased()
     }
     
-    func mountWebURL(url: URL, dataKey: String? = nil) -> URL {
-        RedirectHandler.state = UUID().uuidString
-        var url = url
+    func getLoginUrl(dataKey: String? = nil) -> URL {
+        RedirectHandlerImplementation.state = UUID().uuidString
+        var url = OST.configuration.environment.webURL
         url.addParameter(OST.configuration.clientId, forParameterName: "client_id")
         url.addParameter(OST.configuration.redirectUri, forParameterName: "redirect_uri")
-        url.addParameter(RedirectHandler.state, forParameterName: "state")
+        url.addParameter(RedirectHandlerImplementation.state, forParameterName: "state")
         url.addParameter("code", forParameterName: "response_type")
         if let dataKey = dataKey {
             url.addParameter(dataKey, forParameterName: "data_key")
@@ -73,7 +80,7 @@ struct RedirectHandler {
         return url
     }
     
-    func handleURI(open url: URL) throws {
+    func handleUri(open url: URL) throws {
         guard url.scheme?.lowercased() == self.urlScheme else {
             // it don't throws because it can be any URL
             return
@@ -87,7 +94,7 @@ struct RedirectHandler {
         
         // Verify if the state is valid
         let stateValue = items.filter{ $0.name.lowercased() == urlQueryStateKey }.first?.value
-        guard let state = stateValue, state == RedirectHandler.state else {
+        guard let state = stateValue, state == RedirectHandlerImplementation.state else {
             throw OSTErrors.stateIsInvalid
         }
         
@@ -104,7 +111,7 @@ struct RedirectHandler {
         }
     }
     
-    func handleAuthorizeRedirect(queryItems items: [URLQueryItem]) throws {
+    private func handleAuthorizeRedirect(queryItems items: [URLQueryItem]) throws {
         let authorizationCode = items.filter{ $0.name == urlQueryAuthCodeKey }.first
         
         guard let propertyValue = authorizationCode?.value else {
