@@ -47,4 +47,19 @@ public class ApiTokenManager: TokenManager {
             }
         }
     }
+    
+    func verifyToken(completion: @escaping (Result<Token>) -> Void) {
+        let tokenApiRequest = VerifyTokenApiRequest()
+        
+        apiClient.execute(request: tokenApiRequest) { (result: Result<ApiResponse<ApiToken>>) in
+            switch result {
+            case let .success(response):
+                let token = response.entity.token
+                UserDefaults.standard.accessToken = token.accessToken
+                completion(.success(token))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
 }

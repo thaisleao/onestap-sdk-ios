@@ -1,5 +1,5 @@
 //
-//  AccessTokenApiRequest.swift
+//  VerifyTokenApiRequest.swift
 //  OnestapSDK
 //
 //  Created by Munir Wanis on 21/08/17.
@@ -8,14 +8,13 @@
 
 import Foundation
 
-struct AccessTokenApiRequest: ApiRequest {
+struct VerifyTokenApiRequest: ApiRequest {
     var urlRequest: URLRequest {
         var url: URL! = URL(string: OST.configuration.environment.apiURL)
         
         let parameters = [
-            "grant_type": "authorization_code",
-            "authorization_code": "\(UserDefaults.standard.authorizationCode ?? "")",
-            "redirect_uri": "\(OST.configuration.redirectUri)",
+            "grant_type": "verify_token",
+            "access_token": "\(UserDefaults.standard.accessToken ?? "")",
             "client_id": "\(OST.configuration.clientId)",
             "client_secret": "\(OST.configuration.clientSecret)"
         ]
@@ -24,8 +23,7 @@ struct AccessTokenApiRequest: ApiRequest {
         
         var request = URLRequest(url: url)
         request.addDefaultHeaders()
-        request.httpMethod = HttpVerbEnum.post.rawValue
-        
+        request.httpMethod = HttpVerbEnum.post.rawValue        
         return request
     }
 }

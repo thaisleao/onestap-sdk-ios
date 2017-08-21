@@ -11,4 +11,5 @@ import Foundation
 protocol TokenManager {
     func refreshToken(completion: @escaping (_ tokens: Result<Token>) -> Void)
     func accessToken(completion: @escaping (_ tokens: Result<Token>) -> Void)
+    func verifyToken(completion: @escaping (_ tokens: Result<Token>) -> Void)
 }

@@ -23,11 +23,8 @@ struct RefreshTokenApiRequest: ApiRequest {
         url.addParameters(parameters)
         
         var request = URLRequest(url: url)
-        
         request.addDefaultHeaders()
-        
-        request.httpMethod = HttpVerbEnum.post.rawValue
-        
+        request.httpMethod = HttpVerbEnum.post.rawValue        
         return request
     }
 }
