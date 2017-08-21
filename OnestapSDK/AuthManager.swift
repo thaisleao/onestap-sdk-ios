@@ -8,11 +8,12 @@
 
 import Foundation
 
-public protocol AuthManager {
+protocol AuthManager {
     func refreshToken(completion: @escaping (_ tokens: Result<Token>) -> Void)
     func accessToken(completion: @escaping (_ tokens: Result<Token>) -> Void)
     func verifyToken(completion: @escaping (_ tokens: Result<Token>) -> Void)
     func revokeToken(completion: @escaping (_ tokens: Result<GenericResponse>) -> Void)
+    func handleRedirect(fromUrl url: URL, completion: @escaping (_ tokens: Result<Token>) -> Void)
 }
 
 public class AuthManagerImplementation: AuthManager {
@@ -38,7 +39,7 @@ public class AuthManagerImplementation: AuthManager {
         }
     }
     
-    public func accessToken(completion: @escaping (Result<Token>) -> Void) {
+    func accessToken(completion: @escaping (Result<Token>) -> Void) {
         let tokenApiRequest = AccessTokenApiRequest()
         
         apiClient.execute(request: tokenApiRequest) { (result: Result<ApiResponse<ApiToken>>) in
@@ -52,6 +53,12 @@ public class AuthManagerImplementation: AuthManager {
             case let .failure(error):
                 completion(.failure(error))
             }
+        }
+    }
+    
+    public func handleRedirect(fromUrl url: URL, completion: @escaping (Result<Token>) -> Void) {
+        accessToken { result in
+            completion(result)
         }
     }
     

@@ -18,5 +18,5 @@ public class OST {
         self.auth = AuthManagerImplementation(apiClient: apiClient)
     }
     
-    public var auth: AuthManager
+    public var auth: AuthManagerImplementation
 }
