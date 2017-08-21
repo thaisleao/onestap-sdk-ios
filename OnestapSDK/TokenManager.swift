@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol TokenManager {
+    func refreshToken(completion: @escaping (_ tokens: Result<Token>) -> Void)
+}

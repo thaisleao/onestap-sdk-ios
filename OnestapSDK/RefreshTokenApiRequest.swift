@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RefreshTokenRequest: ApiRequest {
+struct RefreshTokenApiRequest: ApiRequest {
     var urlRequest: URLRequest {
         var url: URL! = URL(string: OST.configuration.environment.apiURL)
         
