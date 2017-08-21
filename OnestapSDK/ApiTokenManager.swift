@@ -30,4 +30,21 @@ public class ApiTokenManager: TokenManager {
             }
         }
     }
+    
+    func accessToken(completion: @escaping (Result<Token>) -> Void) {
+        let tokenApiRequest = AccessTokenApiRequest()
+        
+        apiClient.execute(request: tokenApiRequest) { (result: Result<ApiResponse<ApiToken>>) in
+            switch result {
+            case let .success(response):
+                let token = response.entity.token
+                UserDefaults.standard.accessToken = token.accessToken
+                UserDefaults.standard.refreshToken = token.refreshToken
+                UserDefaults.standard.userKey = token.userKey
+                completion(.success(token))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
 }
