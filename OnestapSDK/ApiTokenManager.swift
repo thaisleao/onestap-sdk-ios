@@ -22,6 +22,8 @@ public class ApiTokenManager: TokenManager {
             switch result {
             case let .success(response):
                 let token = response.entity.token
+                UserDefaults.standard.accessToken = token.accessToken
+                UserDefaults.standard.refreshToken = token.refreshToken
                 completion(.success(token))
             case let .failure(error):
                 completion(.failure(error))
