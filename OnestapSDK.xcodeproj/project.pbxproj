@@ -14,6 +14,8 @@
 		A14D5D021F4B17C60003A2A4 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D011F4B17C60003A2A4 /* UserDefaultsExtension.swift */; };
 		A14D5D041F4B1A660003A2A4 /* UserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D031F4B1A660003A2A4 /* UserDefaultsTests.swift */; };
 		A14D5D061F4B59DD0003A2A4 /* UrlRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D051F4B59DD0003A2A4 /* UrlRequestTests.swift */; };
+		A14D5D091F4B5F5A0003A2A4 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D081F4B5F5A0003A2A4 /* TokenManager.swift */; };
+		A14D5D0B1F4B600A0003A2A4 /* HttpVerbEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D0A1F4B600A0003A2A4 /* HttpVerbEnum.swift */; };
 		A1A31CAE1F47A4BD0060C9DC /* RefreshTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CAD1F47A4BD0060C9DC /* RefreshTokenRequest.swift */; };
 		A1A31CB11F47A4D10060C9DC /* ApiReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CAF1F47A4D10060C9DC /* ApiReport.swift */; };
 		A1A31CB21F47A4D10060C9DC /* ApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CB01F47A4D10060C9DC /* ApiToken.swift */; };
@@ -26,7 +28,6 @@
 		A1A31CC11F47A58A0060C9DC /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CBF1F47A58A0060C9DC /* Report.swift */; };
 		A1A31CC21F47A58A0060C9DC /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CC01F47A58A0060C9DC /* Token.swift */; };
 		A1A31CD01F47AA850060C9DC /* OST.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CCF1F47AA850060C9DC /* OST.swift */; };
-		A1A31CD41F47AC090060C9DC /* HttpVerbEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CD31F47AC090060C9DC /* HttpVerbEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		A14D5D011F4B17C60003A2A4 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultsExtension.swift; path = OnestapSDK/UserDefaultsExtension.swift; sourceTree = SOURCE_ROOT; };
 		A14D5D031F4B1A660003A2A4 /* UserDefaultsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsTests.swift; sourceTree = "<group>"; };
 		A14D5D051F4B59DD0003A2A4 /* UrlRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlRequestTests.swift; sourceTree = "<group>"; };
+		A14D5D081F4B5F5A0003A2A4 /* TokenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		A14D5D0A1F4B600A0003A2A4 /* HttpVerbEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpVerbEnum.swift; path = OnestapSDK/HttpVerbEnum.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CAD1F47A4BD0060C9DC /* RefreshTokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RefreshTokenRequest.swift; path = OnestapSDK/RefreshTokenRequest.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CAF1F47A4D10060C9DC /* ApiReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiReport.swift; path = OnestapSDK/ApiReport.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CB01F47A4D10060C9DC /* ApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiToken.swift; path = OnestapSDK/ApiToken.swift; sourceTree = SOURCE_ROOT; };
@@ -62,7 +65,6 @@
 		A1A31CBF1F47A58A0060C9DC /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Report.swift; path = OnestapSDK/Report.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CC01F47A58A0060C9DC /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Token.swift; path = OnestapSDK/Token.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CCF1F47AA850060C9DC /* OST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OST.swift; sourceTree = "<group>"; };
-		A1A31CD31F47AC090060C9DC /* HttpVerbEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpVerbEnum.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				A1A31CBD1F47A5790060C9DC /* OSTEnvironmentsEnum.swift */,
-				A1A31CD31F47AC090060C9DC /* HttpVerbEnum.swift */,
+				A14D5D0A1F4B600A0003A2A4 /* HttpVerbEnum.swift */,
 			);
 			name = Enums;
 			sourceTree = "<group>";
@@ -223,6 +225,7 @@
 		A1A31CD21F47AABF0060C9DC /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				A14D5D081F4B5F5A0003A2A4 /* TokenManager.swift */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -343,14 +346,15 @@
 				A1A31CAE1F47A4BD0060C9DC /* RefreshTokenRequest.swift in Sources */,
 				A1A31CBC1F47A52B0060C9DC /* Result.swift in Sources */,
 				A1A31CBE1F47A5790060C9DC /* OSTEnvironmentsEnum.swift in Sources */,
-				A1A31CD41F47AC090060C9DC /* HttpVerbEnum.swift in Sources */,
 				A1A31CB21F47A4D10060C9DC /* ApiToken.swift in Sources */,
 				A1A31CBB1F47A52B0060C9DC /* JSON.swift in Sources */,
 				A1A31CB61F47A4ED0060C9DC /* ApiResponse.swift in Sources */,
+				A14D5D091F4B5F5A0003A2A4 /* TokenManager.swift in Sources */,
 				A1A31CD01F47AA850060C9DC /* OST.swift in Sources */,
 				A1A31CB11F47A4D10060C9DC /* ApiReport.swift in Sources */,
 				A1A31CB81F47A5180060C9DC /* OSTConfiguration.swift in Sources */,
 				A1A31CB51F47A4ED0060C9DC /* ApiClient.swift in Sources */,
+				A14D5D0B1F4B600A0003A2A4 /* HttpVerbEnum.swift in Sources */,
 				A1A31CC21F47A58A0060C9DC /* Token.swift in Sources */,
 				A14D5D021F4B17C60003A2A4 /* UserDefaultsExtension.swift in Sources */,
 				A1A31CC11F47A58A0060C9DC /* Report.swift in Sources */,
