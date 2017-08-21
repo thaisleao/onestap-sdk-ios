@@ -11,7 +11,12 @@ import Foundation
 public class OST {
     static var configuration: OSTConfiguration!
     
-    init(configuration: OSTConfiguration) {
+    public init(configuration: OSTConfiguration) {
         OST.configuration = configuration
+        
+        let apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default, completionHandlerQueue: OperationQueue.main)
+        self.auth = ApiTokenManager(apiClient: apiClient)
     }
+    
+    public var auth: ApiTokenManager
 }

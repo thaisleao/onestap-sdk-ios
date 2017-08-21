@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ApiTokenManager: TokenManager {
+public class ApiTokenManager: TokenManager {
     let apiClient: ApiClient
     
     init(apiClient: ApiClient) {
