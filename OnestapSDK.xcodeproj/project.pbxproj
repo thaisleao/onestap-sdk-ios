@@ -14,9 +14,8 @@
 		A14D5D021F4B17C60003A2A4 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D011F4B17C60003A2A4 /* UserDefaultsExtension.swift */; };
 		A14D5D041F4B1A660003A2A4 /* UserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D031F4B1A660003A2A4 /* UserDefaultsTests.swift */; };
 		A14D5D061F4B59DD0003A2A4 /* UrlRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D051F4B59DD0003A2A4 /* UrlRequestTests.swift */; };
-		A14D5D091F4B5F5A0003A2A4 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D081F4B5F5A0003A2A4 /* TokenManager.swift */; };
+		A14D5D091F4B5F5A0003A2A4 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D081F4B5F5A0003A2A4 /* AuthManager.swift */; };
 		A14D5D0B1F4B600A0003A2A4 /* HttpVerbEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D0A1F4B600A0003A2A4 /* HttpVerbEnum.swift */; };
-		A14D5D0E1F4B61300003A2A4 /* ApiTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D0D1F4B61300003A2A4 /* ApiTokenManager.swift */; };
 		A14D5D111F4B67D30003A2A4 /* ApiClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D101F4B67D30003A2A4 /* ApiClientTest.swift */; };
 		A14D5D141F4B68CD0003A2A4 /* URLSessionStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D131F4B68CD0003A2A4 /* URLSessionStub.swift */; };
 		A14D5D161F4B698D0003A2A4 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D151F4B698D0003A2A4 /* NSError.swift */; };
@@ -61,9 +60,8 @@
 		A14D5D011F4B17C60003A2A4 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultsExtension.swift; path = OnestapSDK/UserDefaultsExtension.swift; sourceTree = SOURCE_ROOT; };
 		A14D5D031F4B1A660003A2A4 /* UserDefaultsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsTests.swift; sourceTree = "<group>"; };
 		A14D5D051F4B59DD0003A2A4 /* UrlRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlRequestTests.swift; sourceTree = "<group>"; };
-		A14D5D081F4B5F5A0003A2A4 /* TokenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		A14D5D081F4B5F5A0003A2A4 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		A14D5D0A1F4B600A0003A2A4 /* HttpVerbEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpVerbEnum.swift; path = OnestapSDK/HttpVerbEnum.swift; sourceTree = SOURCE_ROOT; };
-		A14D5D0D1F4B61300003A2A4 /* ApiTokenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTokenManager.swift; sourceTree = "<group>"; };
 		A14D5D101F4B67D30003A2A4 /* ApiClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClientTest.swift; sourceTree = "<group>"; };
 		A14D5D131F4B68CD0003A2A4 /* URLSessionStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionStub.swift; sourceTree = "<group>"; };
 		A14D5D151F4B698D0003A2A4 /* NSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
@@ -192,14 +190,6 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		A14D5D0C1F4B61250003A2A4 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				A14D5D0D1F4B61300003A2A4 /* ApiTokenManager.swift */,
-			);
-			name = Manager;
-			sourceTree = "<group>";
-		};
 		A14D5D0F1F4B67B70003A2A4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,7 +268,6 @@
 		A1A31CD11F47AAAF0060C9DC /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A14D5D0C1F4B61250003A2A4 /* Manager */,
 				A1A31CA51F47915D0060C9DC /* Request */,
 			);
 			name = API;
@@ -287,7 +276,7 @@
 		A1A31CD21F47AABF0060C9DC /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				A14D5D081F4B5F5A0003A2A4 /* TokenManager.swift */,
+				A14D5D081F4B5F5A0003A2A4 /* AuthManager.swift */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -412,9 +401,8 @@
 				A1A31CB21F47A4D10060C9DC /* ApiToken.swift in Sources */,
 				A1A31CBB1F47A52B0060C9DC /* JSON.swift in Sources */,
 				A1A31CB61F47A4ED0060C9DC /* ApiResponse.swift in Sources */,
-				A14D5D0E1F4B61300003A2A4 /* ApiTokenManager.swift in Sources */,
 				A14D5D1C1F4B77910003A2A4 /* RevokeTokenApiRequest.swift in Sources */,
-				A14D5D091F4B5F5A0003A2A4 /* TokenManager.swift in Sources */,
+				A14D5D091F4B5F5A0003A2A4 /* AuthManager.swift in Sources */,
 				A1A31CD01F47AA850060C9DC /* OST.swift in Sources */,
 				A14D5D181F4B73940003A2A4 /* AccessTokenApiRequest.swift in Sources */,
 				A1A31CB11F47A4D10060C9DC /* ApiReport.swift in Sources */,

@@ -15,8 +15,8 @@ public class OST {
         OST.configuration = configuration
         
         let apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default, completionHandlerQueue: OperationQueue.main)
-        self.auth = ApiTokenManager(apiClient: apiClient)
+        self.auth = AuthManagerImplementation(apiClient: apiClient)
     }
     
-    public var auth: ApiTokenManager
+    public var auth: AuthManager
 }

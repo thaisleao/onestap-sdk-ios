@@ -1,5 +1,5 @@
 //
-//  ApiTokenManager.swift
+//  TokenManager.swift
 //  OnestapSDK
 //
 //  Created by Munir Wanis on 21/08/17.
@@ -8,7 +8,14 @@
 
 import Foundation
 
-public class ApiTokenManager: TokenManager {
+public protocol AuthManager {
+    func refreshToken(completion: @escaping (_ tokens: Result<Token>) -> Void)
+    func accessToken(completion: @escaping (_ tokens: Result<Token>) -> Void)
+    func verifyToken(completion: @escaping (_ tokens: Result<Token>) -> Void)
+    func revokeToken(completion: @escaping (_ tokens: Result<GenericResponse>) -> Void)
+}
+
+public class AuthManagerImplementation: AuthManager {
     let apiClient: ApiClient
     
     init(apiClient: ApiClient) {
