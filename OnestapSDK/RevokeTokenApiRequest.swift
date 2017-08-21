@@ -10,7 +10,9 @@ import Foundation
 
 struct RevokeTokenApiRequest: ApiRequest {
     var urlRequest: URLRequest {
-        var url: URL! = URL(string: OST.configuration.environment.apiURL)
+        var url = OST.configuration.environment.apiURL
+        url.appendPathExtension("oauth")
+        url.appendPathExtension("token")
         
         let parameters = [
             "grant_type": "revoke_token",

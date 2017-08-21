@@ -40,7 +40,7 @@ public enum OSTEnvironmentEnum: String {
     /**
      Return Web URL to open login page
      */
-    internal var webURL: String {
+    internal var webURL: URL {
         get {
             if ApiUrls.isStaging { return ApiUrls.connectStagingWebUrl }
             switch self {
@@ -55,7 +55,7 @@ public enum OSTEnvironmentEnum: String {
     /**
      Return API URL to communicate with the Authentication API
      */
-    internal var apiURL: String {
+    internal var apiURL: URL {
         get {
             if ApiUrls.isStaging { return ApiUrls.connectStagingApiUrl }
             switch self {
@@ -70,7 +70,7 @@ public enum OSTEnvironmentEnum: String {
     /**
      Return API URL to communicate with the Management API
      */
-    internal var userManagementURL: String {
+    internal var userManagementURL: URL {
         get {
             if ApiUrls.isStaging { return ApiUrls.connectStagingUserManagementUrl }
             switch self {
@@ -85,16 +85,16 @@ public enum OSTEnvironmentEnum: String {
     private struct ApiUrls {
         static var isStaging: Bool = false
         
-        static let connectStagingWebUrl = "http://flipconnect-signin-develop.herokuapp.com/"
-        static let connectStagingApiUrl = "http://dlp-qrservices.cloudapp.net:20112/api/"
-        static let connectStagingUserManagementUrl = "http://dlp-qrservices.cloudapp.net:20115/"
+        static let connectStagingWebUrl: URL! = URL(string: "http://flipconnect-signin-develop.herokuapp.com/")
+        static let connectStagingApiUrl: URL! = URL(string: "http://dlp-qrservices.cloudapp.net:20112/api/")
+        static let connectStagingUserManagementUrl: URL! = URL(string: "http://dlp-qrservices.cloudapp.net:20115/")
         
-        static let connectSandboxWebUrl = "https://signin-sandbox.flipconnect.io/"
-        static let connectSandboxApiUrl = "https://auth-sandbox.flipconnect.io/api/"
-        static let connectSandboxUserManagementUrl = "https://api-sandbox.flipconnect.io/"
+        static let connectSandboxWebUrl: URL! = URL(string: "https://signin-sandbox.flipconnect.io/")
+        static let connectSandboxApiUrl: URL! = URL(string: "https://auth-sandbox.flipconnect.io/api/")
+        static let connectSandboxUserManagementUrl: URL! = URL(string: "https://api-sandbox.flipconnect.io/")
         
-        static let connectProductionWebUrl = "https://signin.flipconnect.io/"
-        static let connectProductionApiUrl = "https://auth.flipconnect.io/api/"
-        static let connectProductionUserManagementUrl = "https://api.flipconnect.io/"
+        static let connectProductionWebUrl:  URL! = URL(string: "https://signin.flipconnect.io/")
+        static let connectProductionApiUrl: URL! = URL(string: "https://auth.flipconnect.io/api/")
+        static let connectProductionUserManagementUrl: URL! = URL(string: "https://api.flipconnect.io/")
     }
 }

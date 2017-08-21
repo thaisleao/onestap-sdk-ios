@@ -25,6 +25,8 @@
 		A14D5D1E1F4B7A4E0003A2A4 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D1D1F4B7A4E0003A2A4 /* GenericResponse.swift */; };
 		A14D5D201F4B86270003A2A4 /* OSTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D1F1F4B86270003A2A4 /* OSTButton.swift */; };
 		A14D5D231F4B8B0C0003A2A4 /* OSTAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D221F4B8B0C0003A2A4 /* OSTAuthButton.swift */; };
+		A14D5D251F4B967F0003A2A4 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D241F4B967F0003A2A4 /* RedirectHandler.swift */; };
+		A14D5D291F4B9AFE0003A2A4 /* OSTErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D281F4B9AFE0003A2A4 /* OSTErrors.swift */; };
 		A1A31CAE1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CAD1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift */; };
 		A1A31CB11F47A4D10060C9DC /* ApiReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CAF1F47A4D10060C9DC /* ApiReport.swift */; };
 		A1A31CB21F47A4D10060C9DC /* ApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CB01F47A4D10060C9DC /* ApiToken.swift */; };
@@ -71,6 +73,8 @@
 		A14D5D1D1F4B7A4E0003A2A4 /* GenericResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericResponse.swift; path = OnestapSDK/GenericResponse.swift; sourceTree = SOURCE_ROOT; };
 		A14D5D1F1F4B86270003A2A4 /* OSTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTButton.swift; sourceTree = "<group>"; };
 		A14D5D221F4B8B0C0003A2A4 /* OSTAuthButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTAuthButton.swift; sourceTree = "<group>"; };
+		A14D5D241F4B967F0003A2A4 /* RedirectHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedirectHandler.swift; sourceTree = "<group>"; };
+		A14D5D281F4B9AFE0003A2A4 /* OSTErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTErrors.swift; path = OnestapSDK/OSTErrors.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CAD1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RefreshTokenApiRequest.swift; path = OnestapSDK/RefreshTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CAF1F47A4D10060C9DC /* ApiReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiReport.swift; path = OnestapSDK/ApiReport.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CB01F47A4D10060C9DC /* ApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiToken.swift; path = OnestapSDK/ApiToken.swift; sourceTree = SOURCE_ROOT; };
@@ -232,6 +236,7 @@
 			children = (
 				A1A31CBD1F47A5790060C9DC /* OSTEnvironmentsEnum.swift */,
 				A14D5D0A1F4B600A0003A2A4 /* HttpVerbEnum.swift */,
+				A14D5D281F4B9AFE0003A2A4 /* OSTErrors.swift */,
 			);
 			name = Enums;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				A1A31CD11F47AAAF0060C9DC /* API */,
 				A1A31CCE1F47A9960060C9DC /* Entities */,
 				A1A31CD21F47AABF0060C9DC /* Manager */,
+				A14D5D241F4B967F0003A2A4 /* RedirectHandler.swift */,
 			);
 			name = Auth;
 			sourceTree = "<group>";
@@ -407,7 +413,9 @@
 				A14D5D181F4B73940003A2A4 /* AccessTokenApiRequest.swift in Sources */,
 				A1A31CB11F47A4D10060C9DC /* ApiReport.swift in Sources */,
 				A14D5D1A1F4B76520003A2A4 /* VerifyTokenApiRequest.swift in Sources */,
+				A14D5D291F4B9AFE0003A2A4 /* OSTErrors.swift in Sources */,
 				A1A31CB81F47A5180060C9DC /* OSTConfiguration.swift in Sources */,
+				A14D5D251F4B967F0003A2A4 /* RedirectHandler.swift in Sources */,
 				A1A31CB51F47A4ED0060C9DC /* ApiClient.swift in Sources */,
 				A14D5D0B1F4B600A0003A2A4 /* HttpVerbEnum.swift in Sources */,
 				A1A31CC21F47A58A0060C9DC /* Token.swift in Sources */,
