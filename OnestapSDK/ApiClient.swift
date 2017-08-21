@@ -22,6 +22,32 @@ protocol URLSessionProtocol {
 
 extension URLSession: URLSessionProtocol { }
 
+extension URL {
+    mutating func addParameter(_ value: String, forParameterName name: String) {
+        var urlComponents: URLComponents! = URLComponents(url: self, resolvingAgainstBaseURL: false)
+        var queryItems = urlComponents.queryItems ?? []
+        
+        queryItems.append(URLQueryItem(name: name, value: value))
+        urlComponents.queryItems = queryItems
+        
+        self = urlComponents.url!
+    }
+    
+    mutating func addParameters(_ parameters: [String: String]) {
+        var urlComponents: URLComponents! = URLComponents(url: self, resolvingAgainstBaseURL: false)
+        var queryItems = urlComponents.queryItems ?? []
+        
+        for (key, value) in parameters {
+            let queryItem = URLQueryItem(name: key, value: value)
+            queryItems.append(queryItem)
+        }
+        
+        urlComponents.queryItems = queryItems
+        
+        self = urlComponents.url!
+    }
+}
+
 class ApiClientImplementation: ApiClient {
     let urlSession: URLSessionProtocol
     
