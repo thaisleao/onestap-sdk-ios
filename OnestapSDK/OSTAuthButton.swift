@@ -13,9 +13,18 @@ class OSTAuthButton: OSTButton {
         super.init(frame: frame)
         
         self.setTitle("Login with one[S]tap", for: .normal)
+        self.addTarget(nil, action: #selector(openLoginPage), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    /// Opens Safari browser on one[S]tap login page
+    @objc private func openLoginPage() {
+        let url = RedirectHandlerImplementation.getLoginUrl(dataKey: OST.configuration.temporaryProfileDataKey)
+        DispatchQueue.main.async {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }
