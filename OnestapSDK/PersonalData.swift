@@ -15,6 +15,12 @@ public struct PersonalData {
     public var dependentCount: Int?
 }
 
+public enum GenderTypeEnum: String {
+    case masculine
+    case feminine
+    case unmentioned
+}
+
 extension Date {
     func toString() -> String {
         let dateFormatter = DateFormatter()
