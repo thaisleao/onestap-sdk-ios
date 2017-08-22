@@ -11,7 +11,7 @@ import Foundation
 protocol RedirectHandler {
     init(bundle: [String: Any]?) throws
     static var state: String { get set }
-    func getLoginUrl(dataKey: String?) -> URL
+    static func getLoginUrl(dataKey: String?) -> URL
     func handleUri(open url: URL) throws
 }
 
@@ -67,7 +67,7 @@ struct RedirectHandlerImplementation: RedirectHandler {
         self.urlScheme = urlScheme.lowercased()
     }
     
-    func getLoginUrl(dataKey: String? = nil) -> URL {
+    static func getLoginUrl(dataKey: String? = nil) -> URL {
         RedirectHandlerImplementation.state = UUID().uuidString
         var url = OST.configuration.environment.webURL
         url.addParameter(OST.configuration.clientId, forParameterName: "client_id")

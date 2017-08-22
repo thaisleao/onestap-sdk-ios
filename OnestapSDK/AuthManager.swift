@@ -57,6 +57,13 @@ public class AuthManagerImplementation: AuthManager {
     }
     
     public func handleRedirect(fromUrl url: URL, completion: @escaping (Result<Token>) -> Void) {
+        do {
+            let redirectHandler = try RedirectHandlerImplementation(bundle: Bundle.main.infoDictionary)
+            try redirectHandler.handleUri(open: url)
+        } catch let error {
+            completion(.failure(error))
+        }
+        
         accessToken { result in
             completion(result)
         }
