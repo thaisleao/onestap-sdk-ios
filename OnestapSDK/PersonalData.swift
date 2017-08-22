@@ -15,6 +15,17 @@ public struct PersonalData {
     public var dependentCount: Int?
 }
 
+extension PersonalData: Encondable {
+    func toDictionary() -> JSON {
+        return [
+            "birthdate": birthdate?.toString() as Any,
+            "genderType": genderType?.rawValue as Any,
+            "country": country as Any,
+            "dependentCount": dependentCount as Any
+        ]
+    }
+}
+
 /// Gender of the Person
 public enum GenderTypeEnum: String {
     case masculine

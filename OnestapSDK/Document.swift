@@ -10,8 +10,16 @@ import Foundation
 
 public struct Document {
     public var documentType: DocumentTypeEnum?
-    public var documentTypeFriendlyName: String?
     public var documentNumber: String?
+}
+
+extension Document: Encondable {
+    func toDictionary() -> JSON {
+        return [
+            "documentType": documentType?.rawValue as Any,
+            "documentNumber": documentNumber as Any
+        ]
+    }
 }
 
 /// Possible Document Types for the API

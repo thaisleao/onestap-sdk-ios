@@ -13,6 +13,15 @@ public struct Phone {
     public var fullNumber: String?
 }
 
+extension Phone: Encondable {
+    func toDictionary() -> JSON {
+        return [
+            "phoneType": phoneType?.rawValue as Any,
+            "fullNumber": fullNumber as Any
+        ]
+    }
+}
+
 /// Possible Phone Types for the API
 public enum PhoneTypeEnum: String {
     /// Home Phone

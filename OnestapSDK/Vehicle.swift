@@ -14,3 +14,14 @@ public struct Vehicle {
     public var licensePlateState: String?
     public var licensePlateCountry: String?
 }
+
+extension Vehicle: Encondable {
+    func toDictionary() -> JSON {
+        return [
+            "licensePlate": licensePlate as Any,
+            "licensePlateCity": licensePlateCity as Any,
+            "licensePlateState": licensePlateState as Any,
+            "licensePlateCountry": licensePlateCountry as Any
+        ]
+    }
+}

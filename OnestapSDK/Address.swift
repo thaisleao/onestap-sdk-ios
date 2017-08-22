@@ -21,6 +21,23 @@ public struct Address {
     public var country: String?
 }
 
+extension Address: Encondable {
+    func toDictionary() -> JSON {
+        return [
+            "street": street as Any,
+            "number": number as Any,
+            "complement": complement as Any,
+            "addressType": addressType?.rawValue as Any,
+            "district": district as Any,
+            "city": city as Any,
+            "state": state as Any,
+            "zipCode": zipCode as Any,
+            "addressReference": addressReference as Any,
+            "country": country as Any
+        ]
+    }
+}
+
 /// Possible Address Types for the API
 public enum AddressTypeEnum: String {
     /// Home Address
