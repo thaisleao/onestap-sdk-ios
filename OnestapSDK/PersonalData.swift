@@ -15,6 +15,7 @@ public struct PersonalData {
     public var dependentCount: Int?
 }
 
+/// Gender of the Person
 public enum GenderTypeEnum: String {
     case masculine
     case feminine
