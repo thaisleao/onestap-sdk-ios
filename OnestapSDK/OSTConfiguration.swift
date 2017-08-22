@@ -34,4 +34,7 @@ public struct OSTConfiguration {
     
     /// The environment you want to use our SDK, the options are `sandbox` and `production` environments. The default value is **sandbox**
     public let environment: OSTEnvironmentEnum
+    
+    /// When `temporaryProfile` is not nil it'll complete registration steps for the user
+    public let temporaryProfile: TemporaryProfile?
 }
