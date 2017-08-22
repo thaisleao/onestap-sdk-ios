@@ -10,6 +10,10 @@ import Foundation
 
 typealias JSON = [String: Any]
 
+protocol Encondable {
+    func toDictionary() -> JSON
+}
+
 /**
  Extension on `Dictionary` that adds different helper methods such as JSON `Data` serialization
  */
