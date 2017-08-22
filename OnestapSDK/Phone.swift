@@ -9,10 +9,8 @@
 import Foundation
 
 public struct Phone {
-    public private(set) var phoneType: PhoneTypeEnum?
-    public private(set) var fullNumber: String?
-    public private(set) var isValidated: Bool?
-    public private(set) var isPrimary: Bool?
+    public var phoneType: PhoneTypeEnum?
+    public var fullNumber: String?
 }
 
 /// Possible Phone Types for the API

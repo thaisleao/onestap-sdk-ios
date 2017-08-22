@@ -43,6 +43,7 @@
 		A1B8DA5B1F4C8FA400EC40F4 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA5A1F4C8FA400EC40F4 /* Vehicle.swift */; };
 		A1B8DA5D1F4C9C1E00EC40F4 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA5C1F4C9C1E00EC40F4 /* Address.swift */; };
 		A1B8DA5F1F4C9D0F00EC40F4 /* Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA5E1F4C9D0F00EC40F4 /* Phone.swift */; };
+		A1B8DA611F4C9D5400EC40F4 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA601F4C9D5400EC40F4 /* Document.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		A1B8DA5A1F4C8FA400EC40F4 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		A1B8DA5C1F4C9C1E00EC40F4 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		A1B8DA5E1F4C9D0F00EC40F4 /* Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Phone.swift; sourceTree = "<group>"; };
+		A1B8DA601F4C9D5400EC40F4 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +313,7 @@
 				A1B8DA5A1F4C8FA400EC40F4 /* Vehicle.swift */,
 				A1B8DA5C1F4C9C1E00EC40F4 /* Address.swift */,
 				A1B8DA5E1F4C9D0F00EC40F4 /* Phone.swift */,
+				A1B8DA601F4C9D5400EC40F4 /* Document.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				A1A31CB61F47A4ED0060C9DC /* ApiResponse.swift in Sources */,
 				A14D5D1C1F4B77910003A2A4 /* RevokeTokenApiRequest.swift in Sources */,
 				A14D5D091F4B5F5A0003A2A4 /* AuthManager.swift in Sources */,
+				A1B8DA611F4C9D5400EC40F4 /* Document.swift in Sources */,
 				A1A31CD01F47AA850060C9DC /* OST.swift in Sources */,
 				A14D5D181F4B73940003A2A4 /* AccessTokenApiRequest.swift in Sources */,
 				A1B8DA591F4C8DE100EC40F4 /* PersonalData.swift in Sources */,
