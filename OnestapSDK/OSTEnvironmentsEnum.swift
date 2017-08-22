@@ -42,12 +42,14 @@ public enum OSTEnvironmentEnum: String {
      */
     internal var webURL: URL {
         get {
-            if ApiUrls.isStaging { return ApiUrls.connectStagingWebUrl }
             switch self {
             case .production:
-                return ApiUrls.connectProductionWebUrl
+                return ApiUrls.onestapProductionWebUrl
             case .sandbox:
-                return ApiUrls.connectSandboxWebUrl
+                if ApiUrls.isStaging { fallthrough }
+                return ApiUrls.onestapSandboxWebUrl
+            default:
+                return ApiUrls.onestapStagingWebUrl
             }
         }
     }
@@ -57,12 +59,14 @@ public enum OSTEnvironmentEnum: String {
      */
     internal var apiURL: URL {
         get {
-            if ApiUrls.isStaging { return ApiUrls.connectStagingApiUrl }
             switch self {
             case .production:
-                return ApiUrls.connectProductionApiUrl
+                return ApiUrls.onestapProductionApiUrl
             case .sandbox:
-                return ApiUrls.connectSandboxApiUrl
+                if ApiUrls.isStaging { fallthrough }
+                return ApiUrls.onestapSandboxApiUrl
+            default:
+                return ApiUrls.onestapStagingApiUrl
             }
         }
     }
@@ -72,12 +76,14 @@ public enum OSTEnvironmentEnum: String {
      */
     internal var userManagementURL: URL {
         get {
-            if ApiUrls.isStaging { return ApiUrls.connectStagingUserManagementUrl }
             switch self {
             case .production:
-                return ApiUrls.connectProductionUserManagementUrl
+                return ApiUrls.onestapProductionUserManagementUrl
             case .sandbox:
-                return ApiUrls.connectSandboxUserManagementUrl
+                if ApiUrls.isStaging { fallthrough }
+                return ApiUrls.onestapSandboxUserManagementUrl
+            default:
+                return ApiUrls.onestapStagingUserManagementUrl
             }
         }
     }
@@ -85,16 +91,16 @@ public enum OSTEnvironmentEnum: String {
     private struct ApiUrls {
         static var isStaging: Bool = false
         
-        static let connectStagingWebUrl: URL! = URL(string: "http://flipconnect-signin-develop.herokuapp.com/")
-        static let connectStagingApiUrl: URL! = URL(string: "http://dlp-qrservices.cloudapp.net:20112/api/")
-        static let connectStagingUserManagementUrl: URL! = URL(string: "http://dlp-qrservices.cloudapp.net:20115/")
+        static let onestapStagingWebUrl: URL! = URL(string: "http://flipconnect-signin-develop.herokuapp.com/")
+        static let onestapStagingApiUrl: URL! = URL(string: "http://dlp-qrservices.cloudapp.net:20112/api/")
+        static let onestapStagingUserManagementUrl: URL! = URL(string: "http://dlp-qrservices.cloudapp.net:20115/")
         
-        static let connectSandboxWebUrl: URL! = URL(string: "https://signin-sandbox.flipconnect.io/")
-        static let connectSandboxApiUrl: URL! = URL(string: "https://auth-sandbox.flipconnect.io/api/")
-        static let connectSandboxUserManagementUrl: URL! = URL(string: "https://api-sandbox.flipconnect.io/")
+        static let onestapSandboxWebUrl: URL! = URL(string: "https://signin-sandbox.flipconnect.io/")
+        static let onestapSandboxApiUrl: URL! = URL(string: "https://auth-sandbox.flipconnect.io/api/")
+        static let onestapSandboxUserManagementUrl: URL! = URL(string: "https://api-sandbox.flipconnect.io/")
         
-        static let connectProductionWebUrl:  URL! = URL(string: "https://signin.flipconnect.io/")
-        static let connectProductionApiUrl: URL! = URL(string: "https://auth.flipconnect.io/api/")
-        static let connectProductionUserManagementUrl: URL! = URL(string: "https://api.flipconnect.io/")
+        static let onestapProductionWebUrl:  URL! = URL(string: "https://signin.flipconnect.io/")
+        static let onestapProductionApiUrl: URL! = URL(string: "https://auth.flipconnect.io/api/")
+        static let onestapProductionUserManagementUrl: URL! = URL(string: "https://api.flipconnect.io/")
     }
 }
