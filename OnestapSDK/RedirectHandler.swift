@@ -9,7 +9,7 @@
 import Foundation
 
 protocol RedirectHandler {
-    init(bundle: [String: Any]?) throws
+    init(bundle: JSON?) throws
     static var state: String { get set }
     static func getLoginUrl(dataKey: String?) -> URL
     func handleUri(open url: URL) throws
@@ -24,21 +24,21 @@ struct RedirectHandlerImplementation: RedirectHandler {
     private let urlQueryAuthCodeKey = "code"
     private let authorizeOperation = "authorize"
     
-    private var plist: [String: Any] = [:]
-    private var config: [[String: Any]] = [[:]]
+    private var plist: JSON = [:]
+    private var config: [JSON] = [[:]]
     
     internal static var state: String = ""
     
     /// Scheme used for DeepLinking
     private let urlScheme: String
     
-    init(bundle: [String: Any]?) throws {
+    init(bundle: JSON?) throws {
         
         guard let plist = bundle else {
             throw OSTErrors.plistNotFound
         }
         
-        guard let config = plist[urlTypeKey] as? [[String: Any]], !config.isEmpty else {
+        guard let config = plist[urlTypeKey] as? [JSON], !config.isEmpty else {
             throw OSTErrors.configNotFound
         }
         
