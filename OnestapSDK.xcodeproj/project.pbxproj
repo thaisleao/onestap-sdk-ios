@@ -151,8 +151,8 @@
 				A1B8DA561F4C8B6900EC40F4 /* User */,
 				A141A6631F46424500763662 /* Core */,
 				A1A31CCC1F47A9450060C9DC /* Resources */,
-				A1A31CB71F47A5180060C9DC /* OSTConfiguration.swift */,
 				A14D5D1F1F4B86270003A2A4 /* OSTButton.swift */,
+				A1A31CB71F47A5180060C9DC /* OSTConfiguration.swift */,
 				A1A31CCF1F47AA850060C9DC /* OST.swift */,
 			);
 			path = OnestapSDK;

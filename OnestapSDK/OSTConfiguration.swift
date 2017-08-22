@@ -37,4 +37,7 @@ public struct OSTConfiguration {
     
     /// When `temporaryProfile` is not nil it'll complete registration steps for the user
     public let temporaryProfile: TemporaryProfile?
+    
+    /// If temporaryProfile is set, the DataKey should be filled
+    internal var temporaryProfileDataKey: String?
 }

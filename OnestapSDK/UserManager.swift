@@ -17,9 +17,19 @@ public class UserManagerImplementation: UserManager {
     
     init(apiClient: ApiClient) {
         self.apiClient = apiClient
+        
+        self.temporaryProfile()
     }
     
     func temporaryProfile() {
+        let temporaryProfileApiRequest = TemporaryProfileApiRequest()
         
+        apiClient.execute(request: temporaryProfileApiRequest) { (result: Result<ApiResponse<ApiTemporaryProfile>>) in
+            switch result {
+            case let .success(response):
+                OST.configuration.temporaryProfileDataKey = response.entity.dataKey
+            case .failure(_): break
+            }
+        }
     }
 }
