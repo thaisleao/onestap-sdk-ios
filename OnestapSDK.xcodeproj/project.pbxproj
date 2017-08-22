@@ -45,6 +45,7 @@
 		A1B8DA5F1F4C9D0F00EC40F4 /* Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA5E1F4C9D0F00EC40F4 /* Phone.swift */; };
 		A1B8DA611F4C9D5400EC40F4 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA601F4C9D5400EC40F4 /* Document.swift */; };
 		A1B8DA631F4CA0C100EC40F4 /* TemporaryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA621F4CA0C100EC40F4 /* TemporaryProfile.swift */; };
+		A1B8DA671F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA661F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		A1B8DA5E1F4C9D0F00EC40F4 /* Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Phone.swift; sourceTree = "<group>"; };
 		A1B8DA601F4C9D5400EC40F4 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		A1B8DA621F4CA0C100EC40F4 /* TemporaryProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporaryProfile.swift; sourceTree = "<group>"; };
+		A1B8DA661F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporaryProfileApiRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +305,7 @@
 		A1B8DA561F4C8B6900EC40F4 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				A1B8DA641F4CB7AA00EC40F4 /* API */,
 				A1B8DA571F4C8DB000EC40F4 /* Entities */,
 			);
 			name = User;
@@ -319,6 +322,22 @@
 				A1B8DA621F4CA0C100EC40F4 /* TemporaryProfile.swift */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		A1B8DA641F4CB7AA00EC40F4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A1B8DA651F4CB7B800EC40F4 /* Request */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		A1B8DA651F4CB7B800EC40F4 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				A1B8DA661F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift */,
+			);
+			name = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,6 +473,7 @@
 				A1A31CB11F47A4D10060C9DC /* ApiReport.swift in Sources */,
 				A14D5D1A1F4B76520003A2A4 /* VerifyTokenApiRequest.swift in Sources */,
 				A14D5D291F4B9AFE0003A2A4 /* OSTErrors.swift in Sources */,
+				A1B8DA671F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift in Sources */,
 				A1A31CB81F47A5180060C9DC /* OSTConfiguration.swift in Sources */,
 				A14D5D251F4B967F0003A2A4 /* RedirectHandler.swift in Sources */,
 				A1A31CB51F47A4ED0060C9DC /* ApiClient.swift in Sources */,
