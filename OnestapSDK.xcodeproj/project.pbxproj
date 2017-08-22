@@ -42,6 +42,7 @@
 		A1B8DA591F4C8DE100EC40F4 /* PersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA581F4C8DE100EC40F4 /* PersonalData.swift */; };
 		A1B8DA5B1F4C8FA400EC40F4 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA5A1F4C8FA400EC40F4 /* Vehicle.swift */; };
 		A1B8DA5D1F4C9C1E00EC40F4 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA5C1F4C9C1E00EC40F4 /* Address.swift */; };
+		A1B8DA5F1F4C9D0F00EC40F4 /* Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA5E1F4C9D0F00EC40F4 /* Phone.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		A1B8DA581F4C8DE100EC40F4 /* PersonalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalData.swift; sourceTree = "<group>"; };
 		A1B8DA5A1F4C8FA400EC40F4 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		A1B8DA5C1F4C9C1E00EC40F4 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		A1B8DA5E1F4C9D0F00EC40F4 /* Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Phone.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +310,7 @@
 				A1B8DA581F4C8DE100EC40F4 /* PersonalData.swift */,
 				A1B8DA5A1F4C8FA400EC40F4 /* Vehicle.swift */,
 				A1B8DA5C1F4C9C1E00EC40F4 /* Address.swift */,
+				A1B8DA5E1F4C9D0F00EC40F4 /* Phone.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				A1A31CAE1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift in Sources */,
 				A1B8DA5D1F4C9C1E00EC40F4 /* Address.swift in Sources */,
 				A1A31CBC1F47A52B0060C9DC /* Result.swift in Sources */,
+				A1B8DA5F1F4C9D0F00EC40F4 /* Phone.swift in Sources */,
 				A1B8DA5B1F4C8FA400EC40F4 /* Vehicle.swift in Sources */,
 				A1A31CBE1F47A5790060C9DC /* OSTEnvironmentsEnum.swift in Sources */,
 				A1A31CB21F47A4D10060C9DC /* ApiToken.swift in Sources */,
