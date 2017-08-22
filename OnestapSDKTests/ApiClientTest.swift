@@ -36,7 +36,7 @@ class ApiClientTest: XCTestCase {
         
         urlSessionStub.enqueue(response: (data: expectedData, response: expected2xxReponse, error: nil))
         
-        let executeCompletionHandlerExpectation = expectation(description: "Add book completion handler expectation")
+        let executeCompletionHandlerExpectation = expectation(description: "Completion handler expectation")
         
         // When
         apiClient.execute(request: TestDoubleRequest()) { (result: Result<ApiResponse<TestDoubleApiEntity>>) in
