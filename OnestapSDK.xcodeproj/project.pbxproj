@@ -39,6 +39,7 @@
 		A1A31CC11F47A58A0060C9DC /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CBF1F47A58A0060C9DC /* Report.swift */; };
 		A1A31CC21F47A58A0060C9DC /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CC01F47A58A0060C9DC /* Token.swift */; };
 		A1A31CD01F47AA850060C9DC /* OST.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CCF1F47AA850060C9DC /* OST.swift */; };
+		A1B8DA591F4C8DE100EC40F4 /* PersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA581F4C8DE100EC40F4 /* PersonalData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		A1A31CBF1F47A58A0060C9DC /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Report.swift; path = OnestapSDK/Report.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CC01F47A58A0060C9DC /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Token.swift; path = OnestapSDK/Token.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CCF1F47AA850060C9DC /* OST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OST.swift; sourceTree = "<group>"; };
+		A1B8DA581F4C8DE100EC40F4 /* PersonalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				A1A31CCD1F47A9560060C9DC /* Auth */,
+				A1B8DA561F4C8B6900EC40F4 /* User */,
 				A141A6631F46424500763662 /* Core */,
 				A1A31CCC1F47A9450060C9DC /* Resources */,
 				A1A31CB71F47A5180060C9DC /* OSTConfiguration.swift */,
@@ -287,6 +290,22 @@
 			name = Manager;
 			sourceTree = "<group>";
 		};
+		A1B8DA561F4C8B6900EC40F4 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				A1B8DA571F4C8DB000EC40F4 /* Entities */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		A1B8DA571F4C8DB000EC40F4 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A1B8DA581F4C8DE100EC40F4 /* PersonalData.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -411,6 +430,7 @@
 				A14D5D091F4B5F5A0003A2A4 /* AuthManager.swift in Sources */,
 				A1A31CD01F47AA850060C9DC /* OST.swift in Sources */,
 				A14D5D181F4B73940003A2A4 /* AccessTokenApiRequest.swift in Sources */,
+				A1B8DA591F4C8DE100EC40F4 /* PersonalData.swift in Sources */,
 				A1A31CB11F47A4D10060C9DC /* ApiReport.swift in Sources */,
 				A14D5D1A1F4B76520003A2A4 /* VerifyTokenApiRequest.swift in Sources */,
 				A14D5D291F4B9AFE0003A2A4 /* OSTErrors.swift in Sources */,
