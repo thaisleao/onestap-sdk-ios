@@ -47,6 +47,7 @@
 		A1B8DA631F4CA0C100EC40F4 /* TemporaryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA621F4CA0C100EC40F4 /* TemporaryProfile.swift */; };
 		A1B8DA671F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA661F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift */; };
 		A1B8DA6A1F4CB92000EC40F4 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA691F4CB92000EC40F4 /* UserManager.swift */; };
+		A1B8DA6C1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		A1B8DA621F4CA0C100EC40F4 /* TemporaryProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporaryProfile.swift; sourceTree = "<group>"; };
 		A1B8DA661F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporaryProfileApiRequest.swift; sourceTree = "<group>"; };
 		A1B8DA691F4CB92000EC40F4 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTemporaryProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +325,7 @@
 				A1B8DA5E1F4C9D0F00EC40F4 /* Phone.swift */,
 				A1B8DA601F4C9D5400EC40F4 /* Document.swift */,
 				A1B8DA621F4CA0C100EC40F4 /* TemporaryProfile.swift */,
+				A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 			files = (
 				A14D5D1E1F4B7A4E0003A2A4 /* GenericResponse.swift in Sources */,
 				A1A31CAE1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift in Sources */,
+				A1B8DA6C1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift in Sources */,
 				A1B8DA5D1F4C9C1E00EC40F4 /* Address.swift in Sources */,
 				A1A31CBC1F47A52B0060C9DC /* Result.swift in Sources */,
 				A1B8DA5F1F4C9D0F00EC40F4 /* Phone.swift in Sources */,
