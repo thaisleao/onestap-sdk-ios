@@ -10,6 +10,35 @@ import Foundation
 
 /// Configuration necessary to initialize the SDK
 public struct OSTConfiguration {
+    
+    /**
+     All your configuration before start using the SDK should be in here.
+     
+     - parameters:
+        - environment: If nothing is passed the default value is **.sandbox**
+        - clientId: Your Client ID
+        - clientSecret: Your Client Secret
+        - host: The `host` registered on URL Types of the application
+        - scheme: The desired `scheme` to appear on redirect URL
+        - fingerPrintId: The ID given by **RexLab** to make anti-fraud security. Default value is `nil`
+        - temporaryProfile: Used to make easier registration of your user. Default value is `nil`
+    */
+    public init(environment: OSTEnvironmentEnum = .sandbox,
+                         clientId: String,
+                         clientSecret: String,
+                         host: String, scheme: String,
+                         fingerPrintId: String? = nil,
+                         temporaryProfile: TemporaryProfile? = nil) {
+        self.environment = environment
+        self.clientId = clientId
+        self.clientSecret = clientSecret
+        self.host = host
+        self.scheme = scheme
+        self.fingerPrintId = fingerPrintId
+        self.temporaryProfile = temporaryProfile
+        
+    }
+    
     /// Your Client ID
     public let clientId: String
     
@@ -39,5 +68,5 @@ public struct OSTConfiguration {
     public let temporaryProfile: TemporaryProfile?
     
     /// If temporaryProfile is set, the DataKey should be filled
-    internal var temporaryProfileDataKey: String?
+    internal var temporaryProfileDataKey: String? = nil
 }

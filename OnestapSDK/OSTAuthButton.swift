@@ -12,7 +12,7 @@ class OSTAuthButton: OSTButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.setTitle("Login with one[S]tap", for: .normal)
+        self.setTitle("Login with one[s]tap", for: .normal)
         self.addTarget(nil, action: #selector(openLoginPage), for: .touchUpInside)
     }
     
