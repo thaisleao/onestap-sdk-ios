@@ -8,15 +8,15 @@
 
 import Foundation
 
-class OSTAuthButton: OSTButton {
-    override init(frame: CGRect) {
+public class OSTAuthButton: OSTButton {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.setTitle("Login with one[s]tap", for: .normal)
         self.addTarget(nil, action: #selector(openLoginPage), for: .touchUpInside)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

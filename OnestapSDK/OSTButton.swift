@@ -8,7 +8,7 @@
 
 import Foundation
 
-class OSTButton: UIButton {
+public class OSTButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -17,7 +17,7 @@ class OSTButton: UIButton {
         self.layer.cornerRadius = 20
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
