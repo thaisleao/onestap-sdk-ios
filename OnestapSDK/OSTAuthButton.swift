@@ -11,13 +11,17 @@ import Foundation
 public class OSTAuthButton: OSTButton {
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        self.setTitle("Login with one[s]tap", for: .normal)
-        self.addTarget(nil, action: #selector(openLoginPage), for: .touchUpInside)
+        configure()
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        configure()
+    }
+    
+    func configure() {
+        self.setTitle("Login with one[s]tap", for: .normal)
+        self.addTarget(nil, action: #selector(openLoginPage), for: .touchUpInside)
     }
     
     /// Opens Safari browser on one[S]tap login page
