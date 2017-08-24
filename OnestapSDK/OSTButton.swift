@@ -22,6 +22,6 @@ public class OSTButton: UIButton {
     private func configure() {
         self.backgroundColor = UIColor(red: 0.57, green: 0.78, blue: 0.24, alpha: 1.0)
         self.setTitleColor(UIColor(red: 0.00, green: 0.22, blue: 0.13, alpha: 1.0), for: .normal)
-        self.layer.cornerRadius = 20
+        self.layer.cornerRadius = 15
     }
 }
