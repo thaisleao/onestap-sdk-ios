@@ -11,8 +11,8 @@ import Foundation
 struct RefreshTokenApiRequest: ApiRequest {
     var urlRequest: URLRequest {
         var url = OST.configuration.environment.apiURL
-        url.appendPathExtension("oauth")
-        url.appendPathExtension("token")
+        url.appendPathComponent("oauth", isDirectory: true)
+        url.appendPathComponent("token", isDirectory: false)
         
         let parameters = [
             "grant_type": "refresh_token",

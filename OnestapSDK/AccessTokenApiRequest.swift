@@ -11,8 +11,8 @@ import Foundation
 struct AccessTokenApiRequest: ApiRequest {
     var urlRequest: URLRequest {
         var url = OST.configuration.environment.apiURL
-        url.appendPathExtension("oauth")
-        url.appendPathExtension("token")
+        url.appendPathComponent("oauth", isDirectory: true)
+        url.appendPathComponent("token", isDirectory: false)
         
         let parameters = [
             "grant_type": "authorization_code",

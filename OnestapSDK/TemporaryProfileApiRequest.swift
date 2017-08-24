@@ -11,8 +11,8 @@ import Foundation
 struct TemporaryProfileApiRequest: ApiRequest {
     var urlRequest: URLRequest {
         var url = OST.configuration.environment.userManagementURL
-        url.appendPathExtension("user")
-        url.appendPathExtension("temporaryProfile")
+        url.appendPathComponent("user", isDirectory: true)
+        url.appendPathComponent("temporaryProfile", isDirectory: false)
         
         var request = URLRequest(url: url)
         request.addDefaultHeaders()
