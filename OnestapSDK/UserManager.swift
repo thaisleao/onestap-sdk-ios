@@ -27,8 +27,10 @@ public class UserManagerImplementation: UserManager {
         apiClient.execute(request: temporaryProfileApiRequest) { (result: Result<ApiResponse<ApiTemporaryProfile>>) in
             switch result {
             case let .success(response):
+                print(response)
                 OST.configuration.temporaryProfileDataKey = response.entity.dataKey
-            case .failure(_): break
+//            case .failure(_): break
+            case .failure(let error): print(error)
             }
         }
     }

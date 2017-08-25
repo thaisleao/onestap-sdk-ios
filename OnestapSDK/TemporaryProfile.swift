@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct TemporaryProfile {
+public class TemporaryProfile {
     public init() {}
     
     public var personalData: PersonalData? = nil

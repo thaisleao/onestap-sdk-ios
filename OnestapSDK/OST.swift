@@ -21,6 +21,7 @@ public class OST {
         self.user = UserManagerImplementation(apiClient: apiClient)
         
         OST.shared = self
+        if OST.configuration.temporaryProfile != nil { OST.shared.user.temporaryProfile() }
     }
     
     public var auth: AuthManagerImplementation
