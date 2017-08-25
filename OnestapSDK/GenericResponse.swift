@@ -9,6 +9,6 @@
 import Foundation
 
 public struct GenericResponse: Response {
-    var success: Bool
-    var operationReport: [ApiReport]
+    public var success: Bool
+    public var operationReport: [ApiReport]
 }
