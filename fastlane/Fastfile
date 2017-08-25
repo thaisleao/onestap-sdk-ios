@@ -1,7 +1,7 @@
 COMMIT_MESSAGE = "New version:"
 
 lane :tests do
-  scan(workspace: "FlipConnectSDKWorkspace.xcworkspace", scheme: "FlipConnectSDK", clean: true)
+  scan(project: "OnestapSDK.xcodeproj", scheme: "OnestapSDK", clean: true)
   carthage_build
 end
 
