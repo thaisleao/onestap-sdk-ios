@@ -20,12 +20,44 @@ public struct TemporaryProfile {
 
 extension TemporaryProfile: Encondable {
     func toDictionary() -> JSON {
+        var vehiclesJSON: [JSON]? = nil
+        if let vehicles = self.vehicles {
+            vehiclesJSON = []
+            vehicles.forEach { vehicle in
+                vehiclesJSON!.append(vehicle.toDictionary())
+            }
+        }
+        
+        var addressesJSON: [JSON]? = nil
+        if let addresses = self.addresses {
+            addressesJSON = []
+            addresses.forEach { address in
+                addressesJSON!.append(address.toDictionary())
+            }
+        }
+        
+        var phonesJSON: [JSON]? = nil
+        if let phones = self.phones {
+            phonesJSON = []
+            phones.forEach { phone in
+                phonesJSON!.append(phone.toDictionary())
+            }
+        }
+        
+        var documentsJSON: [JSON]? = nil
+        if let documents = self.documents {
+            documentsJSON = []
+            documents.forEach { document in
+                documentsJSON!.append(document.toDictionary())
+            }
+        }
+        
         return [
             "personalData": personalData?.toDictionary() as Any,
-            "vehicles": vehicles?.flatMap { $0.toDictionary() } as Any,
-            "addresses": addresses?.flatMap { $0.toDictionary() } as Any,
-            "phones": phones?.flatMap { $0.toDictionary() } as Any,
-            "documents": documents?.flatMap { $0.toDictionary() } as Any
+            "vehicles": vehiclesJSON as Any,
+            "addresses": addressesJSON as Any,
+            "phones": phonesJSON as Any,
+            "documents": documentsJSON as Any
         ]
     }
     

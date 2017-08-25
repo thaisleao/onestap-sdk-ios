@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias JSON = [String: Any]
+public typealias JSON = [String: Any]
 
 protocol Encondable {
     func toDictionary() -> JSON
