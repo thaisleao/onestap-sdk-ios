@@ -17,11 +17,13 @@ public class UserManagerImplementation: UserManager {
     
     init(apiClient: ApiClient) {
         self.apiClient = apiClient
-        
-        self.temporaryProfile()
     }
     
     func temporaryProfile() {
+        guard OST.configuration.temporaryProfile != nil else {
+            return
+        }
+        
         let temporaryProfileApiRequest = TemporaryProfileApiRequest()
         
         apiClient.execute(request: temporaryProfileApiRequest) { (result: Result<ApiResponse<ApiTemporaryProfile>>) in
