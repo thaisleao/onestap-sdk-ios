@@ -82,6 +82,9 @@ class ApiClientImplementation: ApiClient {
                 return
             }
             
+            // LOG
+            Log.apiData(request: request.urlRequest.httpBody, response: data, url: request.urlRequest.url)
+            
             do {
                 let response = try ApiResponse<T>(data: data, httpUrlResponse: httpUrlResponse)
                 completion(
