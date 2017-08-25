@@ -10,20 +10,17 @@ import Foundation
 
 struct Log {
     static func apiData(request: Data?, response: Data?, url: URL?) {
-        log(message: "========== \(url?.absoluteString ?? "API CALL") ==========")
-        log(message: "")
+        log(message: "\n========== \(url?.absoluteString ?? "API CALL") ==========\n")
         if let request = request {
-            log(message: "<-- REQUEST PAYLOAD ->")
+            log(message: "\n<-- REQUEST PAYLOAD ->\n")
             logJson(data: request)
-            log(message: "")
         }
         if let response = response {
-            log(message: "<-- RESPONSE PAYLOAD ->")
+            log(message: "\n<-- RESPONSE PAYLOAD ->\n")
             logJson(data: response)
             log(message: "")
         }
-        log(message: "========== END ==========")
-        log(message: "")
+        log(message: "\n========== END ==========\n")
     }
     
     private static func logJson(data: Data) {
