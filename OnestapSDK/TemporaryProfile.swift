@@ -53,11 +53,14 @@ extension TemporaryProfile: Encondable {
         }
         
         return [
-            "personalData": personalData?.toDictionary() as Any,
-            "vehicles": vehiclesJSON as Any,
-            "addresses": addressesJSON as Any,
-            "phones": phonesJSON as Any,
-            "documents": documentsJSON as Any
+            "applicationKey": OST.configuration.clientId,
+            "data": [
+                "personalData": personalData?.toDictionary() as Any,
+                "vehicles": vehiclesJSON as Any,
+                "addresses": addressesJSON as Any,
+                "phones": phonesJSON as Any,
+                "documents": documentsJSON as Any
+            ]
         ]
     }
     

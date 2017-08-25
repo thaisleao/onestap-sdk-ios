@@ -21,6 +21,6 @@ struct ApiTemporaryProfile: InitializableWithData, InitializableWithJson {
     }
     
     init(json: JSON) throws {
-        self.dataKey = json["accessToken"] as? String
+        self.dataKey = json["dataKey"] as? String
     }
 }
