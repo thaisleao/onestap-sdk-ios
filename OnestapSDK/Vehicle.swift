@@ -9,6 +9,7 @@
 import Foundation
 
 public struct Vehicle {
+    public init() {}
     public var licensePlate: String?
     public var licensePlateCity: String?
     public var licensePlateState: String?

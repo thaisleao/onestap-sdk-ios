@@ -9,6 +9,7 @@
 import Foundation
 
 public struct PersonalData {
+    public init() {}
     public var birthdate: Date?
     public var genderType: GenderTypeEnum?
     public var country: String?

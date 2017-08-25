@@ -9,6 +9,7 @@
 import Foundation
 
 public struct Phone {
+    public init() {}
     public var phoneType: PhoneTypeEnum?
     public var fullNumber: String?
 }

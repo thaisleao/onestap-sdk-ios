@@ -9,6 +9,7 @@
 import Foundation
 
 public struct Document {
+    public init() {}
     public var documentType: DocumentTypeEnum?
     public var documentNumber: String?
 }

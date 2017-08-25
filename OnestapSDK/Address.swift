@@ -9,6 +9,7 @@
 import Foundation
 
 public struct Address {
+    public init() {}
     public var street: String?
     public var number: String?
     public var complement: String?

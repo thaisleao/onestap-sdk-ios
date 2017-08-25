@@ -9,6 +9,8 @@
 import Foundation
 
 public struct TemporaryProfile {
+    public init() {}
+    
     public var personalData: PersonalData? = nil
     public var vehicles: [Vehicle]? = nil
     public var addresses: [Address]? = nil
