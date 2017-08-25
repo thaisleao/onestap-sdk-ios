@@ -387,6 +387,7 @@
 				A141A6351F45FD9100763662 /* Frameworks */,
 				A141A6361F45FD9100763662 /* Headers */,
 				A141A6371F45FD9100763662 /* Resources */,
+				A17E5EE61F50CFB40055EF7B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -472,6 +473,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A17E5EE61F50CFB40055EF7B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${SRCROOT}/scripts/build_universal.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A141A6341F45FD9100763662 /* Sources */ = {

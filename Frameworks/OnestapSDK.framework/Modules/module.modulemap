@@ -1,0 +1,10 @@
+framework module OnestapSDK {
+  umbrella header "OnestapSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module OnestapSDK.Swift {
+    header "OnestapSDK-Swift.h"
+}
