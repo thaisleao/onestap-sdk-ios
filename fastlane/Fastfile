@@ -22,12 +22,12 @@ lane :release do
   tag = last_git_tag
 
   github_release = set_github_release(
-    repository_name: "Flip-Payments/connect-sdk-ios",
+    repository_name: "stone-payments/onestap-sdk-ios",
     api_token: ENV["GITHUB_API_TOKEN"],
     name: "#{COMMIT_MESSAGE} v#{tag}",
     tag_name: tag,
     description: changelog_from_git_commits,
-    upload_assets: ["FlipConnectSDK.framework.zip", "FlipConnectSDK_Manual.zip"]
+    upload_assets: ["OnestapSDK.framework.zip", "OnestapSDK_Manual.zip"]
   )
 end
 
@@ -44,8 +44,8 @@ end
 
 lane :carthage_archive do
   carthage(
-    frameworks: ["FlipConnectSDK", "FingerPrint_iOS"],   # Specify which frameworks to archive (only for the archive command)
-    output: "FlipConnectSDK.framework.zip",      # Specify the output archive name (only for the archive command)
+    frameworks: ["OnestapSDK", "FingerPrint_iOS"],   # Specify which frameworks to archive (only for the archive command)
+    output: "OnestapSDK.framework.zip",      # Specify the output archive name (only for the archive command)
     command: "archive"       # One of: build, bootstrap, update, archive. (default: bootstrap)
   )
 end
@@ -64,14 +64,14 @@ end
 lane :push do
   sh("git fetch --tags")
   tag = last_git_tag
-  version = version_bump_podspec(path: "FlipConnectSDK.podspec", version_number: tag)
+  version = version_bump_podspec(path: "OnestapSDK.podspec", version_number: tag)
   increment_version_number(
     version_number: "#{tag}",      # specify specific version number (optional, omitting it increments patch version number)
-    xcodeproj: "./FlipConnectSDK.xcodeproj"  # (optional, you must specify the path to your main Xcode project if it is not in the project root directory)
+    xcodeproj: "./OnestapSDK.xcodeproj"  # (optional, you must specify the path to your main Xcode project if it is not in the project root directory)
   )
-  git_commit(path: ["./FlipConnectSDK.xcodeproj", "./FlipConnectSDK/Info.plist", "./FlipConnectSDKTests/Info.plist"], message: "Update to #{version} on plists")
-  git_commit(path: ["./FlipConnectSDK.podspec"], message: "#{COMMIT_MESSAGE} #{version}")
+  git_commit(path: ["./OnestapSDK.xcodeproj", "./OnestapSDK/Info.plist", "./OnestapSDKTests/Info.plist"], message: "Update to #{version} on plists")
+  git_commit(path: ["./OnestapSDK.podspec"], message: "#{COMMIT_MESSAGE} #{version}")
   git_commit(path: ["./CHANGELOG.md"], message: "Updates changelog for version #{version}")
   push_to_git_remote(remote_branch: 'master', force: false, tags: true)
-  pod_push(path: "FlipConnectSDK.podspec" , allow_warnings: true, verbose: true)
+  pod_push(path: "OnestapSDK.podspec" , allow_warnings: true, verbose: true)
 end
