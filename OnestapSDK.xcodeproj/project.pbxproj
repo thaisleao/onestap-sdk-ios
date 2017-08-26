@@ -27,6 +27,8 @@
 		A14D5D231F4B8B0C0003A2A4 /* OSTAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D221F4B8B0C0003A2A4 /* OSTAuthButton.swift */; };
 		A14D5D251F4B967F0003A2A4 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D241F4B967F0003A2A4 /* RedirectHandler.swift */; };
 		A14D5D291F4B9AFE0003A2A4 /* OSTErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D281F4B9AFE0003A2A4 /* OSTErrors.swift */; };
+		A14D5D2E1F5108CC0003A2A4 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14D5D2D1F5108CC0003A2A4 /* FingerPrint_iOS.framework */; };
+		A14D5D321F510CCF0003A2A4 /* FingerPrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */; };
 		A17E5EE51F50B8840055EF7B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E5EE41F50B8840055EF7B /* Log.swift */; };
 		A1A31CAE1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CAD1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift */; };
 		A1A31CB11F47A4D10060C9DC /* ApiReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CAF1F47A4D10060C9DC /* ApiReport.swift */; };
@@ -85,6 +87,8 @@
 		A14D5D221F4B8B0C0003A2A4 /* OSTAuthButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTAuthButton.swift; sourceTree = "<group>"; };
 		A14D5D241F4B967F0003A2A4 /* RedirectHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedirectHandler.swift; sourceTree = "<group>"; };
 		A14D5D281F4B9AFE0003A2A4 /* OSTErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTErrors.swift; path = OnestapSDK/OSTErrors.swift; sourceTree = SOURCE_ROOT; };
+		A14D5D2D1F5108CC0003A2A4 /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = Frameworks/FingerPrint_iOS.framework; sourceTree = "<group>"; };
+		A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerPrintManager.swift; sourceTree = "<group>"; };
 		A17E5EE41F50B8840055EF7B /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = OnestapSDK/Log.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CAD1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RefreshTokenApiRequest.swift; path = OnestapSDK/RefreshTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CAF1F47A4D10060C9DC /* ApiReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiReport.swift; path = OnestapSDK/ApiReport.swift; sourceTree = SOURCE_ROOT; };
@@ -114,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A14D5D2E1F5108CC0003A2A4 /* FingerPrint_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +139,7 @@
 				A141A63B1F45FD9100763662 /* OnestapSDK */,
 				A141A6461F45FD9100763662 /* OnestapSDKTests */,
 				A141A63A1F45FD9100763662 /* Products */,
+				A14D5D2C1F5108CC0003A2A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +157,7 @@
 			children = (
 				A1A31CCD1F47A9560060C9DC /* Auth */,
 				A1B8DA561F4C8B6900EC40F4 /* User */,
+				A14D5D2F1F510C970003A2A4 /* FingerPrint */,
 				A141A6631F46424500763662 /* Core */,
 				A1A31CCC1F47A9450060C9DC /* Resources */,
 				A14D5D1F1F4B86270003A2A4 /* OSTButton.swift */,
@@ -239,6 +246,30 @@
 				A14D5D221F4B8B0C0003A2A4 /* OSTAuthButton.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		A14D5D2C1F5108CC0003A2A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A14D5D2D1F5108CC0003A2A4 /* FingerPrint_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A14D5D2F1F510C970003A2A4 /* FingerPrint */ = {
+			isa = PBXGroup;
+			children = (
+				A14D5D301F510CBE0003A2A4 /* Manager */,
+			);
+			name = FingerPrint;
+			sourceTree = "<group>";
+		};
+		A14D5D301F510CBE0003A2A4 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */,
+			);
+			name = Manager;
 			sourceTree = "<group>";
 		};
 		A17E5EE31F50B8680055EF7B /* Log */ = {
@@ -499,6 +530,7 @@
 				A1A31CAE1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift in Sources */,
 				A17E5EE51F50B8840055EF7B /* Log.swift in Sources */,
 				A1B8DA6C1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift in Sources */,
+				A14D5D321F510CCF0003A2A4 /* FingerPrintManager.swift in Sources */,
 				A1B8DA5D1F4C9C1E00EC40F4 /* Address.swift in Sources */,
 				A1A31CBC1F47A52B0060C9DC /* Result.swift in Sources */,
 				A1B8DA5F1F4C9D0F00EC40F4 /* Phone.swift in Sources */,
@@ -667,6 +699,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = OnestapSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -688,6 +724,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = OnestapSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

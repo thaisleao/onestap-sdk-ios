@@ -18,19 +18,19 @@
 		</data>
 		<key>Modules/OnestapSDK.swiftmodule/arm.swiftdoc</key>
 		<data>
-		bvWOjJckzM1qUegKYTFnHTc12Rk=
+		xP5E1XMj2C/vEAbSWBpG93CW2U4=
 		</data>
 		<key>Modules/OnestapSDK.swiftmodule/arm.swiftmodule</key>
 		<data>
-		kusulYB6MMx98O0yPHkTEqkCQok=
+		Zar41yz72LC/0R9PUeFqKZD1NRM=
 		</data>
 		<key>Modules/OnestapSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		MPujDEGnhC/NlmS8lgo5qQTuyNQ=
+		5lXhKTdhEkrKXlF3TtQV5COf+to=
 		</data>
 		<key>Modules/OnestapSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		TqvA/7YPzZ+1SbT0m9Xa0oxXjBs=
+		5UsfovMUi1cPRMrxmBWrRixsAKY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -65,44 +65,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bvWOjJckzM1qUegKYTFnHTc12Rk=
+			xP5E1XMj2C/vEAbSWBpG93CW2U4=
 			</data>
 			<key>hash2</key>
 			<data>
-			bVc8XHmHYDoVX80sGek5bqCQlaGOXSIRIx8f4rYTW6U=
+			kuDV3waEtS9vTW5oQFWdt/3yDgJUt6r7m6fOOtQzhdI=
 			</data>
 		</dict>
 		<key>Modules/OnestapSDK.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kusulYB6MMx98O0yPHkTEqkCQok=
+			Zar41yz72LC/0R9PUeFqKZD1NRM=
 			</data>
 			<key>hash2</key>
 			<data>
-			IAb0NNUWi5HKASN+Ri+7qyMmpqr+ElLVb0e10Cv7yRA=
+			Q9dvcBg9roy/35LjqhRtvKEPEFbi5Jna2gOY7Qn08wE=
 			</data>
 		</dict>
 		<key>Modules/OnestapSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			MPujDEGnhC/NlmS8lgo5qQTuyNQ=
+			5lXhKTdhEkrKXlF3TtQV5COf+to=
 			</data>
 			<key>hash2</key>
 			<data>
-			9ABB4xMXfiHLH7JsYElyFZhaDB6l7aUjD62fZAkn89Y=
+			KWx6TLi4wEbYGMkUljpbXgFBk9t/RwDOtIpd4paPf78=
 			</data>
 		</dict>
 		<key>Modules/OnestapSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TqvA/7YPzZ+1SbT0m9Xa0oxXjBs=
+			5UsfovMUi1cPRMrxmBWrRixsAKY=
 			</data>
 			<key>hash2</key>
 			<data>
-			8uwKsoCCzr1/6lahMPs7mo8ub3CraRq0F20YCgjmHZs=
+			sSIhkoRrQhVhDnR7VOlgZY2eRol7V7o4oPjA498/wiw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
