@@ -171,8 +171,6 @@ SWIFT_CLASS("_TtC10OnestapSDK13OSTAuthButton")
 @property (nonatomic, readonly, copy) NSString * _Nullable refreshToken;
 /// UserKey is the key of the User
 @property (nonatomic, readonly, copy) NSString * _Nullable userKey;
-/// fingerPrintSessionID is the ID generated for the session of the user
-@property (nonatomic, readonly, copy) NSString * _Nullable fingerPrintSessionID;
 @end
 
 #pragma clang diagnostic pop

@@ -14,7 +14,6 @@ class UserDefaultsTests: XCTestCase {
     private struct consts {
         static let accessToken = "accessToken"
         static let refreshToken = "refreshToken"
-        static let fingerPrintSessionID = "fingerPrintSessionID"
         static let userKey = "userKey"
         static let authorizationCode = "authorizationCode"
     }
@@ -23,7 +22,6 @@ class UserDefaultsTests: XCTestCase {
         super.setUp()
         UserDefaults.standard.accessToken = consts.accessToken
         UserDefaults.standard.refreshToken = consts.refreshToken
-        UserDefaults.standard.fingerPrintSessionID = consts.fingerPrintSessionID
         UserDefaults.standard.userKey = consts.userKey
         UserDefaults.standard.authorizationCode = consts.authorizationCode
     }
@@ -33,7 +31,6 @@ class UserDefaultsTests: XCTestCase {
         super.tearDown()
         UserDefaults.standard.accessToken = nil
         UserDefaults.standard.refreshToken = nil
-        UserDefaults.standard.fingerPrintSessionID = nil
         UserDefaults.standard.userKey = nil
         UserDefaults.standard.authorizationCode = nil
     }
@@ -46,11 +43,6 @@ class UserDefaultsTests: XCTestCase {
     func testUserDefaultsRefreshToken() {
         XCTAssertFalse(UserDefaults.standard.refreshToken == nil, "refreshToken was not suposed to be nil")
         XCTAssertTrue(UserDefaults.standard.refreshToken == consts.refreshToken)
-    }
-    
-    func testUserDefaultsFingerPrintSessionID() {
-        XCTAssertFalse(UserDefaults.standard.fingerPrintSessionID == nil, "fingerPrintSessionID was not suposed to be nil")
-        XCTAssertTrue(UserDefaults.standard.fingerPrintSessionID == consts.fingerPrintSessionID)
     }
     
     func testUserDefaultsUserKey() {

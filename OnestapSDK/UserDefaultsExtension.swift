@@ -14,7 +14,6 @@ extension UserDefaults {
         static let AccessToken = "OSTAccessToken"
         static let RefreshToken = "OSTRefreshToken"
         static let UserKey = "OSTUserKey"
-        static let FingerPrintSessionID = "OSTRLFingerPrintSessionID"
     }
     
     internal var authorizationCode: String? {
@@ -49,15 +48,6 @@ extension UserDefaults {
             return UserDefaults.standard.string(forKey: Keys.UserKey)
         } set {
             UserDefaults.standard.set(newValue, forKey: Keys.UserKey)
-        }
-    }
-    
-    /// fingerPrintSessionID is the ID generated for the session of the user
-    public internal(set) var fingerPrintSessionID: String? {
-        get {
-            return UserDefaults.standard.string(forKey: Keys.FingerPrintSessionID)
-        } set {
-            UserDefaults.standard.set(newValue, forKey: Keys.FingerPrintSessionID)
         }
     }
 }
