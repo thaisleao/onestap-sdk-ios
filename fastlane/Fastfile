@@ -52,7 +52,7 @@ end
 
 lane :changelog do
   changelog = generate_changelog(
-    github_project: 'Flip-Payments/connect-sdk-ios',
+    github_project: 'stone-payments/onestap-sdk-ios',
     github_api_token: ENV['GITHUB_API_TOKEN'],
     base_branch: 'master',
     template_path: 'fastlane/changelog_template.erb',
