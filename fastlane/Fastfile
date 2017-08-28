@@ -10,7 +10,7 @@ lane :travis do
 end
 
 lane :bitrise do
-  tests
+  carthage_build
   zip
   changelog
   carthage_archive
