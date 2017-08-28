@@ -42,6 +42,7 @@
 		A1A31CC11F47A58A0060C9DC /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CBF1F47A58A0060C9DC /* Report.swift */; };
 		A1A31CC21F47A58A0060C9DC /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CC01F47A58A0060C9DC /* Token.swift */; };
 		A1A31CD01F47AA850060C9DC /* OST.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CCF1F47AA850060C9DC /* OST.swift */; };
+		A1AE05BC1F53D06400948223 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14D5D2D1F5108CC0003A2A4 /* FingerPrint_iOS.framework */; };
 		A1B8DA591F4C8DE100EC40F4 /* PersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA581F4C8DE100EC40F4 /* PersonalData.swift */; };
 		A1B8DA5B1F4C8FA400EC40F4 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA5A1F4C8FA400EC40F4 /* Vehicle.swift */; };
 		A1B8DA5D1F4C9C1E00EC40F4 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA5C1F4C9C1E00EC40F4 /* Address.swift */; };
@@ -127,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A141A6431F45FD9100763662 /* OnestapSDK.framework in Frameworks */,
+				A1AE05BC1F53D06400948223 /* FingerPrint_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +697,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8Q54VRJ624;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -706,9 +709,11 @@
 				);
 				INFOPLIST_FILE = OnestapSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(PROJECT_DIR)/Frameworks @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onestap.OnestapSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -721,6 +726,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8Q54VRJ624;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -732,9 +738,11 @@
 				);
 				INFOPLIST_FILE = OnestapSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(PROJECT_DIR)/Frameworks @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onestap.OnestapSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -744,11 +752,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8Q54VRJ624;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = OnestapSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(PROJECT_DIR)/Frameworks @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onestap.OnestapSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				REEXPORTED_LIBRARY_PATHS = "";
 				SWIFT_VERSION = 3.0;
 			};
@@ -758,11 +772,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8Q54VRJ624;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = OnestapSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(PROJECT_DIR)/Frameworks @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onestap.OnestapSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				REEXPORTED_LIBRARY_PATHS = "";
 				SWIFT_VERSION = 3.0;
 			};
