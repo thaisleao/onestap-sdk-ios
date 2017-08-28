@@ -1,7 +1,7 @@
 COMMIT_MESSAGE = "New version:"
 
 lane :tests do
-  scan(project: "OnestapSDK.xcodeproj", scheme: "OnestapSDK", clean: true, device: "iPhone SE")
+  # scan(project: "OnestapSDK.xcodeproj", scheme: "OnestapSDK", clean: true, device: "iPhone SE")
   carthage_build
 end
 
@@ -10,7 +10,7 @@ lane :travis do
 end
 
 lane :bitrise do
-  carthage_build
+  tests
   zip
   changelog
   carthage_archive
