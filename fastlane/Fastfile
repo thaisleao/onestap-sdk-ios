@@ -1,7 +1,7 @@
-COMMIT_MESSAGE = ||New version:||
+COMMIT_MESSAGE = "New version:"
 
 lane :tests do
-  scan(project: ||OnestapSDK.xcodeproj||, scheme: ||OnestapSDK||, clean: true, device: ||iPhone SE||)
+  scan(project: "OnestapSDK.xcodeproj", scheme: "OnestapSDK", clean: true, device: "iPhone SE")
   carthage_build
 end
 
@@ -23,35 +23,35 @@ lane :publish do
 end
 
 lane :release do
-  sh(||git fetch --tags||)
+  sh("git fetch --tags")
   tag = last_git_tag
 
   github_release = set_github_release(
-    repository_name: ||stone-payments/onestap-sdk-ios||,
-    api_token: ENV[||GITHUB_API_TOKEN||],
-    name: ||#{COMMIT_MESSAGE} v#{tag}||,
+    repository_name: "stone-payments/onestap-sdk-ios",
+    api_token: ENV["GITHUB_API_TOKEN"],
+    name: "#{COMMIT_MESSAGE} v#{tag}",
     tag_name: tag,
     description: changelog_from_git_commits,
-    upload_assets: [||OnestapSDK.framework.zip||, ||OnestapSDK_Manual.zip||]
+    upload_assets: ["OnestapSDK.framework.zip", "OnestapSDK_Manual.zip"]
   )
 end
 
 lane :carthage_build do
   carthage(
-    command: ||build||,       # One of: build, bootstrap, update, archive. (default: bootstrap)
+    command: "build",       # One of: build, bootstrap, update, archive. (default: bootstrap)
     no_skip_current: true,     # Don't skip building the current project (only for frameworks)
     verbose: false,   # Print xcodebuild output inline
-    platform: ||iOS||,  # Define which platform to build for (one of ‘all’, ‘Mac’, ‘iOS’, ‘watchOS’, ‘tvOS‘, or comma-separated values of the formers except for ‘all’)
-    configuration: ||Release||,   # Build configuration to use when building
+    platform: "iOS",  # Define which platform to build for (one of ‘all’, ‘Mac’, ‘iOS’, ‘watchOS’, ‘tvOS‘, or comma-separated values of the formers except for ‘all’)
+    configuration: "Release",   # Build configuration to use when building
     cache_builds: true         # By default Carthage will rebuild a dependency regardless of whether its the same resolved version as before.
   )
 end
 
 lane :carthage_archive do
   carthage(
-    frameworks: [||OnestapSDK||, ||FingerPrint_iOS||],   # Specify which frameworks to archive (only for the archive command)
-    output: ||OnestapSDK.framework.zip||,      # Specify the output archive name (only for the archive command)
-    command: ||archive||       # One of: build, bootstrap, update, archive. (default: bootstrap)
+    frameworks: ["OnestapSDK", "FingerPrint_iOS"],   # Specify which frameworks to archive (only for the archive command)
+    output: "OnestapSDK.framework.zip",      # Specify the output archive name (only for the archive command)
+    command: "archive"       # One of: build, bootstrap, update, archive. (default: bootstrap)
   )
 end
 
@@ -67,20 +67,20 @@ lane :changelog do
 end
 
 lane :zip_frameworks do
-  sh(||zip -r OnestapSDK_Manual.zip Frameworks/*||)
+  sh("zip -r OnestapSDK_Manual.zip Frameworks/*")
 end
 
 lane :push do
-  sh(||git fetch --tags||)
+  sh("git fetch --tags")
   tag = last_git_tag
-  version = version_bump_podspec(path: ||OnestapSDK.podspec||, version_number: tag)
+  version = version_bump_podspec(path: "OnestapSDK.podspec", version_number: tag)
   increment_version_number(
-    version_number: ||#{tag}||,      # specify specific version number (optional, omitting it increments patch version number)
-    xcodeproj: ||./OnestapSDK.xcodeproj||  # (optional, you must specify the path to your main Xcode project if it is not in the project root directory)
+    version_number: "#{tag}",      # specify specific version number (optional, omitting it increments patch version number)
+    xcodeproj: "./OnestapSDK.xcodeproj"  # (optional, you must specify the path to your main Xcode project if it is not in the project root directory)
   )
-  git_commit(path: [||./OnestapSDK.xcodeproj||, ||./OnestapSDK/Info.plist||, ||./OnestapSDKTests/Info.plist||], message: ||Update to #{version} on plists||)
-  git_commit(path: [||./OnestapSDK.podspec||], message: ||#{COMMIT_MESSAGE} #{version}||)
-  git_commit(path: [||./CHANGELOG.md||], message: ||Updates changelog for version #{version}||)
+  git_commit(path: ["./OnestapSDK.xcodeproj", "./OnestapSDK/Info.plist", "./OnestapSDKTests/Info.plist"], message: "Update to #{version} on plists")
+  git_commit(path: ["./OnestapSDK.podspec"], message: "#{COMMIT_MESSAGE} #{version}")
+  git_commit(path: ["./CHANGELOG.md"], message: "Updates changelog for version #{version}")
   push_to_git_remote(remote_branch: 'master', force: false, tags: true)
-  pod_push(path: ||OnestapSDK.podspec|| , allow_warnings: true, verbose: true)
+  pod_push(path: "OnestapSDK.podspec" , allow_warnings: true, verbose: true)
 end
