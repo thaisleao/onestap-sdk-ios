@@ -62,7 +62,7 @@ lane :changelog do
   )
 end
 
-lane :zip do
+lane :zip_frameworks do
   sh("zip -r OnestapSDK_Manual.zip Frameworks/*")
 end
 
