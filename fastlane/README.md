@@ -64,6 +64,11 @@ fastlane carthage_archive
 fastlane changelog
 ```
 
+### zip
+```
+fastlane zip
+```
+
 ### push
 ```
 fastlane push

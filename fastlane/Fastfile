@@ -11,6 +11,7 @@ end
 
 lane :bitrise do
   tests
+  zip
   changelog
   carthage_archive
   release
@@ -59,6 +60,10 @@ lane :changelog do
     include_unreleased_section: true, # Optional, defaults to false
     output_path: 'CHANGELOG.md' # Optional
   )
+end
+
+lane :zip do
+  sh("zip -r OnestapSDK_Manual.zip Frameworks/*")
 end
 
 lane :push do
