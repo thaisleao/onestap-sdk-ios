@@ -34,14 +34,14 @@ xcode-select --install
 fastlane tests
 ```
 
-### travis
-```
-fastlane travis
-```
-
 ### bitrise
 ```
 fastlane bitrise
+```
+
+### publish
+```
+fastlane publish
 ```
 
 ### release
