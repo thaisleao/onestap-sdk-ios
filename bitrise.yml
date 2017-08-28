@@ -1,0 +1,70 @@
+---
+format_version: '4'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: fastlane
+app:
+  envs:
+  - FASTLANE_XCODE_LIST_TIMEOUT: '120'
+  - opts:
+      is_expand: false
+    FASTLANE_WORK_DIR: "."
+trigger_map:
+- push_branch: feature/*
+  workflow: tests
+- push_branch: hotfix/*
+  workflow: tests
+- push_branch: fix/*
+  workflow: tests
+- pull_request_source_branch: "*"
+  workflow: master
+- tag: "*.*.*"
+  workflow: master
+workflows:
+  master:
+    steps:
+    - activate-ssh-key@3.1.1:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - git-clone@3.5.1: {}
+    - certificate-and-profile-installer@1.8.8: {}
+    - fastlane@2.3.9:
+        inputs:
+        - lane: "$FASTLANE_LANE"
+        - work_dir: "$FASTLANE_WORK_DIR"
+    - script@1.1.4:
+        title: Do anything with Script step
+        inputs:
+        - content: "#!/bin/bash\nset -e\nset -x\n\nMESSAGE=\"\U0001F494 <b>$BITRISE_APP_TITLE</b>
+            build $BITRISE_BUILD_NUMBER failed<br/>URL: $BITRISE_APP_URL<br/>Commit:
+            $BITRISE_GIT_COMMIT - $BITRISE_GIT_MESSAGE <br/>Git URL: $GIT_REPOSITORY_URL
+            <br/>\"\n\nif [ $BITRISE_BUILD_STATUS -eq 0 ] ; then MESSAGE=\"✅ <b>$BITRISE_APP_TITLE</b>
+            build $BITRISE_BUILD_NUMBER passed! ❤️<br/>URL: $BITRISE_APP_URL<br/>\"
+            ; fi \n\ncurl -X POST -H \"Content-Type: application/json\" -d \"{\\\"value1\\\":\\\"$MESSAGE\\\"}\"
+            https://maker.ifttt.com/trigger/build_failed/with/key/$IFTTT_TOKEN\n"
+    envs:
+    - FASTLANE_LANE: bitrise
+      opts:
+        is_expand: false
+  tests:
+    steps:
+    - activate-ssh-key@3.1.1:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - git-clone@3.5.1: {}
+    - certificate-and-profile-installer@1.8.8: {}
+    - fastlane@2.3.9:
+        inputs:
+        - lane: "$FASTLANE_LANE"
+        - work_dir: "$FASTLANE_WORK_DIR"
+    - script@1.1.4:
+        title: Do anything with Script step
+        inputs:
+        - content: "#!/bin/bash\nset -e\nset -x\n\nMESSAGE=\"\U0001F494 <b>$BITRISE_APP_TITLE</b>
+            build $BITRISE_BUILD_NUMBER failed<br/>URL: $BITRISE_APP_URL<br/>Commit:
+            $BITRISE_GIT_COMMIT - $BITRISE_GIT_MESSAGE <br/>Git URL: $GIT_REPOSITORY_URL
+            <br/>\"\n\nif [ $BITRISE_BUILD_STATUS -eq 0 ] ; then MESSAGE=\"✅ <b>$BITRISE_APP_TITLE</b>
+            build $BITRISE_BUILD_NUMBER passed! ❤️<br/>URL: $BITRISE_APP_URL<br/>\"
+            ; fi \n\ncurl -X POST -H \"Content-Type: application/json\" -d \"{\\\"value1\\\":\\\"$MESSAGE\\\"}\"
+            https://maker.ifttt.com/trigger/build_failed/with/key/$IFTTT_TOKEN\n"
+    envs:
+    - FASTLANE_LANE: tests
+      opts:
+        is_expand: false
