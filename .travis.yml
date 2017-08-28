@@ -20,8 +20,6 @@ deploy:
     branch: master
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  script:
-    - ./scripts/ifttt.sh 0
+  - bash ./scripts/ifttt.sh 0
 after_failure:
-  script:
-    - ./scripts/ifttt.sh 1
+  - bash ./scripts/ifttt.sh 1
