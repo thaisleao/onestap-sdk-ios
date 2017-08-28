@@ -7,7 +7,7 @@ end
 
 lane :bitrise do
   tests
-  zip
+  zip_frameworks
   changelog
   carthage_archive
   release
