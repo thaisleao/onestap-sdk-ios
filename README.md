@@ -1,4 +1,4 @@
-# OnestapSDK
+# one[s]tap SDK
 
 [![Build Status](https://www.bitrise.io/app/09ec1618e72331f4/status.svg?token=6ry4FqJghxQAG_JNJy0AFw)](https://www.bitrise.io/app/09ec1618e72331f4) [![codebeat badge](https://codebeat.co/badges/005530c3-ae6b-44f3-98bd-72b429a05fee)](https://codebeat.co/projects/github-com-stone-payments-onestap-sdk-ios-master) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/stone-payments/onestap-sdk-ios/master/LICENSE) [![Github Version](https://img.shields.io/github/release/stone-payments/onestap-sdk-ios.svg)](https://github.com/stone-payments/onestap-sdk-ios/releases) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods](https://img.shields.io/cocoapods/v/OnestapSDK.svg)](http://cocoadocs.org/docsets/OnestapSDK/) ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
 
@@ -6,7 +6,7 @@ Veja mais aqui: [OnestapSDK Reference](http://cocoadocs.org/docsets/OnestapSDK/)
 
 ## Como funciona
 
-A FlipConnectSDK funciona recebendo **ClientId** e **ClientSecret** para abrir uma página web para logar exatamente como na autenticação do Facebook e do Google. O usuário irá logar no nosso ambiente e, caso seja bem sucedido, o usuário será redirecionado para a aplicação usando a previamente configurada **RedirectURI**.
+A OnestapSDK funciona recebendo `clientId` e `clientSecret` para abrir uma página web para logar exatamente como na autenticação do Facebook e do Google. O usuário irá logar no nosso ambiente e, caso seja bem sucedido, o usuário será redirecionado para a aplicação usando a previamente configurada `redirectUri`.
 
 Quando a aplicação abre, a SDK irá procurar por parâmetros válidos na URI, para que então possa fazer requisições para recuperar o `accesToken`, o `refreshToken` e a `userKey`.
 
@@ -19,7 +19,7 @@ Com essas informações você será capaz de acessar as informações do usuári
 Coloque isto no seu Cartfile:
 
 ```yaml
-github "stone-payments/onestap-sdk-ios" ~> 0.4
+github "stone-payments/onestap-sdk-ios" ~> 0.5
 ```
 
 e então rode o seguinte comando:
@@ -27,7 +27,7 @@ e então rode o seguinte comando:
 ```sh
 carthage update
 ```
-**OBS:** O Carthage irá baixar dois frameworks o `FlipConnectSDK.framework` e `FingerPrint_iOS.framework`, ambos devem ser colocados no seu app para que funcione corretamente.
+**OBS:** O Carthage irá baixar dois frameworks o `OnestapSDK.framework` e `FingerPrint_iOS.framework`, ambos devem ser colocados no seu app para que funcione corretamente.
 
 ### Cocoapods
 
@@ -42,11 +42,11 @@ end
 
 ### Instalação manual
 
-Para instalar manualmente a SDK é necessário baixar o `.zip` [FlipConnectSDK_Manual.framework.zip](https://github.com/Flip-Payments/connect-sdk-ios/releases) e colocar em **Embedded Binaries** como na imagem abaixo:
+Para instalar manualmente a SDK é necessário baixar o `.zip` [OnestapSDK_Manual.framework.zip](https://github.com/stone-payments/onestap-sdk-ios/releases) e colocar em **Embedded Binaries** como na imagem abaixo:
 
 ![Manual Installation](./img/installManual.png)
 
-Depois é necessário baixar o script [remove_unused_archs.sh](https://raw.githubusercontent.com/Flip-Payments/connect-sdk-ios/master/scripts/remove_unused_archs.sh) e adicionar em `Build Phases > Run Script` o seguinte comando: `bash "${SRCROOT}/remove_unused_archs.sh"` (lembrando que neste caso o script está no root do projeto, se o seu script estiver em outra pasta é necessário informar o caminho desta pasta) como na imagem abaixo:
+Depois é necessário baixar o script [remove_unused_archs.sh](https://raw.githubusercontent.com/stone-payments/onestap-sdk-ios/master/scripts/remove_unused_archs.sh) e adicionar em `Build Phases > Run Script` o seguinte comando: `bash "${SRCROOT}/remove_unused_archs.sh"` (lembrando que neste caso o script está no root do projeto, se o seu script estiver em outra pasta é necessário informar o caminho desta pasta) como na imagem abaixo:
 
 ![Run Script](./img/runManualScript.png)
 
@@ -56,9 +56,9 @@ Estes passos são necessários para rodar o script manual porque ambos os framew
 
 ### Configuração
 
-No seu projeto, clique na aba "informação" e selecione Url Types. No campo `identifier`, é obrigatório que o nome seja **FlipConnectSDK**, e na URL Schemes você deve colocar o esquema que foi configurado para seu Merchant URI, por exemplo:
+No seu projeto, clique na aba "informação" e selecione Url Types. No campo `identifier`, é obrigatório que o nome seja **OnestapSDK**, e na URL Schemes você deve colocar o esquema que foi configurado para seu Merchant URI, por exemplo:
 
-Se a Merchant URI registrada é `flipConnect://application` sua Url Schemes deve ser **flipConnect**; em outras palavras, tudo **antes de** `://` é sua Url Scheme.
+Se a Merchant URI registrada é `onestap://application` sua Url Schemes deve ser **onestap**; em outras palavras, tudo **antes de** `://` é sua Url Scheme.
 
 ![Url Schema Creation](img/urlTypes.png)
 
@@ -72,7 +72,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
             environment: .sandbox,
             clientID: "{SEU_CLIENT_ID}",
             clientSecret: "{SEU_CLIENT_SECRET}",
-            redirectURI: "{SUA_REDIRECT_URI}", // EX: flipconnect://application
+            redirectURI: "{SUA_REDIRECT_URI}", // EX: onestap://application
             fingerPrintID: "{SEU_FINGERPRINT_ID}"
         )
         do {
@@ -101,7 +101,7 @@ Você pode usar seu próprio botão ou usar o nosso.
 No seu ViewController importe a SDK:
 
 ```swift
-import FlipConnectSDK
+import OnestapSDK
 ```
 
 ### Logar com o botão
@@ -117,7 +117,7 @@ class ViewController: UIViewController {
         do {
             fcLogin = try FCLogin.shared()
 
-            let loginBtn = fcLogin.loginWithButton(center: view.center, frame: CGRect(x: 0, y: 0, width: 180, height: 40), color: .darkGray, title: "FlipConnect Login")
+            let loginBtn = fcLogin.loginWithButton(center: view.center, frame: CGRect(x: 0, y: 0, width: 180, height: 40), color: .darkGray, title: "one[s]tap Login")
             view.addSubview(loginBtn)
 
         } catch {
@@ -408,4 +408,4 @@ Pull Requests serão muito bem-vindos!
 
 ## Problemas
 
-Algum problema, dúvida ou sugestão? [Abra uma issue!](https://github.com/Flip-Payments/connect-sdk-ios/issues/new)
+Algum problema, dúvida ou sugestão? [Abra uma issue!](https://github.com/stone-payments/onestap-sdk-ios/issues/new)
