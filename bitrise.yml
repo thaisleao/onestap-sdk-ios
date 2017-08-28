@@ -8,6 +8,8 @@ app:
   - opts:
       is_expand: false
     FASTLANE_WORK_DIR: "."
+  - BITRISE_PROJECT_PATH: "./OnestapSDK.xcodeproj"
+  - BITRISE_SCHEME: OnestapSDK
 trigger_map:
 - push_branch: feature/*
   workflow: tests
@@ -50,6 +52,7 @@ workflows:
         run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
     - git-clone@3.5.1: {}
     - certificate-and-profile-installer@1.8.8: {}
+    - xcode-test@1.18.7: {}
     - fastlane@2.3.9:
         inputs:
         - lane: "$FASTLANE_LANE"

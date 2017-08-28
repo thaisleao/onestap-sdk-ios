@@ -1,0 +1,27 @@
+language: swift
+osx_image: xcode8.3
+xcode_project: OnestapSDK.xcworkspace
+xcode_scheme: OnestapSDK
+env:
+  global:
+    - FRAMEWORK_NAME=OnestapSDK
+before_install:
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
+  - gem install bundler
+  - bundle install
+script:
+  - bundle exec fastlane tests
+deploy:
+  provider: script
+  script: bundle exec fastlane publish
+  on:
+    tags: true
+    branch: master
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+  script:
+    - ./scripts/ifttt.sh 0
+after_failure:
+  script:
+    - ./scripts/ifttt.sh 1
