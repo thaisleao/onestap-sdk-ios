@@ -1,8 +1,8 @@
-# FlipConnectSDK
+# OnestapSDK
 
-[![Build Status](https://www.bitrise.io/app/e2ffa72d64f58e17/status.svg?token=qyJOAroLehBPTj5D4g7clA)](https://www.bitrise.io/app/e2ffa72d64f58e17) [![codebeat badge](https://codebeat.co/badges/77723f3a-2d63-465b-bef5-f25ebb619cc3)](https://codebeat.co/projects/github-com-flip-payments-connect-sdk-ios-master) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Flip-Payments/connect-sdk-ios/master/LICENSE) [![Github Version](https://img.shields.io/github/release/Flip-Payments/connect-sdk-ios.svg)](https://github.com/Flip-Payments/connect-sdk-ios/releases) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods](https://img.shields.io/cocoapods/v/FlipConnectSDK.svg)](http://cocoadocs.org/docsets/FlipConnectSDK/) ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
+[![Build Status](https://www.bitrise.io/app/09ec1618e72331f4/status.svg?token=6ry4FqJghxQAG_JNJy0AFw)](https://www.bitrise.io/app/09ec1618e72331f4) [[![codebeat badge](https://codebeat.co/badges/005530c3-ae6b-44f3-98bd-72b429a05fee)](https://codebeat.co/projects/github-com-stone-payments-onestap-sdk-ios-master) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/stone-payments/onestap-sdk-ios/master/LICENSE) [![Github Version](https://img.shields.io/github/release/stone-payments/onestap-sdk-ios.svg)](https://github.com/stone-payments/onestap-sdk-ios/releases) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods](https://img.shields.io/cocoapods/v/OnestapSDK.svg)](http://cocoadocs.org/docsets/OnestapSDK/) ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
 
-Veja mais aqui: [FlipConnectSDK Reference](http://cocoadocs.org/docsets/FlipConnectSDK/)
+Veja mais aqui: [OnestapSDK Reference](http://cocoadocs.org/docsets/OnestapSDK/)
 
 ## Como funciona
 
@@ -19,7 +19,7 @@ Com essas informações você será capaz de acessar as informações do usuári
 Coloque isto no seu Cartfile:
 
 ```yaml
-github "Flip-Payments/connect-sdk-ios" ~> 0.4
+github "stone-payments/onestap-sdk-ios" ~> 0.4
 ```
 
 e então rode o seguinte comando:
@@ -36,7 +36,7 @@ Acrescente ao seu  `Podfile`
 ```ruby
 target 'MyApplication' do
   use_frameworks!
-  pod 'FlipConnectSDK', '~> 0.4'
+  pod 'OnestapSDK', '~> 0.4'
 end
 ```
 
