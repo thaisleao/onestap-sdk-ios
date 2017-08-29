@@ -54,6 +54,8 @@
 		A1B8DA6C1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */; };
 		A1D6E4DF1F55DB54002BDE56 /* GetUserApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */; };
 		A1D6E4E11F55E066002BDE56 /* PublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */; };
+		A1D6E4E31F55E16D002BDE56 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E21F55E16D002BDE56 /* Account.swift */; };
+		A1D6E4E51F55E230002BDE56 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E41F55E230002BDE56 /* Email.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +118,8 @@
 		A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTemporaryProfile.swift; sourceTree = "<group>"; };
 		A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserApiRequest.swift; sourceTree = "<group>"; };
 		A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProfile.swift; sourceTree = "<group>"; };
+		A1D6E4E21F55E16D002BDE56 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		A1D6E4E41F55E230002BDE56 /* Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,10 +371,12 @@
 		A1B8DA571F4C8DB000EC40F4 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				A1D6E4E21F55E16D002BDE56 /* Account.swift */,
 				A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */,
 				A1B8DA581F4C8DE100EC40F4 /* PersonalData.swift */,
 				A1B8DA5A1F4C8FA400EC40F4 /* Vehicle.swift */,
 				A1B8DA5C1F4C9C1E00EC40F4 /* Address.swift */,
+				A1D6E4E41F55E230002BDE56 /* Email.swift */,
 				A1B8DA5E1F4C9D0F00EC40F4 /* Phone.swift */,
 				A1B8DA601F4C9D5400EC40F4 /* Document.swift */,
 				A1B8DA621F4CA0C100EC40F4 /* TemporaryProfile.swift */,
@@ -539,8 +545,10 @@
 				A1B8DA6C1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift in Sources */,
 				A14D5D321F510CCF0003A2A4 /* FingerPrintManager.swift in Sources */,
 				A1B8DA5D1F4C9C1E00EC40F4 /* Address.swift in Sources */,
+				A1D6E4E51F55E230002BDE56 /* Email.swift in Sources */,
 				A1A31CBC1F47A52B0060C9DC /* Result.swift in Sources */,
 				A1B8DA5F1F4C9D0F00EC40F4 /* Phone.swift in Sources */,
+				A1D6E4E31F55E16D002BDE56 /* Account.swift in Sources */,
 				A1B8DA5B1F4C8FA400EC40F4 /* Vehicle.swift in Sources */,
 				A1A31CBE1F47A5790060C9DC /* OSTEnvironmentsEnum.swift in Sources */,
 				A1A31CB21F47A4D10060C9DC /* ApiToken.swift in Sources */,
