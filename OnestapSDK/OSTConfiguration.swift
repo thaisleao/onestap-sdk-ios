@@ -26,14 +26,14 @@ public struct OSTConfiguration {
     public init(environment: OSTEnvironmentEnum = .sandbox,
                          clientId: String,
                          clientSecret: String,
-                         host: String, scheme: String,
+                         scheme: String, host: String,
                          fingerPrintId: String? = nil,
                          temporaryProfile: TemporaryProfile? = nil) {
         self.environment = environment
         self.clientId = clientId
         self.clientSecret = clientSecret
-        self.host = host
         self.scheme = scheme
+        self.host = host
         self.fingerPrintId = fingerPrintId
         self.temporaryProfile = temporaryProfile
         
@@ -45,16 +45,16 @@ public struct OSTConfiguration {
     /// Your Client Secret
     public let clientSecret: String
     
-    /// Your app host registered on URL Types (e.g.: **somehost**://somescheme), where host is everything before `://`.
-    public let host: String
-    
-    /// Your app scheme (e. g.: somehost://**somescheme**), where host is everything after `://`. You can use anything on scheme.
+    /// Your app host registered on URL Types (e.g.: **somescheme**://somehost), where scheme is everything before `://`.
     public let scheme: String
     
-    /// Redirect Uri created from `host` + `scheme` combination (e.g.: `host://scheme`)
+    /// Your app scheme (e. g.: somescheme://**somehost**), where host is everything after `://`. You can use anything on host.
+    public let host: String
+    
+    /// Redirect Uri created from `scheme` + `host` combination (e.g.: `scheme://host`)
     internal var redirectUri: String {
         get {
-            return "\(host)://\(scheme)"
+            return "\(scheme)://\(host)"
         }
     }
     

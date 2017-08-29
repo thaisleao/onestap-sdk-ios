@@ -67,7 +67,7 @@ lane :changelog do
 end
 
 lane :zip_frameworks do
-  sh("zip -r OnestapSDK_Manual.zip Frameworks/*")
+  sh("zip -r OnestapSDK_Manual.zip ./../Frameworks/*")
 end
 
 lane :push do
