@@ -70,7 +70,7 @@ lane :zip_frameworks do
   sh("echo ===============TEST ZIP================")
   sh("pwd")
   sh("ls -la")
-  sh("zip -r OnestapSDK_Manual.zip ./Frameworks/*")
+  sh("zip -r OnestapSDK_Manual.zip ./../Frameworks/*")
 end
 
 lane :push do
