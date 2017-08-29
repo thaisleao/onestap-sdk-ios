@@ -42,23 +42,27 @@ end
 
 ### Instalação manual
 
-Para instalar manualmente a SDK é necessário baixar o `.zip` [OnestapSDK_Manual.framework.zip](https://github.com/stone-payments/onestap-sdk-ios/releases) e colocar em **Embedded Binaries** como na imagem abaixo:
+Para instalar manualmente a SDK é necessário baixar o arquivo [OnestapSDK_Manual.framework.zip](https://github.com/stone-payments/onestap-sdk-ios/releases) e colocar em **Embedded Binaries** como na imagem abaixo:
 
 ![Manual Installation](./img/installManual.png)
 
-Depois é necessário baixar o script [remove_unused_archs.sh](https://raw.githubusercontent.com/stone-payments/onestap-sdk-ios/master/scripts/remove_unused_archs.sh) e adicionar em `Build Phases > Run Script` o seguinte comando: `bash "${SRCROOT}/remove_unused_archs.sh"` (lembrando que neste caso o script está no root do projeto, se o seu script estiver em outra pasta é necessário informar o caminho desta pasta) como na imagem abaixo:
+Depois é necessário baixar o _script_ [remove_unused_archs.sh](https://raw.githubusercontent.com/stone-payments/onestap-sdk-ios/master/scripts/remove_unused_archs.sh) e adicionar em `Build Phases > Run Script` o seguinte comando: `bash "${SRCROOT}/remove_unused_archs.sh"` (lembrando que neste caso o script está no root do projeto, se o seu _script_ estiver em outra pasta é necessário informar o caminho desta pasta) como na imagem abaixo:
 
 ![Run Script](./img/runManualScript.png)
 
-Estes passos são necessários para rodar o script manual porque ambos os frameworks contém todos as arquiteturas dentro dele, mas a loja da Apple não permite publicar o app com as arquiteturas de simulador, por isso este post script garante a remoção destas arquiteturas para que a publicação ocorra sem problemas.
+Ou se preferir, basta copiar o conteúdo do _script_ e colar dentro da "caixa" de _script_.
+
+
+
+⚠️ Estes passos são necessários para rodar o _script_ manual porque ambos os frameworks contém todos as arquiteturas dentro dele, mas a loja da Apple não permite publicar o app com as arquiteturas de simulador, por isso este post _script_ garante a remoção destas arquiteturas para que a publicação ocorra sem problemas. ⚠️
 
 ## Usabilidade
 
 ### Configuração
 
-No seu projeto, clique na aba "informação" e selecione Url Types. No campo `identifier`, é obrigatório que o nome seja **OnestapSDK**, e na URL Schemes você deve colocar o esquema que foi configurado para seu Merchant URI, por exemplo:
+No seu projeto, clique na aba "_Info_" e selecione _Url Types_. No campo `identifier`, é obrigatório que o nome seja **OnestapSDK**, e na _URL Schemes_ você deve colocar o esquema que foi configurado para seu Merchant URI, por exemplo:
 
-Se a Merchant URI registrada é `onestap://application` sua Url Schemes deve ser **onestap**; em outras palavras, tudo **antes de** `://` é sua Url Scheme.
+Se a Merchant URI registrada é `onestap://application` sua Url Schemes deve ser **onestap**; em outras palavras, tudo **antes de** `://` é sua _Url Scheme_.
 
 ![Url Schema Creation](img/urlTypes.png)
 
