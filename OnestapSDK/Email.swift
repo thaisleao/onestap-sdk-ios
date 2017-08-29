@@ -9,10 +9,14 @@
 import Foundation
 
 public struct Email {
+    public init(address: String) {
+        self.address = address
+    }
+    
     public internal(set) var key: String = ""
     public var address: String
-    public internal(set) var isValidated: Bool
-    public internal(set) var isPrimary: Bool
+    public internal(set) var isValidated: Bool = false
+    public internal(set) var isPrimary: Bool = false
 }
 
 extension Email: Encondable {

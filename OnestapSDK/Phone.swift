@@ -9,6 +9,11 @@
 import Foundation
 
 public struct Phone {
+    public init(phoneType: PhoneTypeEnum, fullNumber: String) {
+        self.phoneType = phoneType
+        self.fullNumber = fullNumber
+    }
+    
     public internal(set) var key: String = ""
     public var phoneType: PhoneTypeEnum
     public var fullNumber: String

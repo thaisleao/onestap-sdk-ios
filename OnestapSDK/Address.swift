@@ -9,29 +9,35 @@
 import Foundation
 
 public struct Address {
-    public init() {}
-    public var street: String?
-    public var number: String?
-    public var complement: String?
-    public var addressType: AddressTypeEnum?
-    public var district: String?
-    public var city: String?
-    public var state: String?
-    public var zipCode: String?
-    public var addressReference: String?
-    public var country: String?
+    public init(street: String, number: String, city: String, state: String) {
+        self.street = street
+        self.number = number
+        self.city = city
+        self.state = state
+    }
+    public internal(set) var key: String = ""
+    public var street: String
+    public var number: String
+    public var complement: String? = nil
+    public var addressType: AddressTypeEnum? = nil
+    public var district: String? = nil
+    public var city: String
+    public var state: String
+    public var zipCode: String? = nil
+    public var addressReference: String? = nil
+    public var country: String? = nil
 }
 
 extension Address: Encondable {
     func toDictionary() -> JSON {
         return [
-            "street": street as Any,
-            "number": number as Any,
+            "street": street,
+            "number": number,
             "complement": complement as Any,
             "addressType": addressType?.rawValue as Any,
             "district": district as Any,
-            "city": city as Any,
-            "state": state as Any,
+            "city": city,
+            "state": state,
             "zipCode": zipCode as Any,
             "addressReference": addressReference as Any,
             "country": country as Any

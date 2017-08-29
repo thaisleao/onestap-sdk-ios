@@ -9,16 +9,20 @@
 import Foundation
 
 public struct Document {
-    public init() {}
-    public var documentType: DocumentTypeEnum?
-    public var documentNumber: String?
+    public init(documentType: DocumentTypeEnum, documentNumber: String) {
+        self.documentType = documentType
+        self.documentNumber = documentNumber
+    }
+    public internal(set) var key: String = ""
+    public var documentType: DocumentTypeEnum
+    public var documentNumber: String
 }
 
 extension Document: Encondable {
     func toDictionary() -> JSON {
         return [
-            "documentType": documentType?.rawValue as Any,
-            "documentNumber": documentNumber as Any
+            "documentType": documentType.rawValue,
+            "documentNumber": documentNumber
         ]
     }
 }

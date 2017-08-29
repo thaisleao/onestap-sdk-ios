@@ -11,10 +11,10 @@ import Foundation
 public struct Account {
     public var accountKey: String
     public var isNewsLetterEnabled: Bool
-    public var publicProfile: PublicProfile
-    public var personalData: PersonalData
-    public var emails: [Email]
-    public var phones: [Phone]
-    public var addresses: [Address]
-    public var documents: [Document]
+    public var publicProfile: PublicProfile?
+    public var personalData: PersonalData?
+    public var emails: [Email]?
+    public var phones: [Phone]?
+    public var addresses: [Address]?
+    public var documents: [Document]?
 }
