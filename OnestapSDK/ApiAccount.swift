@@ -28,7 +28,8 @@ struct ApiAccount: InitializableWithData, InitializableWithJson {
     }
     
     init(json: JSON) throws {
-        guard let accountKey = json["accountKey"] as? String,
+        guard let json = json["account"] as? JSON,
+            let accountKey = json["accountKey"] as? String,
             let isNewsLetterEnabled = json["isNewsLetterEnabled"] as? Bool else {
             throw NSError.createParseError()
         }
