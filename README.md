@@ -72,27 +72,22 @@ Se a Merchant URI registrada é `onestap://application` sua Url Schemes deve ser
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let config = FCConfiguration(
-            environment: .sandbox,
-            clientID: "{SEU_CLIENT_ID}",
-            clientSecret: "{SEU_CLIENT_SECRET}",
-            redirectURI: "{SUA_REDIRECT_URI}", // EX: onestap://application
-            fingerPrintID: "{SEU_FINGERPRINT_ID}"
-        )
-        do {
-            _ = try FCLogin.shared()
-        } catch {
-            print(error)
-        }
-        return true
-    }
+    let configuration: OSTConfiguration = OSTConfiguration(environment: .sandbox, // .sandbox ou .production
+                                                            clientId: "{SEU_CLIENT_ID}",
+                                                            clientSecret: "{SEU_CLIENT_SECRET}",
+                                                            scheme: "{SEU_HOST}", // ex: onestap
+                                                            host: "{SEU_SCHEME}", // ex: ios -- a url final ficaria onestap://ios
+                                                            fingerPrintId: "{SEU_FINGERPRINT_ID}") // opcional
+    _ = OST(configuration: configuration)
+    return true
+}
 ```
 
-Após esta inicialização, se for passado o `fingerPrintID`, o `fingerPrintSessionID` será *setado* e você poderá acessá-lo chamando o `UserDefaults` como no exemplo abaixo:
+Após esta inicialização, se for passado o `fingerPrintId`, o `fingerPrintSessionId` será criado e você poderá acessá-lo chamando o `UserDefaults` como no exemplo abaixo:
 
 ```swift
-if let fingerPrintSessionID = UserDefaults.standard.fingerPrintSessionID {
-    print(fingerPrintSessionID)
+if let fingerPrintSessionId = UserDefaults.standard.fingerPrintSessionId {
+    print(fingerPrintSessionId)
 }
 ```
 
