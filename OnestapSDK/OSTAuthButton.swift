@@ -14,13 +14,29 @@ public class OSTAuthButton: OSTButton {
         configure()
     }
     
+    /**
+     Initialize our default button implementation
+     - Parameters:
+        - size: The size of the button (it's a square)
+        - posX: The X position on canvas
+        - posY: The Y position on canvas
+    */
+    public convenience init(size: CGFloat, posX x: CGFloat, posY y: CGFloat) {
+        self.init(frame: CGRect(x: x, y: y, width: size, height: size))
+        self.titleLabel?.font = UIFont(name: "EuphemiaUCAS-Bold", size: size)
+        self.setTitle("S", for: .normal)
+        self.contentHorizontalAlignment = .center
+        self.contentVerticalAlignment = .center
+        self.setTitleColor(UIColor.white, for: .normal)
+        self.adjustsImageWhenHighlighted = true
+    }
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configure()
     }
     
     func configure() {
-        self.setTitle("Login with one[s]tap", for: .normal)
         self.addTarget(nil, action: #selector(openLoginPage), for: .touchUpInside)
     }
     

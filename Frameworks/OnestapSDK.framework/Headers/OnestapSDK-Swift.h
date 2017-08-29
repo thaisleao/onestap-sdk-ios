@@ -155,9 +155,21 @@ SWIFT_CLASS("_TtC10OnestapSDK9OSTButton")
 SWIFT_CLASS("_TtC10OnestapSDK13OSTAuthButton")
 @interface OSTAuthButton : OSTButton
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+/// Initialize our default button implementation
+/// \param size The size of the button (it’s a square)
+///
+/// \param posX The X position on canvas
+///
+/// \param posY The Y position on canvas
+///
+- (nonnull instancetype)initWithSize:(CGFloat)size posX:(CGFloat)x posY:(CGFloat)y;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+
+@interface UIColor (SWIFT_EXTENSION(OnestapSDK))
+@end
 
 
 @interface NSURLSession (SWIFT_EXTENSION(OnestapSDK))
