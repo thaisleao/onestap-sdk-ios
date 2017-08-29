@@ -36,7 +36,7 @@ Acrescente ao seu  `Podfile`
 ```ruby
 target 'MyApplication' do
   use_frameworks!
-  pod 'OnestapSDK', '~> 0.4'
+  pod 'OnestapSDK', '~> 0.5'
 end
 ```
 
