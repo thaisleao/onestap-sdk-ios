@@ -101,4 +101,12 @@ public class AuthManagerImplementation: AuthManager {
             }
         }
     }
+    
+    /// Opens Safari browser on one[S]tap login page
+    @objc public func loadAuthPage() {
+        let url = RedirectHandlerImplementation.getLoginUrl(dataKey: OST.configuration.temporaryProfileDataKey)
+        DispatchQueue.main.async {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }
