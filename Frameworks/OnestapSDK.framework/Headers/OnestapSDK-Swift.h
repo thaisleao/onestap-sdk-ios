@@ -171,6 +171,8 @@ SWIFT_CLASS("_TtC10OnestapSDK13OSTAuthButton")
 @property (nonatomic, readonly, copy) NSString * _Nullable refreshToken;
 /// UserKey is the key of the User
 @property (nonatomic, readonly, copy) NSString * _Nullable userKey;
+/// FingerPrintSessionId is created when anti-fraud is enabled
+@property (nonatomic, readonly, copy) NSString * _Nullable fingerPrintSessionId;
 @end
 
 #pragma clang diagnostic pop

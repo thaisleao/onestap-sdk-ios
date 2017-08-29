@@ -18,6 +18,7 @@ class FingerPrintManagerImplementation: FingerPrintManager {
     
     init() {
         self.sessionId = UUID().uuidString
+        UserDefaults.standard.fingerPrintSessionId = self.sessionId
     }
     
     func sendFingerPrint() {
