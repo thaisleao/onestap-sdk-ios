@@ -35,3 +35,11 @@ struct ApiDocument: InitializableWithData, InitializableWithJson {
         self.documentNumber = documentNumber
     }
 }
+
+extension ApiDocument {
+    var document: Document {
+        var document = Document(documentType: self.documentType, documentNumber: self.documentNumber)
+        document.key = self.key
+        return document
+    }
+}

@@ -26,3 +26,9 @@ struct ApiPublicProfile: InitializableWithData, InitializableWithJson {
         self.pictureUrl = json["pictureUrl"] as? String
     }
 }
+
+extension ApiPublicProfile {
+    var publicProfile: PublicProfile {
+        return PublicProfile(name: self.name, pictureUrl: self.pictureUrl)
+    }
+}

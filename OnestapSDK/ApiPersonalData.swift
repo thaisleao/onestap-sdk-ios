@@ -34,6 +34,17 @@ struct ApiPersonalData: InitializableWithData, InitializableWithJson {
     }
 }
 
+extension ApiPersonalData {
+    var personalData: PersonalData {
+        var personalData = PersonalData()
+        personalData.birthdate = self.birthdate
+        personalData.country = self.country
+        personalData.dependentCount = self.dependentCount
+        personalData.genderType = self.genderType
+        return personalData
+    }
+}
+
 extension String {
     func toDate() -> Date? {
         let dateFormatter = DateFormatter()

@@ -55,3 +55,17 @@ struct ApiAddress: InitializableWithData, InitializableWithJson {
         self.country = json["country"] as? String
     }
 }
+
+extension ApiAddress {
+    var address: Address {
+        var address = Address(street: self.street, number: self.number, city: self.city, state: self.state)
+        address.addressReference = self.addressReference
+        address.key = self.key
+        address.addressType = self.addressType
+        address.complement = self.complement
+        address.district = self.district
+        address.zipCode = self.zipCode
+        address.country = self.country
+        return address
+    }
+}

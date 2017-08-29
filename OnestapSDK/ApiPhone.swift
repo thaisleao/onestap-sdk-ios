@@ -35,3 +35,11 @@ struct ApiPhone: InitializableWithData, InitializableWithJson {
         self.fullNumber = fullNumber
     }
 }
+
+extension ApiPhone {
+    var phone: Phone {
+        var phone = Phone(phoneType: self.phoneType, fullNumber: self.fullNumber)
+        phone.key = self.key
+        return phone
+    }
+}

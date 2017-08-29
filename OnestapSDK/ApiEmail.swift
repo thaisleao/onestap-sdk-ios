@@ -37,3 +37,13 @@ struct ApiEmail: InitializableWithData, InitializableWithJson {
         self.isPrimary = isPrimary
     }
 }
+
+extension ApiEmail {
+    var email: Email {
+        var email = Email(address: self.address)
+        email.key = self.key
+        email.isPrimary = self.isPrimary
+        email.isValidated = self.isValidated
+        return email
+    }
+}

@@ -62,3 +62,16 @@ struct ApiAccount: InitializableWithData, InitializableWithJson {
         self.isNewsLetterEnabled = isNewsLetterEnabled
     }
 }
+
+extension ApiAccount {
+    var account: Account {
+        return Account(accountKey: self.accountKey,
+                       isNewsLetterEnabled: self.isNewsLetterEnabled,
+                       publicProfile: self.publicProfile?.publicProfile,
+                       personalData: self.personalData?.personalData,
+                       emails: self.emails?.flatMap { $0.email },
+                       phones: self.phones?.flatMap { $0.phone },
+                       addresses: self.addresses?.flatMap { $0.address },
+                       documents: self.documents?.flatMap { $0.document })
+    }
+}
