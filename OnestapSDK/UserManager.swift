@@ -51,7 +51,7 @@ public class UserManagerImplementation: UserManager {
         apiClient.execute(request: getUserApiRequest) { (result: Result<ApiResponse<ApiAccount>>) in
             switch result {
             case let .success(response):
-                print(response)
+                completion(.success(response.entity.account))
             case let .failure(error):
                 completion(.failure(error))
             }
