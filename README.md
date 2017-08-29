@@ -75,12 +75,18 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     let configuration: OSTConfiguration = OSTConfiguration(environment: .sandbox, // .sandbox ou .production
                                                             clientId: "{SEU_CLIENT_ID}",
                                                             clientSecret: "{SEU_CLIENT_SECRET}",
-                                                            scheme: "{SEU_HOST}", // ex: onestap
-                                                            host: "{SEU_SCHEME}", // ex: ios -- a url final ficaria onestap://ios
+                                                            scheme: "{SEU_SCHEME}", // ex: onestap
+                                                            host: "{SEU_HOST}", // ex: ios -- a url final ficaria onestap://ios
                                                             fingerPrintId: "{SEU_FINGERPRINT_ID}") // opcional
     _ = OST(configuration: configuration)
     return true
 }
+```
+
+Para usar os métodos da SDK basta chamar ela desta forma pois contém a instância iniciada no `AppDelegate`:
+
+```
+OST.shared
 ```
 
 Após esta inicialização, se for passado o `fingerPrintId`, o `fingerPrintSessionId` será criado e você poderá acessá-lo chamando o `UserDefaults` como no exemplo abaixo:
@@ -95,7 +101,11 @@ if let fingerPrintSessionId = UserDefaults.standard.fingerPrintSessionId {
 
 O login terá início aqui. Alguma ação irá ativar a página de login; se tudo funcionar corretamente, a página web irá redirecionar de volta para a aplicação.
 
-Você pode usar seu próprio botão ou usar o nosso.
+### Logar com o botão
+
+Você pode carregar o botão e customizá-lo de duas formas, uma pelo storyboard e outra no código.
+
+#### Por código
 
 No seu ViewController importe a SDK:
 
@@ -103,58 +113,33 @@ No seu ViewController importe a SDK:
 import OnestapSDK
 ```
 
-### Logar com o botão
-
 ```swift
-class ViewController: UIViewController {
-
-    var fcLogin: FCLogin!
-
+class LoginViewController: UIViewController {
+    var ostAuthButton: OSTAuthButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        do {
-            fcLogin = try FCLogin.shared()
-
-            let loginBtn = fcLogin.loginWithButton(center: view.center, frame: CGRect(x: 0, y: 0, width: 180, height: 40), color: .darkGray, title: "one[s]tap Login")
-            view.addSubview(loginBtn)
-
-        } catch {
-            print(error)
-        }
+        ostAuthButton = OSTAuthButton(frame: CGRect(x: 0, y: 0, width: 180, height: 40))
+        ostAuthButton.center = view.center
+        ostAuthButton.setTitle("Login!", for: .normal)
+        view.addSubview(ostAuthButton)
     }
 }
 ```
-O botão parecerá com algum destes:
+
+#### Pelo Storyboard
+
+Basta arrastar um botão comum para o seu _Storyboard_ e clicar no _Identity inspector_ dizendo que o botão é de uma _custom class_ `OSTAuthButton` com o módulo `OnestapSDK` como na imagem abaixo:
+
+![Login Button on Storyboard](./img/buttonLoginStoryboard.png)
+
+O botão se parecerá com este:
 
 ![Login Button](img/buttonLogin.png)
 
-### Logar com openLoginURL
-
-```swift
-class ViewController: UIViewController {
-
-    var fcLogin: FCLogin!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        do {
-            fcLogin = try FCLogin.shared()
-        } catch {
-            print(error)
-        }
-    }
-
-    @IBAction func loginAction(_ sender: UIButton) {
-        self.fcLogin.loginButtonClicked()
-    }
-}
-```
-
 ### Enviando dados de FingerPrint para o anti-fraude (opcional)
 
-Com o FingerPrintID sendo enviado na inicialização da classe `FCLogin`, enviar dados para o anti-fraude é muito simples, basta colocar permissões no seu app para o usuário liberar acesso aos contatos e o mesmo para localização.
+Com o FingerPrintID sendo enviado na inicialização da classe `OST`, enviar dados para o anti-fraude é muito simples, basta colocar permissões no seu app para o usuário liberar acesso aos contatos e o mesmo para localização.
 
 **OBS:** Lembre-se que a Apple pode encrencar com a publicação do seu app se ele pedir permissão ao usuário de dados que são desnecessários para o app, não vale pedir acesso aos contatos do seu usuário se o seu app não faz nada com os contatos dele, não é mesmo?
 
@@ -166,7 +151,7 @@ Para pedir as permissões de acesso para o usuário basta acrescentar estas linh
 
 Se desejar transferir os dados de cadastro que já tem em sua base para facilitar o cadastro e a transição do usuário para o nosso sistema, você pode usar a variável `temporaryProfile` para preencher os dados cadastrais do usuário.
 
-Para utilizar basta atribuir um valor do tipo `TemporaryProfile` a variável `temporaryProfile` da classe `FCLogin`:
+Para utilizar basta atribuir um valor do tipo `TemporaryProfile` a variável `temporaryProfile` da classe `OSTConfiguration` antes de inicializar a SDK:
 
 ```swift
 class ViewController: UIViewController {
@@ -214,84 +199,79 @@ class ViewController: UIViewController {
 Ou na chamada do método `loginWithButton()`:
 
 ```swift
-class ViewController: UIViewController {
+let tempProfile = TemporaryProfile()
+var address = Address()
+address.city = "Rio de Janeiro"
+address.country = "BR"
+address.state = "RJ"
+address.street = "Rua Doutor Satamini"
+address.number = "128"
+address.district = "Tijuca"
+address.zipCode = "20270230"
+tempProfile.addresses = []
+tempProfile.addresses?.append(address)
 
-    var fcLogin: FCLogin!
+var document = Document()
+document.documentNumber = "57748217220"
+document.documentType = .cpf
+tempProfile.documents = []
+tempProfile.documents?.append(document)
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+var personalData = PersonalData()
+personalData.country = "BR"
+personalData.genderType = .masculine
+tempProfile.personalData = personalData
 
-        do {
-            fcLogin = try FCLogin.shared()
+var phone = Phone()
+phone.fullNumber = "21986223524"
+phone.phoneType = .mobile
+tempProfile.phones = []
+tempProfile.phones?.append(phone)
 
-	    let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy/MM/dd"
-            let birthdate = formatter.date(from: "1997/12/17")
-            
-            let personalData = PersonalData(birthdate: birthdate, genderType: .masculine, country: "br", dependentCount: 3)!
-            let vehicle = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ", licensePlateCountry: "br")!
-            let vehicle2 = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ", licensePlateCountry: "br")!
-            let document = Document(documentType: .cpf, documentNumber: "12345678901")!
-            let phone = Phone(phoneType: .mobile, fullNumber: "26113328")!
-            let phone2 = Phone(phoneType: .home, fullNumber: "26113328")!
-            let address = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "br")!
-            let address2 = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "br")!
-            
-            let temporaryProfile = TemporaryProfile()
-            temporaryProfile.addresses = [address, address2]
-            temporaryProfile.documents = [document]
-            temporaryProfile.personalData = personalData
-            temporaryProfile.phones = [phone, phone2]
-            temporaryProfile.vehicles = [vehicle, vehicle2]
+var vehicle = Vehicle()
+vehicle.licensePlate = "LNY-4266"
+vehicle.licensePlateCity = "Rio de Janeiro"
+vehicle.licensePlateCountry = "BR"
+vehicle.licensePlateState = "RJ"
+tempProfile.vehicles = []
+tempProfile.vehicles?.append(vehicle)
 
-	    let btn = fcLogin.loginWithButton(center: view.center, temporaryProfile: temporaryProfile)
-
-	    view.addSubview(btn)
-        } catch {
-            print(error)
-        }
-    }
-
-    @IBAction func loginAction(_ sender: UIButton) {
-        self.fcLogin.loginButtonClicked()
-    }
-}
+let configuration: OSTConfiguration = OSTConfiguration(environment: .sandbox,
+                                                        clientId: "{SEU_CLIENT_ID}",
+                                                        clientSecret: "{SEU_CLIENT_SECRET}",
+                                                        scheme: "{SEU_SCHEME}",
+                                                        host: "{SEU_HOST}",
+                                                        fingerPrintId: "{SEU_FINGERPRINT}",
+                                                        temporaryProfile: tempProfile)
+_ = OST(configuration: configuration)
 ```
 
 Com isso a tela de cadastro irá se abrir com os dados já preenchidos no ato do cadastro do usuário.
 
 ### AppDelegate
 
-Após um login bem sucedido, o redirecionamento passará por aqui com alguma informação de login, porém apenas depois do método `handleRedirect(fromURL: URL)` funcionar sem problemas é que nós seremos capazes de recuperar o **Token Data**.
+Após um login bem sucedido, o redirecionamento passará por aqui com alguma informação de login, porém apenas depois do método `handleRedirect(fromUrl: URL)` funcionar sem problemas é que nós seremos capazes de recuperar o **Token Data**.
 
 ```swift
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        do {
-            let fcLogin = try FCLogin.shared()
-            fcLogin.handleRedirect(fromURL: url) { tokenResponse, error in
-
-                guard error == nil else {
-                    print(error!)
-                    return
-                }
-
-                if tokenResponse.success {
-                    // DO SOMETHING
-                    print(tokenResponse.accessToken!)
-                    print(tokenResponse.userKey!)
-                    print(tokenResponse.refreshToken!)
-                }
-            }
-        } catch {
+func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    OST.shared.auth.handleRedirect(fromUrl: url) { result in
+        switch result {
+        case .success(let tokens):
+            print("Access Token: \(tokens.accessToken!)")
+            print("Refresh Token: \(tokens.refreshToken!)")
+            print("User Key: \(tokens.userKey!)")
+            // DO SOMETHING
+        case .failure(let error):
             print(error)
+            // HANDLE ERRORS
         }
-        
-        return true
     }
+ 
+    return true
 }
 ```
 
+O método retornará, caso sucesso, um objeto de tokens e gravará os tokens no `UserDefaults`.
 Você deverá ser capaz de usar o `accessToken`, `refreshToken` e a `userKey` se digitar o seguinte:
 
 ```swift
@@ -302,102 +282,50 @@ let refreshToken: String? = UserDefaults.standard.refreshToken
 
 ### Refresh Token
 
-Se o token expirar, basta fazer a implementação que segue. Se algum erro retornar ou o sucesso do `tokenResponse` for `false`, é porque a requisição foi mal-sucedida
+Se o token expirar, basta fazer a implementação que segue:
 
 ```swift
-do {
-	let fcLogin = try FCLogin.shared()
-
-	FCApi.requestTokenRefresh() { tokenResponse, error in
-		guard error == nil else {
-			print("Refresh with NO success")
-			print(err!)
-			return
-		}
-
-            if tokenResponse.success {
-                // DO SOMETHING
-                print("Tokens Refreshed")
-                print(tokenResponse.accessToken!)
-                print(tokenResponse.userKey!)
-                print(tokenResponse.refreshToken!)
-            } else {
-                // ERROR HANDLING
-                var message = ""
-                for report in tokenResponse.operationReport {
-                    message.append("\(report.field) - \(report.message)")
-                }
-            }
-	}
-
-} catch {
-	print(error)
+OST.shared.auth.refreshToken { result in
+    switch result {
+    case .success(let tokens):
+        // DO SOMETHING
+    case .failure(let error):
+        print(error)
+        // HANDLE ERROR
+    }
 }
-
 ```
 
 ### Verificar o Token
 
-Se algum erro retornar ou o sucesso do `tokenResponse` for `false`, é porque a requisição foi mal-sucedida e/ou o token verificado é inválido
+Verifica se o token ainda é válido:
 
 ```swift
-do {
-	let fcLogin = try FCLogin.shared()
-
-	FCApi.requestTokenVerification() { tokenResponse, error in
-            guard error == nil else {
-                print("Verify with NO success")
-		print(err!)
-                return
-            }
-            
-            if tokenResponse.success {
-                // DO SOMETHING
-                print(tokenResponse.accessToken!)
-                print(tokenResponse.userKey!)
-            } else {
-                // ERROR HANDLING
-                var message = ""
-                for report in tokenResponse.operationReport {
-                    message.append("\(report.field) - \(report.message)")
-                }
-                print(message)
-            }
-	}
-
-} catch {
-	print(error)
+OST.shared.auth.verifyToken { result in
+    switch result {
+    case .success(let tokens):
+        // DO SOMETHING
+    case .failure(let error):
+        print(error)
+        // HANDLE ERROR
+    }
 }
 ```
 
 ### Revogar Token
 
-Para revogar o Token do usuário, basta chamar o método `requestTokenRevocation` como no exemplo abaixo:
+Para revogar o Token do usuário, basta chamar o método `revokeToken` como no exemplo abaixo:
 
 ```swift
-do {
-	let fcLogin = try FCLogin.shared()
-
-        FCApi.requestTokenRevocation() { tokenResponse, error in
-            guard error == nil else {
-                self.showErrorDialog("\(error!)")
-                return
-            }
-            
-            if tokenResponse.success {
-                // DO SOMETHING
-                print("Logged out")
-            } else {
-                // ERROR HANDLING
-                var message = ""
-                for report in tokenResponse.operationReport {
-                    message.append("\(report.field) - \(report.message)")
-                }
-                print(message)
-            }
-
-} catch {
-	print(error)
+OST.shared.auth.revokeToken { result in
+    switch result {
+    case .success(let genericResponse):
+        print(genericResponse.operationReport)
+        // DO SOMETHING
+    case .failure(let error):
+        print(error)
+        // DO SOMETHING
+    }
 }
 ```
 
