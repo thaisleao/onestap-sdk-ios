@@ -67,7 +67,10 @@ lane :changelog do
 end
 
 lane :zip_frameworks do
+  sh("#################### ZIP STEP FASTLANE ####################")
+  sh("pwd")
   sh("zip -r ./../OnestapSDK_Manual.zip ./../Frameworks/*")
+  sh("#################### ZIP STEP FASTLANE ####################")
 end
 
 lane :push do
