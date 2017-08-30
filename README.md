@@ -19,7 +19,7 @@ Com essas informações você será capaz de acessar as informações do usuári
 Coloque isto no seu Cartfile:
 
 ```yaml
-github "stone-payments/onestap-sdk-ios" ~> 0.5
+github "stone-payments/onestap-sdk-ios" ~> 0.6
 ```
 
 e então rode o seguinte comando:
@@ -36,7 +36,7 @@ Acrescente ao seu  `Podfile`
 ```ruby
 target 'MyApplication' do
   use_frameworks!
-  pod 'OnestapSDK', '~> 0.5'
+  pod 'OnestapSDK', '~> 0.6'
 end
 ```
 
@@ -85,7 +85,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 Para usar os métodos da SDK basta chamar ela desta forma pois contém a instância iniciada no `AppDelegate`:
 
-```
+```swift
 OST.shared
 ```
 
@@ -101,7 +101,7 @@ if let fingerPrintSessionId = UserDefaults.standard.fingerPrintSessionId {
 
 O login terá início aqui. Alguma ação irá ativar a página de login; se tudo funcionar corretamente, a página web irá redirecionar de volta para a aplicação.
 
-### Logar com o botão
+### Login com botão
 
 Você pode carregar o botão e customizá-lo de duas formas, uma pelo storyboard e outra no código.
 
@@ -137,6 +137,14 @@ O botão se parecerá com este:
 
 ![Login Button](img/buttonLogin.png)
 
+### Login por método
+
+Basta chamar o método `loadAuthPage` que ele irá abrir a página web para o login do usuário:
+
+```swift
+OST.shared.auth.loadAuthPage()
+```
+
 ### Enviando dados de FingerPrint para o anti-fraude (opcional)
 
 Com o FingerPrintID sendo enviado na inicialização da classe `OST`, enviar dados para o anti-fraude é muito simples, basta colocar permissões no seu app para o usuário liberar acesso aos contatos e o mesmo para localização.
@@ -154,66 +162,15 @@ Se desejar transferir os dados de cadastro que já tem em sua base para facilita
 Para utilizar basta atribuir um valor do tipo `TemporaryProfile` a variável `temporaryProfile` da classe `OSTConfiguration` antes de inicializar a SDK:
 
 ```swift
-class ViewController: UIViewController {
-
-    var fcLogin: FCLogin!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        do {
-            fcLogin = try FCLogin.shared()
-
-	    let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy/MM/dd"
-            let birthdate = formatter.date(from: "1997/12/17")
-            
-            let personalData = PersonalData(birthdate: birthdate, genderType: .masculine, country: "br", dependentCount: 3)!
-            let vehicle = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ", licensePlateCountry: "br")!
-            let vehicle2 = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ", licensePlateCountry: "br")!
-            let document = Document(documentType: .cpf, documentNumber: "12345678901")!
-            let phone = Phone(phoneType: .mobile, fullNumber: "26113328")!
-            let phone2 = Phone(phoneType: .home, fullNumber: "26113328")!
-            let address = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "br")!
-            let address2 = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "br")!
-            
-            let temporaryProfile = TemporaryProfile()
-            temporaryProfile.addresses = [address, address2]
-            temporaryProfile.documents = [document]
-            temporaryProfile.personalData = personalData
-            temporaryProfile.phones = [phone, phone2]
-            temporaryProfile.vehicles = [vehicle, vehicle2]
-
-	    fcLogin.temporaryProfile = temporaryProfile
-        } catch {
-            print(error)
-        }
-    }
-
-    @IBAction func loginAction(_ sender: UIButton) {
-        self.fcLogin.loginButtonClicked()
-    }
-}
-```
-
-Ou na chamada do método `loginWithButton()`:
-
-```swift
 let tempProfile = TemporaryProfile()
-var address = Address()
-address.city = "Rio de Janeiro"
+var address = Address(street: "R. Dr. Satamini", number: "128", city: "Rio de Janeiro", state: "RJ")
 address.country = "BR"
-address.state = "RJ"
-address.street = "Rua Doutor Satamini"
-address.number = "128"
 address.district = "Tijuca"
 address.zipCode = "20270230"
 tempProfile.addresses = []
 tempProfile.addresses?.append(address)
 
-var document = Document()
-document.documentNumber = "57748217220"
-document.documentType = .cpf
+let document = Document(documentType: .cpf, documentNumber: "57748217220")
 tempProfile.documents = []
 tempProfile.documents?.append(document)
 
@@ -222,14 +179,11 @@ personalData.country = "BR"
 personalData.genderType = .masculine
 tempProfile.personalData = personalData
 
-var phone = Phone()
-phone.fullNumber = "21986223524"
-phone.phoneType = .mobile
+let phone = Phone(phoneType: .mobile, fullNumber: "21986223524")
 tempProfile.phones = []
 tempProfile.phones?.append(phone)
 
-var vehicle = Vehicle()
-vehicle.licensePlate = "LNY-4266"
+var vehicle = Vehicle(licensePlate: "LNY-4266")
 vehicle.licensePlateCity = "Rio de Janeiro"
 vehicle.licensePlateCountry = "BR"
 vehicle.licensePlateState = "RJ"
