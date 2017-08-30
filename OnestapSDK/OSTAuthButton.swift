@@ -37,7 +37,13 @@ public class OSTAuthButton: OSTButton {
     }
     
     func configure() {
-        let ostAuth = OSTAuth().auth as! AuthManagerImplementation
-        self.addTarget(nil, action: #selector(ostAuth.loadAuthPage), for: .touchUpInside)
+        self.addTarget(nil, action: #selector(loadAuthPage), for: .touchUpInside)
+    }
+    
+    @objc private func loadAuthPage() {
+        let url = RedirectHandlerImplementation.getLoginUrl(dataKey: OST.configuration.temporaryProfileDataKey)
+        DispatchQueue.main.async {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }
