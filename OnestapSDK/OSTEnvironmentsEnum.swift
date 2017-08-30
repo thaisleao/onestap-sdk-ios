@@ -95,12 +95,12 @@ public enum OSTEnvironmentEnum: String {
         static let onestapStagingApiUrl: URL! = URL(string: "http://dlp-qrservices.cloudapp.net:20112/api/")
         static let onestapStagingUserManagementUrl: URL! = URL(string: "http://dlp-qrservices.cloudapp.net:20115/")
         
-        static let onestapSandboxWebUrl: URL! = URL(string: "https://signin-sandbox.flipconnect.io/")
-        static let onestapSandboxApiUrl: URL! = URL(string: "https://auth-sandbox.flipconnect.io/api/")
-        static let onestapSandboxUserManagementUrl: URL! = URL(string: "https://api-sandbox.flipconnect.io/")
+        static let onestapSandboxWebUrl: URL! = URL(string: "https://signin-sandbox.onestap.com/")
+        static let onestapSandboxApiUrl: URL! = URL(string: "https://auth-sandbox.onestap.com/api/")
+        static let onestapSandboxUserManagementUrl: URL! = URL(string: "https://api-sandbox.onestap.com/")
         
-        static let onestapProductionWebUrl:  URL! = URL(string: "https://signin.flipconnect.io/")
-        static let onestapProductionApiUrl: URL! = URL(string: "https://auth.flipconnect.io/api/")
-        static let onestapProductionUserManagementUrl: URL! = URL(string: "https://api.flipconnect.io/")
+        static let onestapProductionWebUrl:  URL! = URL(string: "https://signin.onestap.com/")
+        static let onestapProductionApiUrl: URL! = URL(string: "https://auth.onestap.com/api/")
+        static let onestapProductionUserManagementUrl: URL! = URL(string: "https://api.onestap.com/")
     }
 }

@@ -19,7 +19,7 @@ Com essas informações você será capaz de acessar as informações do usuári
 Coloque isto no seu Cartfile:
 
 ```yaml
-github "stone-payments/onestap-sdk-ios" ~> 0.6
+github "stone-payments/onestap-sdk-ios" ~> 0.7
 ```
 
 e então rode o seguinte comando:
@@ -36,7 +36,7 @@ Acrescente ao seu  `Podfile`
 ```ruby
 target 'MyApplication' do
   use_frameworks!
-  pod 'OnestapSDK', '~> 0.6'
+  pod 'OnestapSDK', '~> 0.7'
 end
 ```
 
@@ -142,7 +142,8 @@ O botão se parecerá com este:
 Basta chamar o método `loadAuthPage` que ele irá abrir a página web para o login do usuário:
 
 ```swift
-OST.shared.auth.loadAuthPage()
+let ostAuth = OSTAuth()
+ostAuth.auth.loadAuthPage()
 ```
 
 ### Enviando dados de FingerPrint para o anti-fraude (opcional)
@@ -208,7 +209,8 @@ Após um login bem sucedido, o redirecionamento passará por aqui com alguma inf
 
 ```swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-    OST.shared.auth.handleRedirect(fromUrl: url) { result in
+    let ostAuth = OSTAuth()
+    ostAuth.auth.handleRedirect(fromUrl: url) { result in
         switch result {
         case .success(let tokens):
             print("Access Token: \(tokens.accessToken!)")
@@ -239,7 +241,8 @@ let refreshToken: String? = UserDefaults.standard.refreshToken
 Se o token expirar, basta fazer a implementação que segue:
 
 ```swift
-OST.shared.auth.refreshToken { result in
+let ostAuth = OSTAuth()
+ostAuth.auth.revokeToken { result in
     switch result {
     case .success(let tokens):
         // DO SOMETHING
@@ -255,7 +258,8 @@ OST.shared.auth.refreshToken { result in
 Verifica se o token ainda é válido:
 
 ```swift
-OST.shared.auth.verifyToken { result in
+let ostAuth = OSTAuth()
+ostAuth.auth.verifyToken { result in
     switch result {
     case .success(let tokens):
         // DO SOMETHING
@@ -271,7 +275,8 @@ OST.shared.auth.verifyToken { result in
 Para revogar o Token do usuário, basta chamar o método `revokeToken` como no exemplo abaixo:
 
 ```swift
-OST.shared.auth.revokeToken { result in
+let ostAuth = OSTAuth()
+ostAuth.auth.revokeToken { result in
     switch result {
     case .success(let genericResponse):
         print(genericResponse.operationReport)
@@ -282,6 +287,25 @@ OST.shared.auth.revokeToken { result in
     }
 }
 ```
+
+### Buscar dados de usuário
+
+Para buscar os dados do usuário basta seguir com a seguinte implementação:
+
+```swift
+let ostUser = OSTUser()
+let categories = ["personalData", "emails", "phones", "documents", "addresses"]
+ostUser.user.getUserData(including: categories) { (result: Result<Account>) in    
+    switch result {
+    case .success(let account):
+        // DO SOMETHING
+    case .failure(let error):
+        // HANDLE ERROR
+    }
+}
+```
+
+**OBS:** O parâmetro `including` é opcional. Se não for enviado nada o método retornará apenas o `publicProfile`.
 
 ## Contribuições
 

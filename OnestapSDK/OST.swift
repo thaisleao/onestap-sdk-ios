@@ -13,20 +13,12 @@ public class OST {
     
     public static var shared: OST!
     
+    let fingerPrint = FingerPrintManagerImplementation()
+    
     public required init(configuration: OSTConfiguration) {
-        OST.configuration = configuration
-        
-        let apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default, completionHandlerQueue: OperationQueue.main)
-        self.auth = AuthManagerImplementation(apiClient: apiClient)
-        self.user = UserManagerImplementation(apiClient: apiClient)
-        self.fingerPrint = FingerPrintManagerImplementation()
-        
+        OST.configuration = configuration        
         OST.shared = self
+        
+        fingerPrint.sendFingerPrint()
     }
-    
-    public var auth: AuthManagerImplementation
-    
-    public var user: UserManagerImplementation
-    
-    var fingerPrint: FingerPrintManagerImplementation
 }
