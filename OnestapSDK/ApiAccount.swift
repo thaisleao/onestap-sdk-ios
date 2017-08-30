@@ -10,7 +10,7 @@ import Foundation
 
 struct ApiAccount: InitializableWithData, InitializableWithJson {
     var accountKey: String
-    var isNewsLetterEnabled: Bool
+    var isNewsLetterAllowed: Bool
     var publicProfile: ApiPublicProfile? = nil
     var personalData: ApiPersonalData? = nil
     var emails: [ApiEmail]? = nil
@@ -30,7 +30,7 @@ struct ApiAccount: InitializableWithData, InitializableWithJson {
     init(json: JSON) throws {
         guard let json = json["account"] as? JSON,
             let accountKey = json["accountKey"] as? String,
-            let isNewsLetterEnabled = json["isNewsLetterEnabled"] as? Bool else {
+            let isNewsLetterAllowed = json["isNewsLetterAllowed"] as? Bool else {
             throw NSError.createParseError()
         }
         
@@ -59,14 +59,14 @@ struct ApiAccount: InitializableWithData, InitializableWithJson {
         }
         
         self.accountKey = accountKey
-        self.isNewsLetterEnabled = isNewsLetterEnabled
+        self.isNewsLetterAllowed = isNewsLetterAllowed
     }
 }
 
 extension ApiAccount {
     var account: Account {
         return Account(accountKey: self.accountKey,
-                       isNewsLetterEnabled: self.isNewsLetterEnabled,
+                       isNewsLetterEnabled: self.isNewsLetterAllowed,
                        publicProfile: self.publicProfile?.publicProfile,
                        personalData: self.personalData?.personalData,
                        emails: self.emails?.flatMap { $0.email },
