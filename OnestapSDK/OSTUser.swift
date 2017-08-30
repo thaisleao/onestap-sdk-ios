@@ -9,7 +9,7 @@
 import Foundation
 
 public class OSTUser {
-    var user: UserManager!
+    public var user: UserManager!
     
     public init() {
         let apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default, completionHandlerQueue: OperationQueue.main)
