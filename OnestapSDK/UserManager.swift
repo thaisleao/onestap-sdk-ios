@@ -34,4 +34,27 @@ public class UserManagerImplementation: UserManager {
             }
         }
     }
+    
+    public func getUserData(includePersonalData: Bool = false,
+        includeEmails: Bool = false,
+        includePhones: Bool = false,
+        includeAddresses: Bool = false,
+        includeDocuments: Bool = false,
+        completion: @escaping (Result<Account>) -> Void) {
+        
+        let getUserApiRequest = GetUserApiRequest(includePersonalData: includePersonalData,
+                                                  includeEmails: includeEmails,
+                                                  includePhones: includePhones,
+                                                  includeAddresses: includeAddresses,
+                                                  includeDocuments: includeDocuments)
+        
+        apiClient.execute(request: getUserApiRequest) { (result: Result<ApiResponse<ApiAccount>>) in
+            switch result {
+            case let .success(response):
+                completion(.success(response.entity.account))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
 }

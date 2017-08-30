@@ -9,17 +9,20 @@
 import Foundation
 
 public struct Vehicle {
-    public init() {}
-    public var licensePlate: String?
-    public var licensePlateCity: String?
-    public var licensePlateState: String?
-    public var licensePlateCountry: String?
+    public init(licensePlate: String) {
+        self.licensePlate = licensePlate
+    }
+    public internal(set) var key: String = ""
+    public var licensePlate: String
+    public var licensePlateCity: String? = nil
+    public var licensePlateState: String? = nil
+    public var licensePlateCountry: String? = nil
 }
 
 extension Vehicle: Encondable {
     func toDictionary() -> JSON {
         return [
-            "licensePlate": licensePlate as Any,
+            "licensePlate": licensePlate,
             "licensePlateCity": licensePlateCity as Any,
             "licensePlateState": licensePlateState as Any,
             "licensePlateCountry": licensePlateCountry as Any

@@ -29,7 +29,14 @@
 		A14D5D291F4B9AFE0003A2A4 /* OSTErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D281F4B9AFE0003A2A4 /* OSTErrors.swift */; };
 		A14D5D2E1F5108CC0003A2A4 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14D5D2D1F5108CC0003A2A4 /* FingerPrint_iOS.framework */; };
 		A14D5D321F510CCF0003A2A4 /* FingerPrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */; };
+		A17E28111F567FCB0071AE76 /* ApiUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E28101F567FCB0071AE76 /* ApiUserTests.swift */; };
 		A17E5EE51F50B8840055EF7B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E5EE41F50B8840055EF7B /* Log.swift */; };
+		A19CEF621F55EE50006201D6 /* ApiPublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF611F55EE50006201D6 /* ApiPublicProfile.swift */; };
+		A19CEF641F55F0D6006201D6 /* ApiPersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF631F55F0D6006201D6 /* ApiPersonalData.swift */; };
+		A19CEF661F55F5AC006201D6 /* ApiEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF651F55F5AC006201D6 /* ApiEmail.swift */; };
+		A19CEF681F55F7D7006201D6 /* ApiPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF671F55F7D7006201D6 /* ApiPhone.swift */; };
+		A19CEF6A1F55FA2F006201D6 /* ApiAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF691F55FA2F006201D6 /* ApiAddress.swift */; };
+		A19CEF6C1F55FD37006201D6 /* ApiDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF6B1F55FD37006201D6 /* ApiDocument.swift */; };
 		A1A31CAE1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CAD1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift */; };
 		A1A31CB11F47A4D10060C9DC /* ApiReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CAF1F47A4D10060C9DC /* ApiReport.swift */; };
 		A1A31CB21F47A4D10060C9DC /* ApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CB01F47A4D10060C9DC /* ApiToken.swift */; };
@@ -52,6 +59,11 @@
 		A1B8DA671F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA661F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift */; };
 		A1B8DA6A1F4CB92000EC40F4 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA691F4CB92000EC40F4 /* UserManager.swift */; };
 		A1B8DA6C1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */; };
+		A1D6E4DF1F55DB54002BDE56 /* GetUserApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */; };
+		A1D6E4E11F55E066002BDE56 /* PublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */; };
+		A1D6E4E31F55E16D002BDE56 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E21F55E16D002BDE56 /* Account.swift */; };
+		A1D6E4E51F55E230002BDE56 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E41F55E230002BDE56 /* Email.swift */; };
+		A1D6E4E81F55E936002BDE56 /* ApiAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E71F55E936002BDE56 /* ApiAccount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +102,14 @@
 		A14D5D281F4B9AFE0003A2A4 /* OSTErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTErrors.swift; path = OnestapSDK/OSTErrors.swift; sourceTree = SOURCE_ROOT; };
 		A14D5D2D1F5108CC0003A2A4 /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = Frameworks/FingerPrint_iOS.framework; sourceTree = "<group>"; };
 		A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerPrintManager.swift; sourceTree = "<group>"; };
+		A17E28101F567FCB0071AE76 /* ApiUserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiUserTests.swift; sourceTree = "<group>"; };
 		A17E5EE41F50B8840055EF7B /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = OnestapSDK/Log.swift; sourceTree = SOURCE_ROOT; };
+		A19CEF611F55EE50006201D6 /* ApiPublicProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiPublicProfile.swift; sourceTree = "<group>"; };
+		A19CEF631F55F0D6006201D6 /* ApiPersonalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiPersonalData.swift; sourceTree = "<group>"; };
+		A19CEF651F55F5AC006201D6 /* ApiEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiEmail.swift; sourceTree = "<group>"; };
+		A19CEF671F55F7D7006201D6 /* ApiPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiPhone.swift; sourceTree = "<group>"; };
+		A19CEF691F55FA2F006201D6 /* ApiAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiAddress.swift; sourceTree = "<group>"; };
+		A19CEF6B1F55FD37006201D6 /* ApiDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiDocument.swift; sourceTree = "<group>"; };
 		A1A31CAD1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RefreshTokenApiRequest.swift; path = OnestapSDK/RefreshTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CAF1F47A4D10060C9DC /* ApiReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiReport.swift; path = OnestapSDK/ApiReport.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CB01F47A4D10060C9DC /* ApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiToken.swift; path = OnestapSDK/ApiToken.swift; sourceTree = SOURCE_ROOT; };
@@ -112,6 +131,11 @@
 		A1B8DA661F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporaryProfileApiRequest.swift; sourceTree = "<group>"; };
 		A1B8DA691F4CB92000EC40F4 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTemporaryProfile.swift; sourceTree = "<group>"; };
+		A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserApiRequest.swift; sourceTree = "<group>"; };
+		A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProfile.swift; sourceTree = "<group>"; };
+		A1D6E4E21F55E16D002BDE56 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		A1D6E4E41F55E230002BDE56 /* Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
+		A1D6E4E71F55E936002BDE56 /* ApiAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiAccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +196,7 @@
 		A141A6461F45FD9100763662 /* OnestapSDKTests */ = {
 			isa = PBXGroup;
 			children = (
+				A17E280F1F567F740071AE76 /* Entities */,
 				A14D5D121F4B68990003A2A4 /* Helpers */,
 				A14D5D0F1F4B67B70003A2A4 /* Managers */,
 				A14D5CFE1F4B12C50003A2A4 /* Extensions */,
@@ -274,6 +299,14 @@
 			name = Manager;
 			sourceTree = "<group>";
 		};
+		A17E280F1F567F740071AE76 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A17E28101F567FCB0071AE76 /* ApiUserTests.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
 		A17E5EE31F50B8680055EF7B /* Log */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,13 +396,15 @@
 		A1B8DA571F4C8DB000EC40F4 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				A1D6E4E21F55E16D002BDE56 /* Account.swift */,
+				A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */,
 				A1B8DA581F4C8DE100EC40F4 /* PersonalData.swift */,
 				A1B8DA5A1F4C8FA400EC40F4 /* Vehicle.swift */,
 				A1B8DA5C1F4C9C1E00EC40F4 /* Address.swift */,
+				A1D6E4E41F55E230002BDE56 /* Email.swift */,
 				A1B8DA5E1F4C9D0F00EC40F4 /* Phone.swift */,
 				A1B8DA601F4C9D5400EC40F4 /* Document.swift */,
 				A1B8DA621F4CA0C100EC40F4 /* TemporaryProfile.swift */,
-				A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -377,6 +412,7 @@
 		A1B8DA641F4CB7AA00EC40F4 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A1D6E4E61F55E919002BDE56 /* Entities */,
 				A1B8DA651F4CB7B800EC40F4 /* Request */,
 			);
 			name = API;
@@ -386,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				A1B8DA661F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift */,
+				A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -396,6 +433,21 @@
 				A1B8DA691F4CB92000EC40F4 /* UserManager.swift */,
 			);
 			name = Manager;
+			sourceTree = "<group>";
+		};
+		A1D6E4E61F55E919002BDE56 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */,
+				A1D6E4E71F55E936002BDE56 /* ApiAccount.swift */,
+				A19CEF611F55EE50006201D6 /* ApiPublicProfile.swift */,
+				A19CEF631F55F0D6006201D6 /* ApiPersonalData.swift */,
+				A19CEF651F55F5AC006201D6 /* ApiEmail.swift */,
+				A19CEF671F55F7D7006201D6 /* ApiPhone.swift */,
+				A19CEF691F55FA2F006201D6 /* ApiAddress.swift */,
+				A19CEF6B1F55FD37006201D6 /* ApiDocument.swift */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -529,25 +581,35 @@
 			files = (
 				A14D5D1E1F4B7A4E0003A2A4 /* GenericResponse.swift in Sources */,
 				A1A31CAE1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift in Sources */,
+				A19CEF6C1F55FD37006201D6 /* ApiDocument.swift in Sources */,
 				A17E5EE51F50B8840055EF7B /* Log.swift in Sources */,
+				A19CEF6A1F55FA2F006201D6 /* ApiAddress.swift in Sources */,
 				A1B8DA6C1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift in Sources */,
 				A14D5D321F510CCF0003A2A4 /* FingerPrintManager.swift in Sources */,
 				A1B8DA5D1F4C9C1E00EC40F4 /* Address.swift in Sources */,
+				A1D6E4E51F55E230002BDE56 /* Email.swift in Sources */,
 				A1A31CBC1F47A52B0060C9DC /* Result.swift in Sources */,
 				A1B8DA5F1F4C9D0F00EC40F4 /* Phone.swift in Sources */,
+				A1D6E4E31F55E16D002BDE56 /* Account.swift in Sources */,
 				A1B8DA5B1F4C8FA400EC40F4 /* Vehicle.swift in Sources */,
 				A1A31CBE1F47A5790060C9DC /* OSTEnvironmentsEnum.swift in Sources */,
 				A1A31CB21F47A4D10060C9DC /* ApiToken.swift in Sources */,
 				A1A31CBB1F47A52B0060C9DC /* JSON.swift in Sources */,
+				A1D6E4DF1F55DB54002BDE56 /* GetUserApiRequest.swift in Sources */,
 				A1B8DA631F4CA0C100EC40F4 /* TemporaryProfile.swift in Sources */,
 				A1A31CB61F47A4ED0060C9DC /* ApiResponse.swift in Sources */,
 				A14D5D1C1F4B77910003A2A4 /* RevokeTokenApiRequest.swift in Sources */,
 				A14D5D091F4B5F5A0003A2A4 /* AuthManager.swift in Sources */,
+				A19CEF621F55EE50006201D6 /* ApiPublicProfile.swift in Sources */,
 				A1B8DA611F4C9D5400EC40F4 /* Document.swift in Sources */,
+				A19CEF681F55F7D7006201D6 /* ApiPhone.swift in Sources */,
+				A1D6E4E11F55E066002BDE56 /* PublicProfile.swift in Sources */,
 				A1A31CD01F47AA850060C9DC /* OST.swift in Sources */,
+				A19CEF661F55F5AC006201D6 /* ApiEmail.swift in Sources */,
 				A14D5D181F4B73940003A2A4 /* AccessTokenApiRequest.swift in Sources */,
 				A1B8DA591F4C8DE100EC40F4 /* PersonalData.swift in Sources */,
 				A1A31CB11F47A4D10060C9DC /* ApiReport.swift in Sources */,
+				A1D6E4E81F55E936002BDE56 /* ApiAccount.swift in Sources */,
 				A14D5D1A1F4B76520003A2A4 /* VerifyTokenApiRequest.swift in Sources */,
 				A14D5D291F4B9AFE0003A2A4 /* OSTErrors.swift in Sources */,
 				A1B8DA671F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift in Sources */,
@@ -560,6 +622,7 @@
 				A14D5D021F4B17C60003A2A4 /* UserDefaultsExtension.swift in Sources */,
 				A14D5D201F4B86270003A2A4 /* OSTButton.swift in Sources */,
 				A14D5D231F4B8B0C0003A2A4 /* OSTAuthButton.swift in Sources */,
+				A19CEF641F55F0D6006201D6 /* ApiPersonalData.swift in Sources */,
 				A1A31CC11F47A58A0060C9DC /* Report.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,6 +632,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A14D5D041F4B1A660003A2A4 /* UserDefaultsTests.swift in Sources */,
+				A17E28111F567FCB0071AE76 /* ApiUserTests.swift in Sources */,
 				A141A6481F45FD9100763662 /* OnestapSDKTests.swift in Sources */,
 				A14D5D161F4B698D0003A2A4 /* NSError.swift in Sources */,
 				A14D5D141F4B68CD0003A2A4 /* URLSessionStub.swift in Sources */,

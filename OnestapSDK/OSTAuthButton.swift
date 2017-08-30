@@ -37,14 +37,6 @@ public class OSTAuthButton: OSTButton {
     }
     
     func configure() {
-        self.addTarget(nil, action: #selector(openLoginPage), for: .touchUpInside)
-    }
-    
-    /// Opens Safari browser on one[S]tap login page
-    @objc private func openLoginPage() {
-        let url = RedirectHandlerImplementation.getLoginUrl(dataKey: OST.configuration.temporaryProfileDataKey)
-        DispatchQueue.main.async {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
+        self.addTarget(nil, action: #selector(OST.shared.auth.loadAuthPage), for: .touchUpInside)
     }
 }

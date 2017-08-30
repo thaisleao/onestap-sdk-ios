@@ -9,16 +9,21 @@
 import Foundation
 
 public struct Phone {
-    public init() {}
-    public var phoneType: PhoneTypeEnum?
-    public var fullNumber: String?
+    public init(phoneType: PhoneTypeEnum, fullNumber: String) {
+        self.phoneType = phoneType
+        self.fullNumber = fullNumber
+    }
+    
+    public internal(set) var key: String = ""
+    public var phoneType: PhoneTypeEnum
+    public var fullNumber: String
 }
 
 extension Phone: Encondable {
     func toDictionary() -> JSON {
         return [
-            "phoneType": phoneType?.rawValue as Any,
-            "fullNumber": fullNumber as Any
+            "phoneType": phoneType.rawValue,
+            "fullNumber": fullNumber
         ]
     }
 }

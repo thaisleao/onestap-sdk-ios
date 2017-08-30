@@ -16,6 +16,7 @@ public class TemporaryProfile {
     public var addresses: [Address]? = nil
     public var phones: [Phone]? = nil
     public var documents: [Document]? = nil
+    public var emails: [Email]? = nil
 }
 
 extension TemporaryProfile: Encondable {
@@ -52,6 +53,12 @@ extension TemporaryProfile: Encondable {
             }
         }
         
+        var emailsJSON: [JSON]? = nil
+        if let emails = self.emails {
+            emailsJSON = []
+            emails.forEach { emailsJSON?.append($0.toDictionary()) }
+        }
+        
         return [
             "applicationKey": OST.configuration.clientId,
             "data": [
@@ -59,7 +66,8 @@ extension TemporaryProfile: Encondable {
                 "vehicles": vehiclesJSON as Any,
                 "addresses": addressesJSON as Any,
                 "phones": phonesJSON as Any,
-                "documents": documentsJSON as Any
+                "documents": documentsJSON as Any,
+                "emails": emailsJSON as Any
             ]
         ]
     }
