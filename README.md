@@ -288,6 +288,25 @@ ostAuth.auth.revokeToken { result in
 }
 ```
 
+### Buscar dados de usuário
+
+Para buscar os dados do usuário basta seguir com a seguinte implementação:
+
+```swift
+let ostUser = OSTUser()
+let categories = ["personalData", "emails", "phones", "documents", "addresses"]
+ostUser.user.getUserData(including: categories) { (result: Result<Account>) in    
+    switch result {
+    case .success(let account):
+        // DO SOMETHING
+    case .failure(let error):
+        // HANDLE ERROR
+    }
+}
+```
+
+**OBS:** O parâmetro `including` é opcional. Se não for enviado nada o método retornará apenas o `publicProfile`.
+
 ## Contribuições
 
 Pull Requests serão muito bem-vindos!
