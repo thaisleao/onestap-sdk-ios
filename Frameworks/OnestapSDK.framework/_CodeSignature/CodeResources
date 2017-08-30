@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		hlAjf0bAN7Ui0gimHE2H66y3u8k=
+		cINhGF88eFAxkt68WN/Y/rRnusY=
 		</data>
 		<key>Modules/OnestapSDK.swiftmodule/arm.swiftdoc</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/OnestapSDK.swiftmodule/arm.swiftmodule</key>
 		<data>
-		NbgZS1CbBpefBxvc2NHHLueJsQU=
+		XRQJhtDSrNEbVHnc5uigXmUYqUM=
 		</data>
 		<key>Modules/OnestapSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/OnestapSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		eNJaawbFtKmfSqSEZXKhhk8OeQY=
+		tAy5/TloiYxIkBOqUEYn6Kz2oBg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -76,11 +76,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NbgZS1CbBpefBxvc2NHHLueJsQU=
+			XRQJhtDSrNEbVHnc5uigXmUYqUM=
 			</data>
 			<key>hash2</key>
 			<data>
-			t4Idt4yAyAQTSSv2KQ+HjzUJTMkYWwLg0ER22r2Uic4=
+			AnWAE3QaQjBVOeVHk8RurRX5l1HDZbRBiK1Q/9REMgo=
 			</data>
 		</dict>
 		<key>Modules/OnestapSDK.swiftmodule/arm64.swiftdoc</key>
@@ -98,11 +98,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			eNJaawbFtKmfSqSEZXKhhk8OeQY=
+			tAy5/TloiYxIkBOqUEYn6Kz2oBg=
 			</data>
 			<key>hash2</key>
 			<data>
-			tx6gMYP0lsCGS5vkrtCbNDdvfiu02ufEQKwD8KMLyzw=
+			H8XSKq/HTLkSpnaLvOAc0i/IySh5nMQlrDwsYGmM1tg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
