@@ -39,6 +39,7 @@
 		A19CEF6C1F55FD37006201D6 /* ApiDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF6B1F55FD37006201D6 /* ApiDocument.swift */; };
 		A19CEF701F570701006201D6 /* OSTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF6F1F570701006201D6 /* OSTUser.swift */; };
 		A19CEF721F571E2A006201D6 /* OSTAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF711F571E2A006201D6 /* OSTAuth.swift */; };
+		A19CEF741F57715E006201D6 /* ApiVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF731F57715E006201D6 /* ApiVehicle.swift */; };
 		A1A31CAE1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CAD1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift */; };
 		A1A31CB11F47A4D10060C9DC /* ApiReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CAF1F47A4D10060C9DC /* ApiReport.swift */; };
 		A1A31CB21F47A4D10060C9DC /* ApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CB01F47A4D10060C9DC /* ApiToken.swift */; };
@@ -114,6 +115,7 @@
 		A19CEF6B1F55FD37006201D6 /* ApiDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiDocument.swift; sourceTree = "<group>"; };
 		A19CEF6F1F570701006201D6 /* OSTUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTUser.swift; sourceTree = "<group>"; };
 		A19CEF711F571E2A006201D6 /* OSTAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTAuth.swift; sourceTree = "<group>"; };
+		A19CEF731F57715E006201D6 /* ApiVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiVehicle.swift; sourceTree = "<group>"; };
 		A1A31CAD1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RefreshTokenApiRequest.swift; path = OnestapSDK/RefreshTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CAF1F47A4D10060C9DC /* ApiReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiReport.swift; path = OnestapSDK/ApiReport.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CB01F47A4D10060C9DC /* ApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiToken.swift; path = OnestapSDK/ApiToken.swift; sourceTree = SOURCE_ROOT; };
@@ -452,6 +454,7 @@
 				A19CEF671F55F7D7006201D6 /* ApiPhone.swift */,
 				A19CEF691F55FA2F006201D6 /* ApiAddress.swift */,
 				A19CEF6B1F55FD37006201D6 /* ApiDocument.swift */,
+				A19CEF731F57715E006201D6 /* ApiVehicle.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				A19CEF6C1F55FD37006201D6 /* ApiDocument.swift in Sources */,
 				A17E5EE51F50B8840055EF7B /* Log.swift in Sources */,
 				A19CEF6A1F55FA2F006201D6 /* ApiAddress.swift in Sources */,
+				A19CEF741F57715E006201D6 /* ApiVehicle.swift in Sources */,
 				A1B8DA6C1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift in Sources */,
 				A14D5D321F510CCF0003A2A4 /* FingerPrintManager.swift in Sources */,
 				A1B8DA5D1F4C9C1E00EC40F4 /* Address.swift in Sources */,
