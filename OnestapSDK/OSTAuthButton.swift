@@ -37,6 +37,7 @@ public class OSTAuthButton: OSTButton {
     }
     
     func configure() {
-        self.addTarget(nil, action: #selector(OST.shared.auth.loadAuthPage), for: .touchUpInside)
+        let ostAuth = OSTAuth().auth as! AuthManagerImplementation
+        self.addTarget(nil, action: #selector(ostAuth.loadAuthPage), for: .touchUpInside)
     }
 }
