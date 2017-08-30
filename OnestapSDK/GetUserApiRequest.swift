@@ -37,6 +37,11 @@ struct GetUserApiRequest: ApiRequest {
         
         var request = URLRequest(url: url)
         request.addDefaultHeaders()
+        
+        if let accessToken = UserDefaults.standard.accessToken {
+            request.addValue("bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        }
+
         request.httpMethod = HttpVerbEnum.get.rawValue
         return request
     }

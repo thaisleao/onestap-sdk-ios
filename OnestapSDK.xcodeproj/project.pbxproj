@@ -194,6 +194,7 @@
 		A141A6461F45FD9100763662 /* OnestapSDKTests */ = {
 			isa = PBXGroup;
 			children = (
+				A17E280F1F567F740071AE76 /* Entities */,
 				A14D5D121F4B68990003A2A4 /* Helpers */,
 				A14D5D0F1F4B67B70003A2A4 /* Managers */,
 				A14D5CFE1F4B12C50003A2A4 /* Extensions */,
@@ -294,6 +295,13 @@
 				A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */,
 			);
 			name = Manager;
+			sourceTree = "<group>";
+		};
+		A17E280F1F567F740071AE76 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 		A17E5EE31F50B8680055EF7B /* Log */ = {
