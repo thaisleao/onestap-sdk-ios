@@ -62,6 +62,9 @@ public class AuthManagerImplementation: AuthManager {
                 UserDefaults.standard.accessToken = token.accessToken
                 UserDefaults.standard.refreshToken = token.refreshToken
                 UserDefaults.standard.userKey = token.userKey
+                
+                OST.shared.fingerPrint.sendFingerPrint()
+                
                 completion(.success(token))
             case let .failure(error):
                 completion(.failure(error))

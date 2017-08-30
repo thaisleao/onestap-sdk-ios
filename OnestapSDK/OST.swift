@@ -13,8 +13,12 @@ public class OST {
     
     public static var shared: OST!
     
+    let fingerPrint = FingerPrintManagerImplementation()
+    
     public required init(configuration: OSTConfiguration) {
         OST.configuration = configuration        
         OST.shared = self
+        
+        fingerPrint.sendFingerPrint()
     }
 }
