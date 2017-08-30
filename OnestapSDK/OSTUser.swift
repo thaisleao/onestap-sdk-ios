@@ -9,10 +9,16 @@
 import Foundation
 
 public class OSTUser {
+    /// Implements `UserManager`
     public var user: UserManager!
     
-    public init() {
+    /**
+     Initialize OSTUser
+     - parameters:
+        - userManager: Only present for injection purposes
+     */
+    public init(userManager: UserManager? = nil) {
         let apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default, completionHandlerQueue: OperationQueue.main)
-        self.user = UserManagerImplementation(apiClient: apiClient)
+        self.user = userManager ?? UserManagerImplementation(apiClient: apiClient)
     }
 }
