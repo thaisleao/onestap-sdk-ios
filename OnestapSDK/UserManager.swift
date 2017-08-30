@@ -8,8 +8,9 @@
 
 import Foundation
 
-protocol UserManager {
+public protocol UserManager {
     func temporaryProfile()
+    func getUserData(including: [String]?, completion: @escaping (Result<Account>) -> Void)
 }
 
 public class UserManagerImplementation: UserManager {
@@ -19,7 +20,7 @@ public class UserManagerImplementation: UserManager {
         self.apiClient = apiClient
     }
     
-    func temporaryProfile() {
+    public func temporaryProfile() {
         guard OST.configuration.temporaryProfile != nil else {
             return
         }
@@ -35,18 +36,10 @@ public class UserManagerImplementation: UserManager {
         }
     }
     
-    public func getUserData(includePersonalData: Bool = false,
-        includeEmails: Bool = false,
-        includePhones: Bool = false,
-        includeAddresses: Bool = false,
-        includeDocuments: Bool = false,
-        completion: @escaping (Result<Account>) -> Void) {
+    public func getUserData(including: [String]? = nil, completion: @escaping (Result<Account>) -> Void) {
+        let including = including ?? []
         
-        let getUserApiRequest = GetUserApiRequest(includePersonalData: includePersonalData,
-                                                  includeEmails: includeEmails,
-                                                  includePhones: includePhones,
-                                                  includeAddresses: includeAddresses,
-                                                  includeDocuments: includeDocuments)
+        let getUserApiRequest = GetUserApiRequest(including: including)
         
         apiClient.execute(request: getUserApiRequest) { (result: Result<ApiResponse<ApiAccount>>) in
             switch result {
