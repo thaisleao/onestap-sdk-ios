@@ -40,6 +40,7 @@
 		A19CEF701F570701006201D6 /* OSTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF6F1F570701006201D6 /* OSTUser.swift */; };
 		A19CEF721F571E2A006201D6 /* OSTAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF711F571E2A006201D6 /* OSTAuth.swift */; };
 		A19CEF741F57715E006201D6 /* ApiVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF731F57715E006201D6 /* ApiVehicle.swift */; };
+		A19CEF771F58A90E006201D6 /* OSTCategoriesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF761F58A90E006201D6 /* OSTCategoriesEnum.swift */; };
 		A1A31CAE1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CAD1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift */; };
 		A1A31CB11F47A4D10060C9DC /* ApiReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CAF1F47A4D10060C9DC /* ApiReport.swift */; };
 		A1A31CB21F47A4D10060C9DC /* ApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CB01F47A4D10060C9DC /* ApiToken.swift */; };
@@ -116,6 +117,7 @@
 		A19CEF6F1F570701006201D6 /* OSTUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTUser.swift; sourceTree = "<group>"; };
 		A19CEF711F571E2A006201D6 /* OSTAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTAuth.swift; sourceTree = "<group>"; };
 		A19CEF731F57715E006201D6 /* ApiVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiVehicle.swift; sourceTree = "<group>"; };
+		A19CEF761F58A90E006201D6 /* OSTCategoriesEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTCategoriesEnum.swift; sourceTree = "<group>"; };
 		A1A31CAD1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RefreshTokenApiRequest.swift; path = OnestapSDK/RefreshTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CAF1F47A4D10060C9DC /* ApiReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiReport.swift; path = OnestapSDK/ApiReport.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CB01F47A4D10060C9DC /* ApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiToken.swift; path = OnestapSDK/ApiToken.swift; sourceTree = SOURCE_ROOT; };
@@ -321,6 +323,14 @@
 			name = Log;
 			sourceTree = "<group>";
 		};
+		A19CEF751F58A6A2006201D6 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A19CEF761F58A90E006201D6 /* OSTCategoriesEnum.swift */,
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
 		A1A31CA51F47915D0060C9DC /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				A1B8DA641F4CB7AA00EC40F4 /* API */,
+				A19CEF751F58A6A2006201D6 /* Enums */,
 				A1B8DA571F4C8DB000EC40F4 /* Entities */,
 				A1B8DA681F4CB90A00EC40F4 /* Manager */,
 				A19CEF6F1F570701006201D6 /* OSTUser.swift */,
@@ -629,6 +640,7 @@
 				A14D5D251F4B967F0003A2A4 /* RedirectHandler.swift in Sources */,
 				A1B8DA6A1F4CB92000EC40F4 /* UserManager.swift in Sources */,
 				A1A31CB51F47A4ED0060C9DC /* ApiClient.swift in Sources */,
+				A19CEF771F58A90E006201D6 /* OSTCategoriesEnum.swift in Sources */,
 				A14D5D0B1F4B600A0003A2A4 /* HttpVerbEnum.swift in Sources */,
 				A1A31CC21F47A58A0060C9DC /* Token.swift in Sources */,
 				A14D5D021F4B17C60003A2A4 /* UserDefaultsExtension.swift in Sources */,
