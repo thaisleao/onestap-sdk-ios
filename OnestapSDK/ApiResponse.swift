@@ -27,6 +27,7 @@ extension Response {
     }
     
     mutating func initializeResponse(json: JSON) throws {
+        self.operationReport = []
         guard let success = json["success"] as? Bool else {
             self.success = false
             return
@@ -35,11 +36,8 @@ extension Response {
         self.success = success
         
         guard let operationReportJSON = json["operationReport"] as? [JSON] else {
-            self.operationReport = []
             return
         }
-        
-        self.operationReport = []
         
         let operationReport = try operationReportJSON.flatMap({ operationReport in
             return try ApiReport(json: operationReport)

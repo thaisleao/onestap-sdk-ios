@@ -9,8 +9,8 @@
 import Foundation
 
 struct ApiAccount: InitializableWithData, InitializableWithJson {
-    var accountKey: String
-    var isNewsLetterAllowed: Bool
+    var accountKey: String = ""
+    var isNewsLetterAllowed: Bool = false
     var publicProfile: ApiPublicProfile? = nil
     var personalData: ApiPersonalData? = nil
     var emails: [ApiEmail]? = nil
@@ -29,8 +29,11 @@ struct ApiAccount: InitializableWithData, InitializableWithJson {
     }
     
     init(json: JSON) throws {
-        guard let json = json["account"] as? JSON,
-            let accountKey = json["accountKey"] as? String,
+        guard let json = json["account"] as? JSON else {
+            return
+        }
+        
+        guard let accountKey = json["accountKey"] as? String,
             let isNewsLetterAllowed = json["isNewsLetterAllowed"] as? Bool else {
             throw NSError.createParseError()
         }
