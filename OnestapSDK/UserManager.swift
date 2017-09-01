@@ -8,17 +8,9 @@
 
 import Foundation
 
-public protocol UserManager {
-    /// Sends `temporaryProfile` data so the user can register with some data already filled
+protocol UserManager {
     func temporaryProfile()
     
-    /**
-     Receive User Data
-     - parameters:
-        - categories: **Optional** parameter where you can pass what information you want to get
-        - completion: Callback
-        - result: Response of type `Result<Account>`
-     */
     func getUser(categories: [OSTCategoriesEnum]?, completion: @escaping (Result<Account>) -> Void)
 }
 
@@ -29,8 +21,7 @@ public class UserManagerImplementation: UserManager {
         self.apiClient = apiClient
     }
     
-    /// Sends `temporaryProfile` data so the user can register with some data already filled
-    public func temporaryProfile() {
+    func temporaryProfile() {
         guard OST.configuration.temporaryProfile != nil else {
             return
         }
@@ -46,7 +37,7 @@ public class UserManagerImplementation: UserManager {
         }
     }
     
-    public func getUser(categories: [OSTCategoriesEnum]? = nil, completion: @escaping (_ result: Result<Account>) -> Void) {
+    func getUser(categories: [OSTCategoriesEnum]? = nil, completion: @escaping (_ result: Result<Account>) -> Void) {
         let including = categories ?? []
         
         let getUserApiRequest = GetUserApiRequest(categories: including)
