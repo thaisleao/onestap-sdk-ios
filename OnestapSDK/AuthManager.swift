@@ -125,8 +125,13 @@ public class AuthManagerImplementation: AuthManager {
     
     private func openAuthPageOnSafariViewController(url: URL, viewController: UIViewController) {
         AuthManagerImplementation.safariViewController = SFSafariViewController(url: url)
-        AuthManagerImplementation.safariViewController?.preferredBarTintColor = UIColor.darkGreen
-        AuthManagerImplementation.safariViewController?.preferredControlTintColor = UIColor.defaultGreen
+        
+        if let primaryColor = OST.configuration.primaryColor {
+            AuthManagerImplementation.safariViewController?.preferredBarTintColor = primaryColor
+        }
+        if let secondaryColor = OST.configuration.secondaryColor {
+          AuthManagerImplementation.safariViewController?.preferredControlTintColor = secondaryColor
+        }
         viewController.present(AuthManagerImplementation.safariViewController!, animated: true, completion: nil)
     }
 }
