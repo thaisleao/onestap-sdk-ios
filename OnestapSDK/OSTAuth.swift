@@ -60,5 +60,5 @@ public class OSTAuth {
     public func revokeToken(completion: @escaping (_ result: Result<GenericResponse>) -> Void) { self.authManager.revokeToken { completion($0) } }
     
     /// Opens Safari browser on one[S]tap login page
-    public func loadAuthPage() { self.authManager.loadAuthPage() }
+    public func loadAuthPage(viewController: UIViewController? = nil) { self.authManager.loadAuthPage(viewController: viewController) }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SafariServices
 
 protocol AuthManager {
     func refreshToken(completion: @escaping (_ tokens: Result<Token>) -> Void)
@@ -14,7 +15,7 @@ protocol AuthManager {
     func verifyToken(completion: @escaping (_ tokens: Result<Token>) -> Void)
     func revokeToken(completion: @escaping (_ tokens: Result<GenericResponse>) -> Void)
     func handleRedirect(fromUrl url: URL, completion: @escaping (_ tokens: Result<Token>) -> Void)
-    func loadAuthPage()
+    func loadAuthPage(viewController: UIViewController?)
 }
 
 public class AuthManagerImplementation: AuthManager {
@@ -106,10 +107,26 @@ public class AuthManagerImplementation: AuthManager {
         }
     }
     
-    func loadAuthPage() {
+    func loadAuthPage(viewController: UIViewController? = nil) {
         let url = RedirectHandlerImplementation.getLoginUrl(dataKey: OST.configuration.temporaryProfileDataKey)
+        
+        if let vc = viewController {
+            openAuthPageOnSafariViewController(url: url, viewController: vc)
+        } else {
+            openAuthPageOnBrowser(url: url)
+        }
+    }
+    
+    private func openAuthPageOnBrowser(url: URL) {
         DispatchQueue.main.async {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    private func openAuthPageOnSafariViewController(url: URL, viewController: UIViewController) {
+        let svc = SFSafariViewController(url: url)
+        DispatchQueue.main.async {
+            viewController.present(svc, animated: true, completion: nil)
         }
     }
 }
