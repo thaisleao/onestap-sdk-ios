@@ -125,8 +125,6 @@ public class AuthManagerImplementation: AuthManager {
     
     private func openAuthPageOnSafariViewController(url: URL, viewController: UIViewController) {
         let svc = SFSafariViewController(url: url)
-        DispatchQueue.main.async {
-            viewController.present(svc, animated: true, completion: nil)
-        }
+        viewController.present(svc, animated: true, completion: nil)
     }
 }
