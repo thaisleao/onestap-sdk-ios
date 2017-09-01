@@ -21,6 +21,8 @@ protocol AuthManager {
 public class AuthManagerImplementation: AuthManager {
     let apiClient: ApiClient
     
+    static var safariViewController: SFSafariViewController?
+    
     init(apiClient: ApiClient) {
         self.apiClient = apiClient
     }
@@ -70,6 +72,7 @@ public class AuthManagerImplementation: AuthManager {
         }
         
         accessToken { result in
+            AuthManagerImplementation.safariViewController?.dismiss(animated: true, completion: nil)
             completion(result)
         }
     }
@@ -109,7 +112,6 @@ public class AuthManagerImplementation: AuthManager {
     
     func loadAuthPage(viewController: UIViewController? = nil) {
         let url = RedirectHandlerImplementation.getLoginUrl(dataKey: OST.configuration.temporaryProfileDataKey)
-        
         if let vc = viewController {
             openAuthPageOnSafariViewController(url: url, viewController: vc)
         } else {
@@ -118,13 +120,14 @@ public class AuthManagerImplementation: AuthManager {
     }
     
     private func openAuthPageOnBrowser(url: URL) {
-        DispatchQueue.main.async {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
     private func openAuthPageOnSafariViewController(url: URL, viewController: UIViewController) {
-        let svc = SFSafariViewController(url: url)
-        viewController.present(svc, animated: true, completion: nil)
+        AuthManagerImplementation.safariViewController = SFSafariViewController(url: url)
+        AuthManagerImplementation.safariViewController?.preferredBarTintColor = UIColor.darkGreen
+        AuthManagerImplementation.safariViewController?.preferredControlTintColor = UIColor.defaultGreen
+        viewController.present(AuthManagerImplementation.safariViewController!, animated: true, completion: nil)
     }
 }
+

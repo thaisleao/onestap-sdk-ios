@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SafariServices
 
 /// Class containing all authorization implementations
 public class OSTAuth {
@@ -59,6 +60,10 @@ public class OSTAuth {
      */
     public func revokeToken(completion: @escaping (_ result: Result<GenericResponse>) -> Void) { self.authManager.revokeToken { completion($0) } }
     
-    /// Opens Safari browser on one[S]tap login page
+    /**
+     Opens Safari browser on one[S]tap login page
+     - parameters:
+        - viewController: If your controller is passed, we will use `SFSafariViewController` to load you page
+     */
     public func loadAuthPage(viewController: UIViewController? = nil) { self.authManager.loadAuthPage(viewController: viewController) }
 }
