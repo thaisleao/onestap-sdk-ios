@@ -10,10 +10,10 @@ import Foundation
 
 struct GetUserApiRequest: ApiRequest {
     
-    private var including: [String]
+    private var categories: [OSTCategoriesEnum]
     
-    init(including: [String]) {
-        self.including = including
+    init(categories: [OSTCategoriesEnum]) {
+        self.categories = Array(Set(categories))
     }
     
     var urlRequest: URLRequest {
@@ -21,7 +21,7 @@ struct GetUserApiRequest: ApiRequest {
         url.appendPathComponent("user", isDirectory: true)
         url.appendPathComponent("account", isDirectory: false)
         
-        self.including.forEach { url.addParameter($0, forParameterName: "include") }
+        self.categories.forEach { url.addParameter($0.rawValue, forParameterName: "include") }
         
         var request = URLRequest(url: url)
         request.addDefaultHeaders()

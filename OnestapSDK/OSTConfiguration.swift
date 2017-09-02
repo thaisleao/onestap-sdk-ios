@@ -28,7 +28,9 @@ public struct OSTConfiguration {
                          clientSecret: String,
                          scheme: String, host: String,
                          fingerPrintId: String? = nil,
-                         temporaryProfile: TemporaryProfile? = nil) {
+                         temporaryProfile: TemporaryProfile? = nil,
+                         primaryColor: UIColor? = nil,
+                         secondaryColor: UIColor? = nil) {
         self.environment = environment
         self.clientId = clientId
         self.clientSecret = clientSecret
@@ -36,7 +38,8 @@ public struct OSTConfiguration {
         self.host = host
         self.fingerPrintId = fingerPrintId
         self.temporaryProfile = temporaryProfile
-        
+        self.primaryColor = primaryColor
+        self.secondaryColor = secondaryColor
     }
     
     /// Your Client ID
@@ -57,6 +60,12 @@ public struct OSTConfiguration {
             return "\(scheme)://\(host)"
         }
     }
+    
+    /// The primary color of your app
+    public let primaryColor: UIColor?
+    
+    /// The secondary color of your app
+    public let secondaryColor: UIColor?
     
     /// Your Finger Print ID if you want to send data to our anti-fraud.
     public let fingerPrintId: String?

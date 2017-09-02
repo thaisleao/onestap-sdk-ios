@@ -7,30 +7,27 @@
 //
 
 import Foundation
+import SafariServices
 
-public protocol AuthManager {
+protocol AuthManager {
     func refreshToken(completion: @escaping (_ tokens: Result<Token>) -> Void)
     func accessToken(completion: @escaping (_ tokens: Result<Token>) -> Void)
     func verifyToken(completion: @escaping (_ tokens: Result<Token>) -> Void)
     func revokeToken(completion: @escaping (_ tokens: Result<GenericResponse>) -> Void)
     func handleRedirect(fromUrl url: URL, completion: @escaping (_ tokens: Result<Token>) -> Void)
-    func loadAuthPage()
+    func loadAuthPage(viewController: UIViewController?)
 }
 
 public class AuthManagerImplementation: AuthManager {
     let apiClient: ApiClient
     
+    static var safariViewController: SFSafariViewController?
+    
     init(apiClient: ApiClient) {
         self.apiClient = apiClient
     }
     
-    /**
-     Refreshes expired Token
-     - parameters:
-        - completion: Callback
-        - result: Response of type `Result<Token>`
-     */
-    public func refreshToken(completion: @escaping (_ result: Result<Token>) -> Void) {
+    func refreshToken(completion: @escaping (_ result: Result<Token>) -> Void) {
         let tokenApiRequest = RefreshTokenApiRequest()
         
         apiClient.execute(request: tokenApiRequest) { (result: Result<ApiResponse<ApiToken>>) in
@@ -46,13 +43,7 @@ public class AuthManagerImplementation: AuthManager {
         }
     }
     
-    /**
-     Uses received token from redirect to get the remaining tokens
-     - parameters:
-        - completion: Callback
-        - result: Response of type `Result<Token>`
-     */
-    public func accessToken(completion: @escaping (_ result: Result<Token>) -> Void) {
+    func accessToken(completion: @escaping (_ result: Result<Token>) -> Void) {
         let tokenApiRequest = AccessTokenApiRequest()
         
         apiClient.execute(request: tokenApiRequest) { (result: Result<ApiResponse<ApiToken>>) in
@@ -71,15 +62,8 @@ public class AuthManagerImplementation: AuthManager {
             }
         }
     }
-    
-    /**
-     Handle when the login occurs with success on webpage and redirects back to the app
-     - parameters:
-        - fromUrl: Redirect `URL`
-        - completion: Callback
-        - result: Response of type `Result<Token>`
-     */
-    public func handleRedirect(fromUrl url: URL, completion: @escaping (_ result: Result<Token>) -> Void) {
+
+    func handleRedirect(fromUrl url: URL, completion: @escaping (_ result: Result<Token>) -> Void) {
         do {
             let redirectHandler = try RedirectHandlerImplementation(bundle: Bundle.main.infoDictionary)
             try redirectHandler.handleUri(open: url)
@@ -88,17 +72,12 @@ public class AuthManagerImplementation: AuthManager {
         }
         
         accessToken { result in
+            AuthManagerImplementation.safariViewController?.dismiss(animated: true, completion: nil)
             completion(result)
         }
     }
     
-    /**
-     Verify if the `accessToken` is expired
-     - parameters:
-        - completion: Callback
-        - result: Response of type `Result<Token>`
-     */
-    public func verifyToken(completion: @escaping (_ result: Result<Token>) -> Void) {
+    func verifyToken(completion: @escaping (_ result: Result<Token>) -> Void) {
         let tokenApiRequest = VerifyTokenApiRequest()
         
         apiClient.execute(request: tokenApiRequest) { (result: Result<ApiResponse<ApiToken>>) in
@@ -113,13 +92,7 @@ public class AuthManagerImplementation: AuthManager {
         }
     }
     
-    /**
-     Revokes token so the will not be able to access user data until it logs in again
-     - parameters:
-        - completion: Callback
-        - result: Response of type `Result<GenericResponse>`
-    */
-    public func revokeToken(completion: @escaping (_ result: Result<GenericResponse>) -> Void) {
+    func revokeToken(completion: @escaping (_ result: Result<GenericResponse>) -> Void) {
         let tokenApiRequest = RevokeTokenApiRequest()
         
         apiClient.execute(request: tokenApiRequest) { (result: Result<ApiResponse<ApiToken>>) in
@@ -137,11 +110,29 @@ public class AuthManagerImplementation: AuthManager {
         }
     }
     
-    /// Opens Safari browser on one[S]tap login page
-    public func loadAuthPage() {
+    func loadAuthPage(viewController: UIViewController? = nil) {
         let url = RedirectHandlerImplementation.getLoginUrl(dataKey: OST.configuration.temporaryProfileDataKey)
-        DispatchQueue.main.async {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        if let vc = viewController {
+            openAuthPageOnSafariViewController(url: url, viewController: vc)
+        } else {
+            openAuthPageOnBrowser(url: url)
         }
     }
+    
+    private func openAuthPageOnBrowser(url: URL) {
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
+    private func openAuthPageOnSafariViewController(url: URL, viewController: UIViewController) {
+        AuthManagerImplementation.safariViewController = SFSafariViewController(url: url)
+        
+        if let primaryColor = OST.configuration.primaryColor {
+            AuthManagerImplementation.safariViewController?.preferredBarTintColor = primaryColor
+        }
+        if let secondaryColor = OST.configuration.secondaryColor {
+          AuthManagerImplementation.safariViewController?.preferredControlTintColor = secondaryColor
+        }
+        viewController.present(AuthManagerImplementation.safariViewController!, animated: true, completion: nil)
+    }
 }
+

@@ -17,4 +17,5 @@ public struct Account {
     public var phones: [Phone]?
     public var addresses: [Address]?
     public var documents: [Document]?
+    public var vehicles: [Vehicle]?
 }

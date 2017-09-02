@@ -10,15 +10,26 @@ import Foundation
 
 public class OSTUser {
     /// Implements `UserManager`
-    public var user: UserManager!
+    private var userManager: UserManager!
+    
+    public init() {
+        let apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default, completionHandlerQueue: OperationQueue.main)
+        self.userManager = UserManagerImplementation(apiClient: apiClient)
+    }
+    
+    /// Sends `temporaryProfile` data so the user can register with some data already filled
+    func temporaryProfile() {
+        userManager.temporaryProfile()
+    }
     
     /**
-     Initialize OSTUser
+     Receive User Data
      - parameters:
-        - userManager: Only present for injection purposes
+        - categories: **Optional** parameter where you can pass what information you want to get
+        - completion: Callback
+        - result: Response of type `Result<Account>`
      */
-    public init(userManager: UserManager? = nil) {
-        let apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default, completionHandlerQueue: OperationQueue.main)
-        self.user = userManager ?? UserManagerImplementation(apiClient: apiClient)
+    public func getUser(categories: [OSTCategoriesEnum]? = nil, completion: @escaping (_ result: Result<Account>) -> Void) {
+        self.userManager.getUser(categories: categories) { completion($0) }
     }
 }

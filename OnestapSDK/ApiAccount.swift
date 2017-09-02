@@ -9,14 +9,15 @@
 import Foundation
 
 struct ApiAccount: InitializableWithData, InitializableWithJson {
-    var accountKey: String
-    var isNewsLetterAllowed: Bool
+    var accountKey: String = ""
+    var isNewsLetterAllowed: Bool = false
     var publicProfile: ApiPublicProfile? = nil
     var personalData: ApiPersonalData? = nil
     var emails: [ApiEmail]? = nil
     var phones: [ApiPhone]? = nil
     var addresses: [ApiAddress]? = nil
     var documents: [ApiDocument]? = nil
+    var vehicles: [ApiVehicle]? = nil
     
     init(data: Data?) throws {
         guard let data = data,
@@ -28,8 +29,11 @@ struct ApiAccount: InitializableWithData, InitializableWithJson {
     }
     
     init(json: JSON) throws {
-        guard let json = json["account"] as? JSON,
-            let accountKey = json["accountKey"] as? String,
+        guard let json = json["account"] as? JSON else {
+            return
+        }
+        
+        guard let accountKey = json["accountKey"] as? String,
             let isNewsLetterAllowed = json["isNewsLetterAllowed"] as? Bool else {
             throw NSError.createParseError()
         }
@@ -58,6 +62,10 @@ struct ApiAccount: InitializableWithData, InitializableWithJson {
             self.documents = try documentsJSON.flatMap { try ApiDocument(json: $0) }
         }
         
+        if let vehiclesJSON = json["vehicles"] as? [JSON] {
+            self.vehicles = try vehiclesJSON.flatMap { try ApiVehicle(json: $0) }
+        }
+        
         self.accountKey = accountKey
         self.isNewsLetterAllowed = isNewsLetterAllowed
     }
@@ -72,6 +80,7 @@ extension ApiAccount {
                        emails: self.emails?.flatMap { $0.email },
                        phones: self.phones?.flatMap { $0.phone },
                        addresses: self.addresses?.flatMap { $0.address },
-                       documents: self.documents?.flatMap { $0.document })
+                       documents: self.documents?.flatMap { $0.document },
+                       vehicles: self.vehicles?.flatMap { $0.vehicle })
     }
 }
