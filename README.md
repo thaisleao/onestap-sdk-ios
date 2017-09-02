@@ -19,7 +19,7 @@ Com essas informações você será capaz de acessar as informações do usuári
 Coloque isto no seu Cartfile:
 
 ```yaml
-github "stone-payments/onestap-sdk-ios" ~> 0.7
+github "stone-payments/onestap-sdk-ios" ~> 0.8
 ```
 
 e então rode o seguinte comando:
@@ -36,7 +36,7 @@ Acrescente ao seu  `Podfile`
 ```ruby
 target 'MyApplication' do
   use_frameworks!
-  pod 'OnestapSDK', '~> 0.7'
+  pod 'OnestapSDK', '~> 0.8'
 end
 ```
 
@@ -72,12 +72,14 @@ Se a Merchant URI registrada é `onestap://application` sua Url Schemes deve ser
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    let configuration: OSTConfiguration = OSTConfiguration(environment: .sandbox, // .sandbox ou .production
-                                                            clientId: "{SEU_CLIENT_ID}",
-                                                            clientSecret: "{SEU_CLIENT_SECRET}",
-                                                            scheme: "{SEU_SCHEME}", // ex: onestap
-                                                            host: "{SEU_HOST}", // ex: ios -- a url final ficaria onestap://ios
-                                                            fingerPrintId: "{SEU_FINGERPRINT_ID}") // opcional
+    let configuration: OSTConfiguration = OSTConfiguration(environment: .sandbox,
+                                                           clientId: "{SEU_CLIENT_ID}",
+                                                           clientSecret: "{SEU_CLIENT_SECRET}",
+                                                           scheme: "{SEU_SCHEME}", // ex: onestap
+                                                           host: "{SEU_HOST}", // ex: ios -- a url final ficaria onestap://ios
+                                                           fingerPrintId: "{SEU_FINGERPRINT_ID}") // opcional
+                                                           primaryColor: UIColor(), // OPCIONAL cor primária para abrir no SafariViewController
+                                                           secondaryColor: UIColor()) // // OPCIONAL cor sencundária para abrir no SafariViewController
     _ = OST(configuration: configuration)
     return true
 }
@@ -139,12 +141,27 @@ O botão se parecerá com este:
 
 ### Login por método
 
+#### Abrindo o browser do celular
+
 Basta chamar o método `loadAuthPage` que ele irá abrir a página web para o login do usuário:
 
 ```swift
 let ostAuth = OSTAuth()
 ostAuth.auth.loadAuthPage()
 ```
+
+#### Usando o SFSafariViewController
+
+Basta chamar o método `loadAuthPage` passando como argumento a sua `UIViewCotroller` atual que ele irá abrir a página web no `SafariViewController` com as cores passadas no `OSTConfiguration`:
+
+```swift
+let ostAuth = OSTAuth()
+ostAuth.loadAuthPage(viewController: self)
+```
+
+A página ficará desta maneira:
+
+![](./img/loginPage.png)
 
 ### Enviando dados de FingerPrint para o anti-fraude (opcional)
 
@@ -210,7 +227,7 @@ Após um login bem sucedido, o redirecionamento passará por aqui com alguma inf
 ```swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
     let ostAuth = OSTAuth()
-    ostAuth.auth.handleRedirect(fromUrl: url) { result in
+    ostAuth.handleRedirect(fromUrl: url) { result in
         switch result {
         case .success(let tokens):
             print("Access Token: \(tokens.accessToken!)")
@@ -242,7 +259,7 @@ Se o token expirar, basta fazer a implementação que segue:
 
 ```swift
 let ostAuth = OSTAuth()
-ostAuth.auth.revokeToken { result in
+ostAuth.revokeToken { result in
     switch result {
     case .success(let tokens):
         // DO SOMETHING
@@ -259,7 +276,7 @@ Verifica se o token ainda é válido:
 
 ```swift
 let ostAuth = OSTAuth()
-ostAuth.auth.verifyToken { result in
+ostAuth.verifyToken { result in
     switch result {
     case .success(let tokens):
         // DO SOMETHING
@@ -276,7 +293,7 @@ Para revogar o Token do usuário, basta chamar o método `revokeToken` como no e
 
 ```swift
 let ostAuth = OSTAuth()
-ostAuth.auth.revokeToken { result in
+ostAuth.revokeToken { result in
     switch result {
     case .success(let genericResponse):
         print(genericResponse.operationReport)
@@ -294,8 +311,8 @@ Para buscar os dados do usuário basta seguir com a seguinte implementação:
 
 ```swift
 let ostUser = OSTUser()
-let categories = ["personalData", "emails", "phones", "documents", "addresses"]
-ostUser.user.getUserData(including: categories) { (result: Result<Account>) in    
+let toInclude: [OSTCategoriesEnum] = [.personalData, .emails, .phones, .documents, .addresses, .vehicles]
+ostUser.getUser(categories: toInclude) { (result: Result<Account>) in    
     switch result {
     case .success(let account):
         // DO SOMETHING
