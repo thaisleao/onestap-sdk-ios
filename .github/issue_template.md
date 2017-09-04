@@ -22,3 +22,9 @@ https://github.com/stone-payments/onestap-sdk-ios/blob/master/CONTRIBUTING.md
 # Qual é o comportamente esperado?
 
 - Exemplos.
+
+# Especificações:
+
+- Versão da SDK:
+
+- Versão do iOS:
