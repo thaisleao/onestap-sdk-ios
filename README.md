@@ -326,7 +326,7 @@ ostUser.getUser(categories: toInclude) { (result: Result<Account>) in
 
 ## Contribuições
 
-Pull Requests serão muito bem-vindos!
+Pull Requests serão muito bem-vindos! Leia o nosso [Contributing](./CONTRIBUTING.md)
 
 ## Problemas
 
