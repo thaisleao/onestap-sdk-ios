@@ -1,3 +1,11 @@
+## [Unreleased]
+
+**Enhancement:**
+- Criação do CONTRIBUTING | [#6](https://github.com/stone-payments/onestap-sdk-ios/pull/6) | [@munirwanis](https://github.com/munirwanis)
+
+## [0.8.1] - 2017-09-04
+[Full Changelog](https://github.com/stone-payments/onestap-sdk-ios/compare/0.8.0...0.8.1)
+
 ## [0.8.0] - 2017-09-01
 [Full Changelog](https://github.com/stone-payments/onestap-sdk-ios/compare/0.7.1...0.8.0)
 
