@@ -1,7 +1,9 @@
 <!--
 
-Colocar um dos itens abaixo separados por | no título, se tiver mais de coloquei um # antes do nome
-[#{bug}|{enhancement}|{documentation}{fire}] Título bem explicado
+Colocar  na label da issue um ou mais itens abaixo.
+[#{bug}|{enhancement}|{documentation}{fire}]
+
+Título: Título bem explicado.
 
 Para mais informações:
 https://github.com/stone-payments/onestap-sdk-ios/blob/master/CONTRIBUTING.md
