@@ -17,7 +17,7 @@ https://github.com/stone-payments/onestap-sdk-ios/blob/master/CONTRIBUTING.md
 
 # Como chego no(a) sugestão/problema?
 
-- Exmplos.
+- Exemplos.
 
 # Qual é o comportamente esperado?
 

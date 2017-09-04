@@ -17,7 +17,7 @@ https://github.com/stone-payments/onestap-sdk-ios/blob/master/CONTRIBUTING.md
 
 # Por que foi feito?
   
-- Exmplos do porque foi feito.
+- Exemplos do porque foi feito.
 
 # Como foi feito?
 
