@@ -120,18 +120,25 @@ public class AuthManagerImplementation: AuthManager {
     }
     
     private func openAuthPageOnBrowser(url: URL) {
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     private func openAuthPageOnSafariViewController(url: URL, viewController: UIViewController) {
         AuthManagerImplementation.safariViewController = SFSafariViewController(url: url)
         
-        if let primaryColor = OST.configuration.primaryColor {
-            AuthManagerImplementation.safariViewController?.preferredBarTintColor = primaryColor
+        if #available(iOS 10.0,*) {
+            if let primaryColor = OST.configuration.primaryColor {
+                AuthManagerImplementation.safariViewController?.preferredBarTintColor = primaryColor
+            }
+            if let secondaryColor = OST.configuration.secondaryColor {
+                AuthManagerImplementation.safariViewController?.preferredControlTintColor = secondaryColor
+            }
         }
-        if let secondaryColor = OST.configuration.secondaryColor {
-          AuthManagerImplementation.safariViewController?.preferredControlTintColor = secondaryColor
-        }
+      
         viewController.present(AuthManagerImplementation.safariViewController!, animated: true, completion: nil)
     }
 }
