@@ -11,11 +11,10 @@ import Foundation
 public enum OSTErrors: Error {
     case plistNotFound
     case configNotFound
-    case urlNameDifferentFromIdentifier
-    case urlSchemeDoesNotExist
     case incorrectIdentifier
     case malformedUri
     case stateIsInvalid
     case invalidOperation
+    case failedToRetrieveSchemeFromPlist
     case wrongParameters(message: String)
 }

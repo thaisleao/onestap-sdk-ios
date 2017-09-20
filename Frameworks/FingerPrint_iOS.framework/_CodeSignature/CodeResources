@@ -4,116 +4,116 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/OnestapSDK-Swift.h</key>
+		<key>Headers/FingerPrint_iOS-Swift.h</key>
 		<data>
-		Xefg5wW7TgsZRfq0kphxzrqsxa8=
+		CdwTcQBOx9tl6X88BpG21f7T34w=
 		</data>
-		<key>Headers/OnestapSDK.h</key>
+		<key>Headers/FingerPrint_iOS.h</key>
 		<data>
-		e0AI/9SdDU0+hDpofNtJVq5bOcg=
+		mjWP8sdGrr6yCAmk5UsVfDX/eXk=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		q3zSRsrlAo1WBYUjLCTosJah++0=
+		dp1QrAM/v497VjTs1q8upsNb3Rw=
 		</data>
-		<key>Modules/OnestapSDK.swiftmodule/arm.swiftdoc</key>
+		<key>Modules/FingerPrint_iOS.swiftmodule/arm.swiftdoc</key>
 		<data>
-		0fIT69rBQRVx2u/2uFQQSEkN7YM=
+		6wKegiGO6RnrRjchADyU2v06L58=
 		</data>
-		<key>Modules/OnestapSDK.swiftmodule/arm.swiftmodule</key>
+		<key>Modules/FingerPrint_iOS.swiftmodule/arm.swiftmodule</key>
 		<data>
-		N361mgkk2AkDPJI/7wUiCeTLoXk=
+		elKKLFpfbQQpOCR9wLk2+XpSITk=
 		</data>
-		<key>Modules/OnestapSDK.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/FingerPrint_iOS.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		PCchaBF//2WurpZ8KDiRp0KQ8xk=
+		D0DVTmmh1Lqfk0wDYLwm0bFPYiA=
 		</data>
-		<key>Modules/OnestapSDK.swiftmodule/arm64.swiftmodule</key>
+		<key>Modules/FingerPrint_iOS.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		6R2eiUYJxqF3LTNHqkCtS5+xG7w=
+		yL+vuxYYSdatmBeMyMhwwRmbxZQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		t4DFGJXYO2T6fs+K34y7r8Mehv8=
+		Ny58Pqvv7GBqVIKneEYmJAaZ7y8=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/OnestapSDK-Swift.h</key>
+		<key>Headers/FingerPrint_iOS-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Xefg5wW7TgsZRfq0kphxzrqsxa8=
+			CdwTcQBOx9tl6X88BpG21f7T34w=
 			</data>
 			<key>hash2</key>
 			<data>
-			GIWeYylk/IGN/vRPWhurQhLOYup6kYIIaZqlNfUIS3E=
+			F9Cqp6IzKOpeOBdrzwjd1Y7cVqyb37zQMR0jWWwr86U=
 			</data>
 		</dict>
-		<key>Headers/OnestapSDK.h</key>
+		<key>Headers/FingerPrint_iOS.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			e0AI/9SdDU0+hDpofNtJVq5bOcg=
+			mjWP8sdGrr6yCAmk5UsVfDX/eXk=
 			</data>
 			<key>hash2</key>
 			<data>
-			2AiEJrbdiPGsiCC2b/eGUVQ6pPdoRsYjpCeDehfJWgg=
+			XIaeok6H9fhcFtlbtITS37WaVWNYnW7s+Od/rKOQDYQ=
 			</data>
 		</dict>
-		<key>Modules/OnestapSDK.swiftmodule/arm.swiftdoc</key>
+		<key>Modules/FingerPrint_iOS.swiftmodule/arm.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0fIT69rBQRVx2u/2uFQQSEkN7YM=
+			6wKegiGO6RnrRjchADyU2v06L58=
 			</data>
 			<key>hash2</key>
 			<data>
-			wsctjykNf53Ieg93f9xEa3FMpC6m24Mdz7tWAGfndtM=
+			UnmovAyM6YuWK/vaxxMOg13Jwgc7WzFKgeAHp5R34Hc=
 			</data>
 		</dict>
-		<key>Modules/OnestapSDK.swiftmodule/arm.swiftmodule</key>
+		<key>Modules/FingerPrint_iOS.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			N361mgkk2AkDPJI/7wUiCeTLoXk=
+			elKKLFpfbQQpOCR9wLk2+XpSITk=
 			</data>
 			<key>hash2</key>
 			<data>
-			vk8C4w+Dd3pks0g80bmbuktOSBsR1nKqgIM/5spo3Hc=
+			nlwVqc+qPwE8swt1QGdRVyWvye9bbxcxZslitkrKL9E=
 			</data>
 		</dict>
-		<key>Modules/OnestapSDK.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/FingerPrint_iOS.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PCchaBF//2WurpZ8KDiRp0KQ8xk=
+			D0DVTmmh1Lqfk0wDYLwm0bFPYiA=
 			</data>
 			<key>hash2</key>
 			<data>
-			ddkL8oO2WC0CNIDU2YQp/24hpOfu9sGtqJRBhSWAsTQ=
+			gpHyDBm1RhfZB8HITqqS2jP2Tq7QsY6zuHx02rw2nF4=
 			</data>
 		</dict>
-		<key>Modules/OnestapSDK.swiftmodule/arm64.swiftmodule</key>
+		<key>Modules/FingerPrint_iOS.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6R2eiUYJxqF3LTNHqkCtS5+xG7w=
+			yL+vuxYYSdatmBeMyMhwwRmbxZQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ta6kMvxXUME5MnfTy1nUja7VoLQdV97m7PnYPan644M=
+			b9uV/EZdPS0urJo0cRdYa4G48p/u/B91e5KJOr1gKZg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			t4DFGJXYO2T6fs+K34y7r8Mehv8=
+			Ny58Pqvv7GBqVIKneEYmJAaZ7y8=
 			</data>
 			<key>hash2</key>
 			<data>
-			/AN3p7Zl+uDOhpogTdugWViZQ+PAhwNLItTFAjV58KE=
+			8firOw84sCGS7GLFtXMMI1Hg8eTD5lCAr3qtGjxRnSY=
 			</data>
 		</dict>
 	</dict>

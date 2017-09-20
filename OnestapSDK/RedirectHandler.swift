@@ -16,10 +16,10 @@ protocol RedirectHandler {
 }
 
 struct RedirectHandlerImplementation: RedirectHandler {
-    private let sdkIdentifier = "OnestapSDK"
-    private let urlNameKey = "CFBundleURLName"
+    private static let sdkIdentifier = "OnestapSDK"
+    private static let urlNameKey = "CFBundleURLName"
     private let urlTypeKey = "CFBundleURLTypes"
-    private let urlSchemeKey = "CFBundleURLSchemes"
+    private static let urlSchemeKey = "CFBundleURLSchemes"
     private let urlQueryStateKey = "state"
     private let urlQueryAuthCodeKey = "code"
     private let authorizeOperation = "authorize"
@@ -42,29 +42,33 @@ struct RedirectHandlerImplementation: RedirectHandler {
             throw OSTErrors.configNotFound
         }
         
-        var urlScheme = ""
-        for item in config {
+        self.plist = plist
+        self.config = config
+        self.urlScheme = try RedirectHandlerImplementation.getScheme(from: config)
+    }
+    
+    private static func getScheme(from cfBundleURLTypes: [JSON]) throws -> String {
+        var scheme = ""
+        for item in cfBundleURLTypes {
             guard let urlID = item[urlNameKey] as? String else {
-                throw OSTErrors.urlNameDifferentFromIdentifier
+                continue
             }
-            guard let scheme = item[urlSchemeKey] as? [String],
-                let schemeUrl = scheme.first else {
-                    throw OSTErrors.urlSchemeDoesNotExist
+            guard let schemeCandidate = item[urlSchemeKey] as? [String],
+                let schemeUrl = schemeCandidate.first else {
+                    continue
             }
             
             guard urlID == sdkIdentifier else {
                 continue
             }
             
-            urlScheme = schemeUrl
+            scheme = schemeUrl.lowercased()
         }
-        if urlScheme.isEmpty {
-            throw OSTErrors.incorrectIdentifier
+        guard !scheme.isEmpty else {
+            throw OSTErrors.failedToRetrieveSchemeFromPlist
         }
         
-        self.plist = plist
-        self.config = config
-        self.urlScheme = urlScheme.lowercased()
+        return scheme
     }
     
     static func getLoginUrl(dataKey: String? = nil) -> URL {

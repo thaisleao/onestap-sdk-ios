@@ -27,7 +27,6 @@
 		A14D5D231F4B8B0C0003A2A4 /* OSTAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D221F4B8B0C0003A2A4 /* OSTAuthButton.swift */; };
 		A14D5D251F4B967F0003A2A4 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D241F4B967F0003A2A4 /* RedirectHandler.swift */; };
 		A14D5D291F4B9AFE0003A2A4 /* OSTErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D281F4B9AFE0003A2A4 /* OSTErrors.swift */; };
-		A14D5D2E1F5108CC0003A2A4 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14D5D2D1F5108CC0003A2A4 /* FingerPrint_iOS.framework */; };
 		A14D5D321F510CCF0003A2A4 /* FingerPrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */; };
 		A17E28111F567FCB0071AE76 /* ApiUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E28101F567FCB0071AE76 /* ApiUserTests.swift */; };
 		A17E5EE51F50B8840055EF7B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E5EE41F50B8840055EF7B /* Log.swift */; };
@@ -53,7 +52,6 @@
 		A1A31CC11F47A58A0060C9DC /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CBF1F47A58A0060C9DC /* Report.swift */; };
 		A1A31CC21F47A58A0060C9DC /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CC01F47A58A0060C9DC /* Token.swift */; };
 		A1A31CD01F47AA850060C9DC /* OST.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CCF1F47AA850060C9DC /* OST.swift */; };
-		A1AE05BC1F53D06400948223 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14D5D2D1F5108CC0003A2A4 /* FingerPrint_iOS.framework */; };
 		A1B8DA591F4C8DE100EC40F4 /* PersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA581F4C8DE100EC40F4 /* PersonalData.swift */; };
 		A1B8DA5B1F4C8FA400EC40F4 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA5A1F4C8FA400EC40F4 /* Vehicle.swift */; };
 		A1B8DA5D1F4C9C1E00EC40F4 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA5C1F4C9C1E00EC40F4 /* Address.swift */; };
@@ -68,6 +66,7 @@
 		A1D6E4E31F55E16D002BDE56 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E21F55E16D002BDE56 /* Account.swift */; };
 		A1D6E4E51F55E230002BDE56 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E41F55E230002BDE56 /* Email.swift */; };
 		A1D6E4E81F55E936002BDE56 /* ApiAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E71F55E936002BDE56 /* ApiAccount.swift */; };
+		A1E564881F72EF18000714F9 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E564871F72EF18000714F9 /* FingerPrint_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,7 +103,6 @@
 		A14D5D221F4B8B0C0003A2A4 /* OSTAuthButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTAuthButton.swift; sourceTree = "<group>"; };
 		A14D5D241F4B967F0003A2A4 /* RedirectHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedirectHandler.swift; sourceTree = "<group>"; };
 		A14D5D281F4B9AFE0003A2A4 /* OSTErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTErrors.swift; path = OnestapSDK/OSTErrors.swift; sourceTree = SOURCE_ROOT; };
-		A14D5D2D1F5108CC0003A2A4 /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = Frameworks/FingerPrint_iOS.framework; sourceTree = "<group>"; };
 		A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerPrintManager.swift; sourceTree = "<group>"; };
 		A17E28101F567FCB0071AE76 /* ApiUserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiUserTests.swift; sourceTree = "<group>"; };
 		A17E5EE41F50B8840055EF7B /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = OnestapSDK/Log.swift; sourceTree = SOURCE_ROOT; };
@@ -144,6 +142,7 @@
 		A1D6E4E21F55E16D002BDE56 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		A1D6E4E41F55E230002BDE56 /* Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		A1D6E4E71F55E936002BDE56 /* ApiAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiAccount.swift; sourceTree = "<group>"; };
+		A1E564871F72EF18000714F9 /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = Frameworks/FingerPrint_iOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A14D5D2E1F5108CC0003A2A4 /* FingerPrint_iOS.framework in Frameworks */,
+				A1E564881F72EF18000714F9 /* FingerPrint_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +159,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A141A6431F45FD9100763662 /* OnestapSDK.framework in Frameworks */,
-				A1AE05BC1F53D06400948223 /* FingerPrint_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +234,6 @@
 				A14D5D011F4B17C60003A2A4 /* UserDefaultsExtension.swift */,
 			);
 			name = Core;
-			path = Model;
 			sourceTree = "<group>";
 		};
 		A141A6641F46425900763662 /* Entities */ = {
@@ -286,7 +283,7 @@
 		A14D5D2C1F5108CC0003A2A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A14D5D2D1F5108CC0003A2A4 /* FingerPrint_iOS.framework */,
+				A1E564871F72EF18000714F9 /* FingerPrint_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

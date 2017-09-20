@@ -7,4 +7,5 @@ framework module FingerPrint_iOS {
 
 module FingerPrint_iOS.Swift {
     header "FingerPrint_iOS-Swift.h"
+    requires objc
 }
