@@ -66,7 +66,7 @@
 		A1D6E4E31F55E16D002BDE56 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E21F55E16D002BDE56 /* Account.swift */; };
 		A1D6E4E51F55E230002BDE56 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E41F55E230002BDE56 /* Email.swift */; };
 		A1D6E4E81F55E936002BDE56 /* ApiAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E71F55E936002BDE56 /* ApiAccount.swift */; };
-		A1E564881F72EF18000714F9 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E564871F72EF18000714F9 /* FingerPrint_iOS.framework */; };
+		A1E5648A1F72FD7B000714F9 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E564891F72FD7B000714F9 /* FingerPrint_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,7 +142,7 @@
 		A1D6E4E21F55E16D002BDE56 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		A1D6E4E41F55E230002BDE56 /* Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		A1D6E4E71F55E936002BDE56 /* ApiAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiAccount.swift; sourceTree = "<group>"; };
-		A1E564871F72EF18000714F9 /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = Frameworks/FingerPrint_iOS.framework; sourceTree = "<group>"; };
+		A1E564891F72FD7B000714F9 /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = Frameworks/FingerPrint_iOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1E564881F72EF18000714F9 /* FingerPrint_iOS.framework in Frameworks */,
+				A1E5648A1F72FD7B000714F9 /* FingerPrint_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +283,7 @@
 		A14D5D2C1F5108CC0003A2A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A1E564871F72EF18000714F9 /* FingerPrint_iOS.framework */,
+				A1E564891F72FD7B000714F9 /* FingerPrint_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
