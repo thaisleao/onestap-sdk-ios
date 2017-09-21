@@ -48,25 +48,15 @@ struct RedirectHandlerImplementation: RedirectHandler {
     }
     
     private static func getScheme(from cfBundleURLTypes: [JSON]) throws -> String {
-        var scheme = ""
-        for item in cfBundleURLTypes {
-            guard let urlID = item[urlNameKey] as? String else {
-                continue
+        
+        let scheme = cfBundleURLTypes.flatMap {
+            if ($0[urlNameKey] as? String) == sdkIdentifier {
+                return ($0[urlSchemeKey] as? [String])?.first
             }
-            guard let schemeCandidate = item[urlSchemeKey] as? [String],
-                let schemeUrl = schemeCandidate.first else {
-                    continue
-            }
-            
-            guard urlID == sdkIdentifier else {
-                continue
-            }
-            
-            scheme = schemeUrl.lowercased()
-        }
-        guard !scheme.isEmpty else {
-            throw OSTErrors.failedToRetrieveSchemeFromPlist
-        }
+            return nil
+        }.first ?? ""
+        
+        if scheme.isEmpty { throw OSTErrors.failedToRetrieveSchemeFromPlist }
         
         return scheme
     }
