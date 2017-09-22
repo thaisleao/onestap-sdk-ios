@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/FingerPrint_iOS.swiftmodule/arm.swiftmodule</key>
 		<data>
-		QeaQcegA07ft9ZNaf3uXcUQv1VM=
+		sc815lVB+q2FN9GQiap4cXG6cdY=
 		</data>
 		<key>Modules/FingerPrint_iOS.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/FingerPrint_iOS.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		xySTDRxLWyWfiYPYi5EHxBJCW5U=
+		ULgu736C4rVustdn2qc3Rf/3/Mg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -76,11 +76,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QeaQcegA07ft9ZNaf3uXcUQv1VM=
+			sc815lVB+q2FN9GQiap4cXG6cdY=
 			</data>
 			<key>hash2</key>
 			<data>
-			E2s/e51GezneYjyaer9eNraKLYn5f7vuLVHqg19qHPo=
+			4g1Je4C5GV3nv74SjbIrOJ92lOG4BDVpubLg8ANfiXg=
 			</data>
 		</dict>
 		<key>Modules/FingerPrint_iOS.swiftmodule/arm64.swiftdoc</key>
@@ -98,11 +98,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xySTDRxLWyWfiYPYi5EHxBJCW5U=
+			ULgu736C4rVustdn2qc3Rf/3/Mg=
 			</data>
 			<key>hash2</key>
 			<data>
-			vh6L+cUdPLKwdHBKK3fYIsQ5irE4DeF/IQwPKuJVN1Y=
+			eZdcbIsH9RkMp0P59hxJRG0BJD3Pa8tYjb9aNXy2eyY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

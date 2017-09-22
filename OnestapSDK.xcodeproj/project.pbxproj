@@ -63,6 +63,7 @@
 		A1B8DA6C1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */; };
 		A1BDDD5F1F74ADAD0091E83D /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BDDD5E1F74ADAD0091E83D /* FingerPrint_iOS.framework */; };
 		A1BDDD601F74BCB90091E83D /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BDDD5E1F74ADAD0091E83D /* FingerPrint_iOS.framework */; };
+		A1BDDD621F74C0D20091E83D /* RedirectHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BDDD611F74C0D20091E83D /* RedirectHandlerTests.swift */; };
 		A1D6E4DF1F55DB54002BDE56 /* GetUserApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */; };
 		A1D6E4E11F55E066002BDE56 /* PublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */; };
 		A1D6E4E31F55E16D002BDE56 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E21F55E16D002BDE56 /* Account.swift */; };
@@ -139,6 +140,7 @@
 		A1B8DA691F4CB92000EC40F4 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTemporaryProfile.swift; sourceTree = "<group>"; };
 		A1BDDD5E1F74ADAD0091E83D /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = Frameworks/FingerPrint_iOS.framework; sourceTree = "<group>"; };
+		A1BDDD611F74C0D20091E83D /* RedirectHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedirectHandlerTests.swift; sourceTree = "<group>"; };
 		A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserApiRequest.swift; sourceTree = "<group>"; };
 		A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProfile.swift; sourceTree = "<group>"; };
 		A1D6E4E21F55E16D002BDE56 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				A14D5D101F4B67D30003A2A4 /* ApiClientTest.swift */,
+				A1BDDD611F74C0D20091E83D /* RedirectHandlerTests.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A14D5D041F4B1A660003A2A4 /* UserDefaultsTests.swift in Sources */,
+				A1BDDD621F74C0D20091E83D /* RedirectHandlerTests.swift in Sources */,
 				A17E28111F567FCB0071AE76 /* ApiUserTests.swift in Sources */,
 				A141A6481F45FD9100763662 /* OnestapSDKTests.swift in Sources */,
 				A14D5D161F4B698D0003A2A4 /* NSError.swift in Sources */,
