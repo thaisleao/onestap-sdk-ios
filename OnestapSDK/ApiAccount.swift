@@ -50,7 +50,7 @@ struct ApiAccount: InitializableWithData, InitializableWithJson {
             self.emails = try emailsJSON.flatMap { try ApiEmail(json: $0) }
         }
         
-        if let phonesJSON = json["phone"] as? [JSON] {
+        if let phonesJSON = json["phones"] as? [JSON] {
             self.phones = try phonesJSON.flatMap { try ApiPhone(json: $0) }
         }
         
