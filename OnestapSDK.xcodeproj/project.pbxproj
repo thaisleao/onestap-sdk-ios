@@ -27,7 +27,6 @@
 		A14D5D231F4B8B0C0003A2A4 /* OSTAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D221F4B8B0C0003A2A4 /* OSTAuthButton.swift */; };
 		A14D5D251F4B967F0003A2A4 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D241F4B967F0003A2A4 /* RedirectHandler.swift */; };
 		A14D5D291F4B9AFE0003A2A4 /* OSTErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D281F4B9AFE0003A2A4 /* OSTErrors.swift */; };
-		A14D5D2E1F5108CC0003A2A4 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14D5D2D1F5108CC0003A2A4 /* FingerPrint_iOS.framework */; };
 		A14D5D321F510CCF0003A2A4 /* FingerPrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */; };
 		A17E28111F567FCB0071AE76 /* ApiUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E28101F567FCB0071AE76 /* ApiUserTests.swift */; };
 		A17E5EE51F50B8840055EF7B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E5EE41F50B8840055EF7B /* Log.swift */; };
@@ -53,7 +52,6 @@
 		A1A31CC11F47A58A0060C9DC /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CBF1F47A58A0060C9DC /* Report.swift */; };
 		A1A31CC21F47A58A0060C9DC /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CC01F47A58A0060C9DC /* Token.swift */; };
 		A1A31CD01F47AA850060C9DC /* OST.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A31CCF1F47AA850060C9DC /* OST.swift */; };
-		A1AE05BC1F53D06400948223 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14D5D2D1F5108CC0003A2A4 /* FingerPrint_iOS.framework */; };
 		A1B8DA591F4C8DE100EC40F4 /* PersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA581F4C8DE100EC40F4 /* PersonalData.swift */; };
 		A1B8DA5B1F4C8FA400EC40F4 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA5A1F4C8FA400EC40F4 /* Vehicle.swift */; };
 		A1B8DA5D1F4C9C1E00EC40F4 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA5C1F4C9C1E00EC40F4 /* Address.swift */; };
@@ -63,6 +61,9 @@
 		A1B8DA671F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA661F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift */; };
 		A1B8DA6A1F4CB92000EC40F4 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA691F4CB92000EC40F4 /* UserManager.swift */; };
 		A1B8DA6C1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */; };
+		A1BDDD5F1F74ADAD0091E83D /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BDDD5E1F74ADAD0091E83D /* FingerPrint_iOS.framework */; };
+		A1BDDD601F74BCB90091E83D /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BDDD5E1F74ADAD0091E83D /* FingerPrint_iOS.framework */; };
+		A1BDDD621F74C0D20091E83D /* RedirectHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BDDD611F74C0D20091E83D /* RedirectHandlerTests.swift */; };
 		A1D6E4DF1F55DB54002BDE56 /* GetUserApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */; };
 		A1D6E4E11F55E066002BDE56 /* PublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */; };
 		A1D6E4E31F55E16D002BDE56 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E21F55E16D002BDE56 /* Account.swift */; };
@@ -104,7 +105,6 @@
 		A14D5D221F4B8B0C0003A2A4 /* OSTAuthButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTAuthButton.swift; sourceTree = "<group>"; };
 		A14D5D241F4B967F0003A2A4 /* RedirectHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedirectHandler.swift; sourceTree = "<group>"; };
 		A14D5D281F4B9AFE0003A2A4 /* OSTErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTErrors.swift; path = OnestapSDK/OSTErrors.swift; sourceTree = SOURCE_ROOT; };
-		A14D5D2D1F5108CC0003A2A4 /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = Frameworks/FingerPrint_iOS.framework; sourceTree = "<group>"; };
 		A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerPrintManager.swift; sourceTree = "<group>"; };
 		A17E28101F567FCB0071AE76 /* ApiUserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiUserTests.swift; sourceTree = "<group>"; };
 		A17E5EE41F50B8840055EF7B /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = OnestapSDK/Log.swift; sourceTree = SOURCE_ROOT; };
@@ -139,6 +139,8 @@
 		A1B8DA661F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporaryProfileApiRequest.swift; sourceTree = "<group>"; };
 		A1B8DA691F4CB92000EC40F4 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTemporaryProfile.swift; sourceTree = "<group>"; };
+		A1BDDD5E1F74ADAD0091E83D /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = Frameworks/FingerPrint_iOS.framework; sourceTree = "<group>"; };
+		A1BDDD611F74C0D20091E83D /* RedirectHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedirectHandlerTests.swift; sourceTree = "<group>"; };
 		A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserApiRequest.swift; sourceTree = "<group>"; };
 		A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProfile.swift; sourceTree = "<group>"; };
 		A1D6E4E21F55E16D002BDE56 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -151,7 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A14D5D2E1F5108CC0003A2A4 /* FingerPrint_iOS.framework in Frameworks */,
+				A1BDDD5F1F74ADAD0091E83D /* FingerPrint_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A141A6431F45FD9100763662 /* OnestapSDK.framework in Frameworks */,
-				A1AE05BC1F53D06400948223 /* FingerPrint_iOS.framework in Frameworks */,
+				A1BDDD601F74BCB90091E83D /* FingerPrint_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +238,6 @@
 				A14D5D011F4B17C60003A2A4 /* UserDefaultsExtension.swift */,
 			);
 			name = Core;
-			path = Model;
 			sourceTree = "<group>";
 		};
 		A141A6641F46425900763662 /* Entities */ = {
@@ -262,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				A14D5D101F4B67D30003A2A4 /* ApiClientTest.swift */,
+				A1BDDD611F74C0D20091E83D /* RedirectHandlerTests.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -286,7 +288,7 @@
 		A14D5D2C1F5108CC0003A2A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A14D5D2D1F5108CC0003A2A4 /* FingerPrint_iOS.framework */,
+				A1BDDD5E1F74ADAD0091E83D /* FingerPrint_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -656,6 +658,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A14D5D041F4B1A660003A2A4 /* UserDefaultsTests.swift in Sources */,
+				A1BDDD621F74C0D20091E83D /* RedirectHandlerTests.swift in Sources */,
 				A17E28111F567FCB0071AE76 /* ApiUserTests.swift in Sources */,
 				A141A6481F45FD9100763662 /* OnestapSDKTests.swift in Sources */,
 				A14D5D161F4B698D0003A2A4 /* NSError.swift in Sources */,

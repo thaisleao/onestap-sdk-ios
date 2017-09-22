@@ -141,19 +141,18 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 typedef SWIFT_ENUM(NSInteger, Config) {
   ConfigProduction = 0,
   ConfigSandbox = 1,
-  ConfigLab = 2,
+  ConfigTest = 2,
   ConfigBbbLocal = 3,
-  ConfigLocal = 4,
 };
 
 
-SWIFT_CLASS("_TtC15FingerPrint_iOS8Location")
-@interface Location : NSObject <CLLocationManagerDelegate>
+SWIFT_CLASS("_TtC15FingerPrint_iOS7GeoInfo")
+@interface GeoInfo : NSObject <CLLocationManagerDelegate>
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
-@interface Location (SWIFT_EXTENSION(FingerPrint_iOS))
+@interface GeoInfo (SWIFT_EXTENSION(FingerPrint_iOS))
 @end
 
 #pragma clang diagnostic pop

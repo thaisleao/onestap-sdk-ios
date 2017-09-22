@@ -69,6 +69,7 @@ public class AuthManagerImplementation: AuthManager {
             try redirectHandler.handleUri(open: url)
         } catch let error {
             completion(.failure(error))
+            return
         }
         
         accessToken { result in
