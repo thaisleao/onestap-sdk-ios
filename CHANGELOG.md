@@ -1,4 +1,5 @@
-## [Unreleased]
+## [0.8.4] - 2017-09-22
+[Full Changelog](https://github.com/stone-payments/onestap-sdk-ios/compare/0.8.3...0.8.4)
 
 **Bugs:**
 - Correção de erro no redirect | [#8](https://github.com/stone-payments/onestap-sdk-ios/pull/8) | [@munirwanis](https://github.com/munirwanis)
