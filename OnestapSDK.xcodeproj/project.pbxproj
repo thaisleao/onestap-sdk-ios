@@ -62,6 +62,7 @@
 		A1B8DA6A1F4CB92000EC40F4 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA691F4CB92000EC40F4 /* UserManager.swift */; };
 		A1B8DA6C1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */; };
 		A1BDDD5F1F74ADAD0091E83D /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BDDD5E1F74ADAD0091E83D /* FingerPrint_iOS.framework */; };
+		A1BDDD601F74BCB90091E83D /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BDDD5E1F74ADAD0091E83D /* FingerPrint_iOS.framework */; };
 		A1D6E4DF1F55DB54002BDE56 /* GetUserApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */; };
 		A1D6E4E11F55E066002BDE56 /* PublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */; };
 		A1D6E4E31F55E16D002BDE56 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E21F55E16D002BDE56 /* Account.swift */; };
@@ -159,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A141A6431F45FD9100763662 /* OnestapSDK.framework in Frameworks */,
+				A1BDDD601F74BCB90091E83D /* FingerPrint_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
