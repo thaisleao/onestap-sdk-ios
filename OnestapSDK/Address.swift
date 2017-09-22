@@ -9,7 +9,8 @@
 import Foundation
 
 public struct Address {
-    public init(street: String, number: String, city: String, state: String) {
+    public init(addressType: AddressTypeEnum, street: String, number: String, city: String, state: String) {
+        self.addressType = addressType
         self.street = street
         self.number = number
         self.city = city
@@ -19,7 +20,7 @@ public struct Address {
     public var street: String
     public var number: String
     public var complement: String? = nil
-    public var addressType: AddressTypeEnum? = nil
+    public var addressType: AddressTypeEnum
     public var district: String? = nil
     public var city: String
     public var state: String
@@ -34,7 +35,7 @@ extension Address: Encondable {
             "street": street,
             "number": number,
             "complement": complement as Any,
-            "addressType": addressType?.rawValue as Any,
+            "addressType": addressType.rawValue,
             "district": district as Any,
             "city": city,
             "state": state,
