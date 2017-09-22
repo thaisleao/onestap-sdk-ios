@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//import FingerPrint_iOS
+import FingerPrint_iOS
 
 protocol FingerPrintManager {
     func sendFingerPrint()
@@ -22,16 +22,16 @@ class FingerPrintManagerImplementation: FingerPrintManager {
     }
     
     func sendFingerPrint() {
-//        guard let fingerPrintId = OST.configuration.fingerPrintId,
-//              let accessToken = UserDefaults.standard.accessToken else {
-//            return
-//        }
-//
-//        FingerPrintLibrary.initFingerprint(role: OST.configuration.environment.rawValue,
-//                                           key: fingerPrintId,
-//                                           registerId: accessToken,
-//                                           sessionId: self.sessionId)
-//        FingerPrintLibrary.configFingerprint(phoneData: true, contactList: true, location: true)
-//        FingerPrintLibrary.getFingerprint()
+        guard let fingerPrintId = OST.configuration.fingerPrintId,
+              let accessToken = UserDefaults.standard.accessToken else {
+            return
+        }
+
+        FingerPrintLibrary.initFingerprint(role: OST.configuration.environment.rawValue,
+                                           key: fingerPrintId,
+                                           registerId: accessToken,
+                                           sessionId: self.sessionId)
+        FingerPrintLibrary.configFingerprint(phoneData: true, contactList: true, location: true)
+        FingerPrintLibrary.getFingerprint()
     }
 }
