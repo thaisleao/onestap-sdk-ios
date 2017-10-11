@@ -200,14 +200,6 @@ SWIFT_CLASS("_TtC10OnestapSDK9OSTButton")
 SWIFT_CLASS("_TtC10OnestapSDK13OSTAuthButton")
 @interface OSTAuthButton : OSTButton
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-/// Initialize our default button implementation
-/// \param size The size of the button (it’s a square)
-///
-/// \param posX The X position on canvas
-///
-/// \param posY The Y position on canvas
-///
-- (nonnull instancetype)initWithSize:(CGFloat)size posX:(CGFloat)x posY:(CGFloat)y SWIFT_DEPRECATED_OBJC("Swift initializer 'OSTAuthButton.init(size:posX:posY:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -217,16 +209,6 @@ SWIFT_CLASS("_TtC10OnestapSDK13OSTAuthButton")
 
 
 
-@interface NSUserDefaults (SWIFT_EXTENSION(OnestapSDK))
-/// Token used to make requests to one[S]tap
-@property (nonatomic, readonly, copy) NSString * _Nullable accessToken SWIFT_DEPRECATED_OBJC("Swift property 'UserDefaults.accessToken' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
-/// Token used to refresh user session
-@property (nonatomic, readonly, copy) NSString * _Nullable refreshToken SWIFT_DEPRECATED_OBJC("Swift property 'UserDefaults.refreshToken' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
-/// UserKey is the key of the User
-@property (nonatomic, readonly, copy) NSString * _Nullable userKey SWIFT_DEPRECATED_OBJC("Swift property 'UserDefaults.userKey' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
-/// FingerPrintSessionId is created when anti-fraud is enabled
-@property (nonatomic, readonly, copy) NSString * _Nullable fingerPrintSessionId SWIFT_DEPRECATED_OBJC("Swift property 'UserDefaults.fingerPrintSessionId' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
-@end
 
 SWIFT_MODULE_NAMESPACE_POP
 #pragma clang diagnostic pop
