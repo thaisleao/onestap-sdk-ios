@@ -2,7 +2,7 @@
 //  RedirectHandler.swift
 //  OnestapSDK
 //
-//  Created by Munir Wanis on 21/08/17.
+//  Created by Jaison Vieira on 11/10/17.
 //  Copyright © 2017 Stone Payments. All rights reserved.
 //
 
@@ -49,12 +49,12 @@ struct RedirectHandlerImplementation: RedirectHandler {
     
     private static func getScheme(from cfBundleURLTypes: [JSON]) throws -> String {
         
-        let scheme = cfBundleURLTypes.flatMap {
+        let scheme: String = cfBundleURLTypes.flatMap {
             if ($0[urlNameKey] as? String) == sdkIdentifier {
-                return ($0[urlSchemeKey] as? [String])?.first
+                return ($0[urlSchemeKey] as? [String])?.first ?? ""
             }
-            return nil
-        }.first ?? ""
+            return ""
+            }.first!
         
         if scheme.isEmpty { throw OSTErrors.failedToRetrieveSchemeFromPlist }
         
