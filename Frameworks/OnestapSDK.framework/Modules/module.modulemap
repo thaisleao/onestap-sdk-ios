@@ -7,4 +7,5 @@ framework module OnestapSDK {
 
 module OnestapSDK.Swift {
     header "OnestapSDK-Swift.h"
+    requires objc
 }

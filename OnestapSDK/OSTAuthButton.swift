@@ -40,5 +40,6 @@ public class OSTAuthButton: OSTButton {
         self.addTarget(nil, action: #selector(loadAuthPage), for: .touchUpInside)
     }
     
-    @objc private func loadAuthPage() { OSTAuth().loadAuthPage() }
+    @objc
+    func loadAuthPage() { OSTAuth().loadAuthPage() }
 }
