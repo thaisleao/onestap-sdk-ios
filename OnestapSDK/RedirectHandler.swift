@@ -51,10 +51,10 @@ struct RedirectHandlerImplementation: RedirectHandler {
         
         let scheme: String = cfBundleURLTypes.flatMap {
             if ($0[urlNameKey] as? String) == sdkIdentifier {
-                return ($0[urlSchemeKey] as? [String])?.first ?? ""
+                return ($0[urlSchemeKey] as? [String])?.first
             }
-            return ""
-            }.first!
+            return nil
+            }.first ?? ""
         
         if scheme.isEmpty { throw OSTErrors.failedToRetrieveSchemeFromPlist }
         
