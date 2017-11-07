@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		9F19E08E1F8EB7E6008425B7 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F19E08D1F8EB7E6008425B7 /* RedirectHandler.swift */; };
 		A11EDCD71FB235520066D0F7 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A191A4471FB2323D00E70FAB /* FingerPrint_iOS.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		A11EDCD91FB249640066D0F7 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11EDCD81FB249640066D0F7 /* UserDefaultsExtension.swift */; };
 		A141A6431F45FD9100763662 /* OnestapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A141A6391F45FD9100763662 /* OnestapSDK.framework */; };
 		A141A6481F45FD9100763662 /* OnestapSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141A6471F45FD9100763662 /* OnestapSDKTests.swift */; };
 		A141A64A1F45FD9100763662 /* OnestapSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A141A63C1F45FD9100763662 /* OnestapSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A14D5D001F4B13B70003A2A4 /* UrlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5CFF1F4B13B70003A2A4 /* UrlTests.swift */; };
-		A14D5D021F4B17C60003A2A4 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D011F4B17C60003A2A4 /* UserDefaultsExtension.swift */; };
 		A14D5D041F4B1A660003A2A4 /* UserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D031F4B1A660003A2A4 /* UserDefaultsTests.swift */; };
 		A14D5D061F4B59DD0003A2A4 /* UrlRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D051F4B59DD0003A2A4 /* UrlRequestTests.swift */; };
 		A14D5D091F4B5F5A0003A2A4 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D081F4B5F5A0003A2A4 /* AuthManager.swift */; };
@@ -82,6 +82,7 @@
 
 /* Begin PBXFileReference section */
 		9F19E08D1F8EB7E6008425B7 /* RedirectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedirectHandler.swift; sourceTree = "<group>"; };
+		A11EDCD81FB249640066D0F7 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		A141A6391F45FD9100763662 /* OnestapSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OnestapSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A141A63C1F45FD9100763662 /* OnestapSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnestapSDK.h; sourceTree = "<group>"; };
 		A141A63D1F45FD9100763662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,24 +90,23 @@
 		A141A6471F45FD9100763662 /* OnestapSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnestapSDKTests.swift; sourceTree = "<group>"; };
 		A141A6491F45FD9100763662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14D5CFF1F4B13B70003A2A4 /* UrlTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlTests.swift; sourceTree = "<group>"; };
-		A14D5D011F4B17C60003A2A4 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultsExtension.swift; path = OnestapSDK/UserDefaultsExtension.swift; sourceTree = SOURCE_ROOT; };
 		A14D5D031F4B1A660003A2A4 /* UserDefaultsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsTests.swift; sourceTree = "<group>"; };
 		A14D5D051F4B59DD0003A2A4 /* UrlRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlRequestTests.swift; sourceTree = "<group>"; };
 		A14D5D081F4B5F5A0003A2A4 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		A14D5D0A1F4B600A0003A2A4 /* HttpVerbEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpVerbEnum.swift; path = OnestapSDK/HttpVerbEnum.swift; sourceTree = SOURCE_ROOT; };
+		A14D5D0A1F4B600A0003A2A4 /* HttpVerbEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpVerbEnum.swift; path = OnestapSDK/Core/Enums/HttpVerbEnum.swift; sourceTree = SOURCE_ROOT; };
 		A14D5D101F4B67D30003A2A4 /* ApiClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClientTest.swift; sourceTree = "<group>"; };
 		A14D5D131F4B68CD0003A2A4 /* URLSessionStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionStub.swift; sourceTree = "<group>"; };
 		A14D5D151F4B698D0003A2A4 /* NSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
-		A14D5D171F4B73940003A2A4 /* AccessTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccessTokenApiRequest.swift; path = OnestapSDK/AccessTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
-		A14D5D191F4B76520003A2A4 /* VerifyTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerifyTokenApiRequest.swift; path = OnestapSDK/VerifyTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
-		A14D5D1B1F4B77910003A2A4 /* RevokeTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RevokeTokenApiRequest.swift; path = OnestapSDK/RevokeTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
-		A14D5D1D1F4B7A4E0003A2A4 /* GenericResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericResponse.swift; path = OnestapSDK/GenericResponse.swift; sourceTree = SOURCE_ROOT; };
+		A14D5D171F4B73940003A2A4 /* AccessTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccessTokenApiRequest.swift; path = OnestapSDK/Auth/API/Request/AccessTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
+		A14D5D191F4B76520003A2A4 /* VerifyTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerifyTokenApiRequest.swift; path = OnestapSDK/Auth/API/Request/VerifyTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
+		A14D5D1B1F4B77910003A2A4 /* RevokeTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RevokeTokenApiRequest.swift; path = OnestapSDK/Auth/API/Request/RevokeTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
+		A14D5D1D1F4B7A4E0003A2A4 /* GenericResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericResponse.swift; path = OnestapSDK/Core/Entities/GenericResponse.swift; sourceTree = SOURCE_ROOT; };
 		A14D5D1F1F4B86270003A2A4 /* OSTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTButton.swift; sourceTree = "<group>"; };
 		A14D5D221F4B8B0C0003A2A4 /* OSTAuthButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTAuthButton.swift; sourceTree = "<group>"; };
-		A14D5D281F4B9AFE0003A2A4 /* OSTErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTErrors.swift; path = OnestapSDK/OSTErrors.swift; sourceTree = SOURCE_ROOT; };
+		A14D5D281F4B9AFE0003A2A4 /* OSTErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTErrors.swift; path = OnestapSDK/Core/Enums/OSTErrors.swift; sourceTree = SOURCE_ROOT; };
 		A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerPrintManager.swift; sourceTree = "<group>"; };
 		A17E28101F567FCB0071AE76 /* ApiUserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiUserTests.swift; sourceTree = "<group>"; };
-		A17E5EE41F50B8840055EF7B /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = OnestapSDK/Log.swift; sourceTree = SOURCE_ROOT; };
+		A17E5EE41F50B8840055EF7B /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = OnestapSDK/Core/Log/Log.swift; sourceTree = SOURCE_ROOT; };
 		A191A4471FB2323D00E70FAB /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = Frameworks/FingerPrint_iOS.framework; sourceTree = "<group>"; };
 		A19CEF611F55EE50006201D6 /* ApiPublicProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiPublicProfile.swift; sourceTree = "<group>"; };
 		A19CEF631F55F0D6006201D6 /* ApiPersonalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiPersonalData.swift; sourceTree = "<group>"; };
@@ -118,17 +118,17 @@
 		A19CEF711F571E2A006201D6 /* OSTAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTAuth.swift; sourceTree = "<group>"; };
 		A19CEF731F57715E006201D6 /* ApiVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiVehicle.swift; sourceTree = "<group>"; };
 		A19CEF761F58A90E006201D6 /* OSTCategoriesEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTCategoriesEnum.swift; sourceTree = "<group>"; };
-		A1A31CAD1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RefreshTokenApiRequest.swift; path = OnestapSDK/RefreshTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
-		A1A31CAF1F47A4D10060C9DC /* ApiReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiReport.swift; path = OnestapSDK/ApiReport.swift; sourceTree = SOURCE_ROOT; };
-		A1A31CB01F47A4D10060C9DC /* ApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiToken.swift; path = OnestapSDK/ApiToken.swift; sourceTree = SOURCE_ROOT; };
-		A1A31CB31F47A4ED0060C9DC /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiClient.swift; path = OnestapSDK/ApiClient.swift; sourceTree = SOURCE_ROOT; };
-		A1A31CB41F47A4ED0060C9DC /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResponse.swift; path = OnestapSDK/ApiResponse.swift; sourceTree = SOURCE_ROOT; };
+		A1A31CAD1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RefreshTokenApiRequest.swift; path = OnestapSDK/Auth/API/Request/RefreshTokenApiRequest.swift; sourceTree = SOURCE_ROOT; };
+		A1A31CAF1F47A4D10060C9DC /* ApiReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiReport.swift; path = OnestapSDK/Core/API/ApiReport.swift; sourceTree = SOURCE_ROOT; };
+		A1A31CB01F47A4D10060C9DC /* ApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiToken.swift; path = OnestapSDK/Auth/Entities/ApiToken.swift; sourceTree = SOURCE_ROOT; };
+		A1A31CB31F47A4ED0060C9DC /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiClient.swift; path = OnestapSDK/Core/API/ApiClient.swift; sourceTree = SOURCE_ROOT; };
+		A1A31CB41F47A4ED0060C9DC /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResponse.swift; path = OnestapSDK/Core/API/ApiResponse.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CB71F47A5180060C9DC /* OSTConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTConfiguration.swift; path = OnestapSDK/OSTConfiguration.swift; sourceTree = SOURCE_ROOT; };
-		A1A31CB91F47A52B0060C9DC /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSON.swift; path = OnestapSDK/JSON.swift; sourceTree = SOURCE_ROOT; };
-		A1A31CBA1F47A52B0060C9DC /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = OnestapSDK/Result.swift; sourceTree = SOURCE_ROOT; };
-		A1A31CBD1F47A5790060C9DC /* OSTEnvironmentsEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTEnvironmentsEnum.swift; path = OnestapSDK/OSTEnvironmentsEnum.swift; sourceTree = SOURCE_ROOT; };
-		A1A31CBF1F47A58A0060C9DC /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Report.swift; path = OnestapSDK/Report.swift; sourceTree = SOURCE_ROOT; };
-		A1A31CC01F47A58A0060C9DC /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Token.swift; path = OnestapSDK/Token.swift; sourceTree = SOURCE_ROOT; };
+		A1A31CB91F47A52B0060C9DC /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSON.swift; path = OnestapSDK/Core/API/JSON.swift; sourceTree = SOURCE_ROOT; };
+		A1A31CBA1F47A52B0060C9DC /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = OnestapSDK/Core/API/Result.swift; sourceTree = SOURCE_ROOT; };
+		A1A31CBD1F47A5790060C9DC /* OSTEnvironmentsEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTEnvironmentsEnum.swift; path = OnestapSDK/Core/Enums/OSTEnvironmentsEnum.swift; sourceTree = SOURCE_ROOT; };
+		A1A31CBF1F47A58A0060C9DC /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Report.swift; path = OnestapSDK/Core/Entities/Report.swift; sourceTree = SOURCE_ROOT; };
+		A1A31CC01F47A58A0060C9DC /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Token.swift; path = OnestapSDK/Auth/Entities/Token.swift; sourceTree = SOURCE_ROOT; };
 		A1A31CCF1F47AA850060C9DC /* OST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OST.swift; sourceTree = "<group>"; };
 		A1B8DA581F4C8DE100EC40F4 /* PersonalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalData.swift; sourceTree = "<group>"; };
 		A1B8DA5A1F4C8FA400EC40F4 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
@@ -223,19 +223,19 @@
 				A1A31CB91F47A52B0060C9DC /* JSON.swift */,
 				A1A31CBA1F47A52B0060C9DC /* Result.swift */,
 			);
-			name = API;
+			path = API;
 			sourceTree = "<group>";
 		};
 		A141A6631F46424500763662 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A11EDCD81FB249640066D0F7 /* UserDefaultsExtension.swift */,
 				A17E5EE31F50B8680055EF7B /* Log */,
 				A141A6601F46420A00763662 /* API */,
 				A1A31CAA1F479B270060C9DC /* Enums */,
 				A141A6641F46425900763662 /* Entities */,
-				A14D5D011F4B17C60003A2A4 /* UserDefaultsExtension.swift */,
 			);
-			name = Core;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		A141A6641F46425900763662 /* Entities */ = {
@@ -244,7 +244,7 @@
 				A1A31CBF1F47A58A0060C9DC /* Report.swift */,
 				A14D5D1D1F4B7A4E0003A2A4 /* GenericResponse.swift */,
 			);
-			name = Entities;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		A14D5CFE1F4B12C50003A2A4 /* Extensions */ = {
@@ -280,7 +280,7 @@
 			children = (
 				A14D5D221F4B8B0C0003A2A4 /* OSTAuthButton.swift */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		A14D5D2C1F5108CC0003A2A4 /* Frameworks */ = {
@@ -296,7 +296,7 @@
 			children = (
 				A14D5D301F510CBE0003A2A4 /* Manager */,
 			);
-			name = FingerPrint;
+			path = FingerPrint;
 			sourceTree = "<group>";
 		};
 		A14D5D301F510CBE0003A2A4 /* Manager */ = {
@@ -304,7 +304,7 @@
 			children = (
 				A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */,
 			);
-			name = Manager;
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		A17E280F1F567F740071AE76 /* Entities */ = {
@@ -320,7 +320,7 @@
 			children = (
 				A17E5EE41F50B8840055EF7B /* Log.swift */,
 			);
-			name = Log;
+			path = Log;
 			sourceTree = "<group>";
 		};
 		A19CEF751F58A6A2006201D6 /* Enums */ = {
@@ -328,7 +328,7 @@
 			children = (
 				A19CEF761F58A90E006201D6 /* OSTCategoriesEnum.swift */,
 			);
-			name = Enums;
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		A1A31CA51F47915D0060C9DC /* Request */ = {
@@ -339,8 +339,7 @@
 				A14D5D191F4B76520003A2A4 /* VerifyTokenApiRequest.swift */,
 				A14D5D1B1F4B77910003A2A4 /* RevokeTokenApiRequest.swift */,
 			);
-			name = Request;
-			path = Model;
+			path = Request;
 			sourceTree = "<group>";
 		};
 		A1A31CAA1F479B270060C9DC /* Enums */ = {
@@ -350,7 +349,7 @@
 				A14D5D0A1F4B600A0003A2A4 /* HttpVerbEnum.swift */,
 				A14D5D281F4B9AFE0003A2A4 /* OSTErrors.swift */,
 			);
-			name = Enums;
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		A1A31CCC1F47A9450060C9DC /* Resources */ = {
@@ -359,7 +358,7 @@
 				A141A63C1F45FD9100763662 /* OnestapSDK.h */,
 				A141A63D1F45FD9100763662 /* Info.plist */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		A1A31CCD1F47A9560060C9DC /* Auth */ = {
@@ -372,7 +371,7 @@
 				A19CEF711F571E2A006201D6 /* OSTAuth.swift */,
 				9F19E08D1F8EB7E6008425B7 /* RedirectHandler.swift */,
 			);
-			name = Auth;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		A1A31CCE1F47A9960060C9DC /* Entities */ = {
@@ -381,7 +380,7 @@
 				A1A31CB01F47A4D10060C9DC /* ApiToken.swift */,
 				A1A31CC01F47A58A0060C9DC /* Token.swift */,
 			);
-			name = Entities;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		A1A31CD11F47AAAF0060C9DC /* API */ = {
@@ -389,7 +388,7 @@
 			children = (
 				A1A31CA51F47915D0060C9DC /* Request */,
 			);
-			name = API;
+			path = API;
 			sourceTree = "<group>";
 		};
 		A1A31CD21F47AABF0060C9DC /* Manager */ = {
@@ -397,7 +396,7 @@
 			children = (
 				A14D5D081F4B5F5A0003A2A4 /* AuthManager.swift */,
 			);
-			name = Manager;
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		A1B8DA561F4C8B6900EC40F4 /* User */ = {
@@ -409,7 +408,7 @@
 				A1B8DA681F4CB90A00EC40F4 /* Manager */,
 				A19CEF6F1F570701006201D6 /* OSTUser.swift */,
 			);
-			name = User;
+			path = User;
 			sourceTree = "<group>";
 		};
 		A1B8DA571F4C8DB000EC40F4 /* Entities */ = {
@@ -425,7 +424,7 @@
 				A1B8DA601F4C9D5400EC40F4 /* Document.swift */,
 				A1B8DA621F4CA0C100EC40F4 /* TemporaryProfile.swift */,
 			);
-			name = Entities;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		A1B8DA641F4CB7AA00EC40F4 /* API */ = {
@@ -434,7 +433,7 @@
 				A1D6E4E61F55E919002BDE56 /* Entities */,
 				A1B8DA651F4CB7B800EC40F4 /* Request */,
 			);
-			name = API;
+			path = API;
 			sourceTree = "<group>";
 		};
 		A1B8DA651F4CB7B800EC40F4 /* Request */ = {
@@ -443,7 +442,7 @@
 				A1B8DA661F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift */,
 				A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */,
 			);
-			name = Request;
+			path = Request;
 			sourceTree = "<group>";
 		};
 		A1B8DA681F4CB90A00EC40F4 /* Manager */ = {
@@ -451,7 +450,7 @@
 			children = (
 				A1B8DA691F4CB92000EC40F4 /* UserManager.swift */,
 			);
-			name = Manager;
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		A1D6E4E61F55E919002BDE56 /* Entities */ = {
@@ -467,7 +466,7 @@
 				A19CEF6B1F55FD37006201D6 /* ApiDocument.swift */,
 				A19CEF731F57715E006201D6 /* ApiVehicle.swift */,
 			);
-			name = Entities;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -633,6 +632,7 @@
 				A19CEF661F55F5AC006201D6 /* ApiEmail.swift in Sources */,
 				A14D5D181F4B73940003A2A4 /* AccessTokenApiRequest.swift in Sources */,
 				A1B8DA591F4C8DE100EC40F4 /* PersonalData.swift in Sources */,
+				A11EDCD91FB249640066D0F7 /* UserDefaultsExtension.swift in Sources */,
 				A1A31CB11F47A4D10060C9DC /* ApiReport.swift in Sources */,
 				A1D6E4E81F55E936002BDE56 /* ApiAccount.swift in Sources */,
 				A14D5D1A1F4B76520003A2A4 /* VerifyTokenApiRequest.swift in Sources */,
@@ -644,7 +644,6 @@
 				A19CEF771F58A90E006201D6 /* OSTCategoriesEnum.swift in Sources */,
 				A14D5D0B1F4B600A0003A2A4 /* HttpVerbEnum.swift in Sources */,
 				A1A31CC21F47A58A0060C9DC /* Token.swift in Sources */,
-				A14D5D021F4B17C60003A2A4 /* UserDefaultsExtension.swift in Sources */,
 				A14D5D201F4B86270003A2A4 /* OSTButton.swift in Sources */,
 				A14D5D231F4B8B0C0003A2A4 /* OSTAuthButton.swift in Sources */,
 				A19CEF641F55F0D6006201D6 /* ApiPersonalData.swift in Sources */,
@@ -808,7 +807,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				INFOPLIST_FILE = OnestapSDK/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OnestapSDK/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -838,7 +837,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				INFOPLIST_FILE = OnestapSDK/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OnestapSDK/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
