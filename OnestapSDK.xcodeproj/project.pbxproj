@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9F19E08E1F8EB7E6008425B7 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F19E08D1F8EB7E6008425B7 /* RedirectHandler.swift */; };
+		A11EDCD71FB235520066D0F7 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A191A4471FB2323D00E70FAB /* FingerPrint_iOS.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A141A6431F45FD9100763662 /* OnestapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A141A6391F45FD9100763662 /* OnestapSDK.framework */; };
 		A141A6481F45FD9100763662 /* OnestapSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141A6471F45FD9100763662 /* OnestapSDKTests.swift */; };
 		A141A64A1F45FD9100763662 /* OnestapSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A141A63C1F45FD9100763662 /* OnestapSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,7 +31,6 @@
 		A14D5D321F510CCF0003A2A4 /* FingerPrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */; };
 		A17E28111F567FCB0071AE76 /* ApiUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E28101F567FCB0071AE76 /* ApiUserTests.swift */; };
 		A17E5EE51F50B8840055EF7B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E5EE41F50B8840055EF7B /* Log.swift */; };
-		A191A4481FB2323E00E70FAB /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A191A4471FB2323D00E70FAB /* FingerPrint_iOS.framework */; };
 		A19CEF621F55EE50006201D6 /* ApiPublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF611F55EE50006201D6 /* ApiPublicProfile.swift */; };
 		A19CEF641F55F0D6006201D6 /* ApiPersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF631F55F0D6006201D6 /* ApiPersonalData.swift */; };
 		A19CEF661F55F5AC006201D6 /* ApiEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF651F55F5AC006201D6 /* ApiEmail.swift */; };
@@ -152,7 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A191A4481FB2323E00E70FAB /* FingerPrint_iOS.framework in Frameworks */,
+				A11EDCD71FB235520066D0F7 /* FingerPrint_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
