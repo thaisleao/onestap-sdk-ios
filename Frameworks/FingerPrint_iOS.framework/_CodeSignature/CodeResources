@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/FingerPrint_iOS-Swift.h</key>
 		<data>
-		g+b1RHxfUKEa4f+54rGAIIc1+18=
+		w6AdU13fyrug6l1lagikfez2tYo=
 		</data>
 		<key>Headers/FingerPrint_iOS.h</key>
 		<data>
@@ -14,27 +14,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		DaT/SvSEYEjmVHU30LFtbk3LKxo=
+		DWeYvPDdgka2otoyQo+iXCRk/Mw=
 		</data>
-		<key>Modules/FingerPrint_iOS.swiftmodule/arm.swiftdoc</key>
+		<key>Modules/FingerPrint_iOS.swiftmodule/i386.swiftdoc</key>
 		<data>
-		8Perx+3+A5+aiKbBRbFjRkj159U=
+		FnXrTMc+vlDVy1dQwd5Jl0oKegs=
 		</data>
-		<key>Modules/FingerPrint_iOS.swiftmodule/arm.swiftmodule</key>
+		<key>Modules/FingerPrint_iOS.swiftmodule/i386.swiftmodule</key>
 		<data>
-		QeaQcegA07ft9ZNaf3uXcUQv1VM=
+		+/h78jIzrFFbxocsfDLxBsitrkA=
 		</data>
-		<key>Modules/FingerPrint_iOS.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/FingerPrint_iOS.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		KrhFPFchyoPOoe08xx9bfjWWcsA=
+		++79tYqc1UJEsCFlUj01AsH+VSk=
 		</data>
-		<key>Modules/FingerPrint_iOS.swiftmodule/arm64.swiftmodule</key>
+		<key>Modules/FingerPrint_iOS.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		xySTDRxLWyWfiYPYi5EHxBJCW5U=
+		3la3Rwoc6r2HYxLRHPXA8kcMfZQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		ObChFzQoxoZ5Ghld8BZAwq7YInk=
+		Ny58Pqvv7GBqVIKneEYmJAaZ7y8=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -43,11 +43,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			g+b1RHxfUKEa4f+54rGAIIc1+18=
+			w6AdU13fyrug6l1lagikfez2tYo=
 			</data>
 			<key>hash2</key>
 			<data>
-			bO8Oy8WmExqIUT3IcTPMupF6ArtWV2OiaK8GKYcKPSc=
+			3QQHFStvd2RUoZuPJE5E3CF82YJ0CCi45uEI+02lxhI=
 			</data>
 		</dict>
 		<key>Headers/FingerPrint_iOS.h</key>
@@ -61,59 +61,59 @@
 			XIaeok6H9fhcFtlbtITS37WaVWNYnW7s+Od/rKOQDYQ=
 			</data>
 		</dict>
-		<key>Modules/FingerPrint_iOS.swiftmodule/arm.swiftdoc</key>
+		<key>Modules/FingerPrint_iOS.swiftmodule/i386.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8Perx+3+A5+aiKbBRbFjRkj159U=
+			FnXrTMc+vlDVy1dQwd5Jl0oKegs=
 			</data>
 			<key>hash2</key>
 			<data>
-			6v6tJ8b6390d11F3/h2oz1lUjjljJcM2o4P7VoE7cD8=
+			sAfKQ7TjfgaHLTUc70zoFoOE4qKQfigK8okBAD+lXpU=
 			</data>
 		</dict>
-		<key>Modules/FingerPrint_iOS.swiftmodule/arm.swiftmodule</key>
+		<key>Modules/FingerPrint_iOS.swiftmodule/i386.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QeaQcegA07ft9ZNaf3uXcUQv1VM=
+			+/h78jIzrFFbxocsfDLxBsitrkA=
 			</data>
 			<key>hash2</key>
 			<data>
-			E2s/e51GezneYjyaer9eNraKLYn5f7vuLVHqg19qHPo=
+			bGzgp09HozsO9y2m6HfqO3fafp5zQioueQb3DZ+yNNM=
 			</data>
 		</dict>
-		<key>Modules/FingerPrint_iOS.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/FingerPrint_iOS.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KrhFPFchyoPOoe08xx9bfjWWcsA=
+			++79tYqc1UJEsCFlUj01AsH+VSk=
 			</data>
 			<key>hash2</key>
 			<data>
-			l9zlN1fZBi77dFw4XX9HKuTJk+xNjP6IWjtUxHottLU=
+			eX/hZcDQiRELaOc6TN4Q9SMJEW+14lwO9PAJxjXi3L4=
 			</data>
 		</dict>
-		<key>Modules/FingerPrint_iOS.swiftmodule/arm64.swiftmodule</key>
+		<key>Modules/FingerPrint_iOS.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xySTDRxLWyWfiYPYi5EHxBJCW5U=
+			3la3Rwoc6r2HYxLRHPXA8kcMfZQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			vh6L+cUdPLKwdHBKK3fYIsQ5irE4DeF/IQwPKuJVN1Y=
+			htTJPPM1NpmV/A0BGM4q+BkPYC5uk/VTF3uqywSEB70=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ObChFzQoxoZ5Ghld8BZAwq7YInk=
+			Ny58Pqvv7GBqVIKneEYmJAaZ7y8=
 			</data>
 			<key>hash2</key>
 			<data>
-			5N9Lcfz4J/0JJabnXAb6nngmfEdOMH+KnZR+OyCyoWw=
+			8firOw84sCGS7GLFtXMMI1Hg8eTD5lCAr3qtGjxRnSY=
 			</data>
 		</dict>
 	</dict>

@@ -23,13 +23,13 @@ class FingerPrintManagerImplementation: FingerPrintManager {
     
     func sendFingerPrint() {
         guard let fingerPrintId = OST.configuration.fingerPrintId,
-              let accessToken = UserDefaults.standard.accessToken else {
+              let accessToken = UserDefaults.standard.accessToken, let userKey = UserDefaults.standard.userKey else {
             return
         }
 
         FingerPrintLibrary.initFingerprint(role: OST.configuration.environment.rawValue,
                                            key: fingerPrintId,
-                                           registerId: accessToken,
+                                           registerId: userKey,
                                            sessionId: self.sessionId)
         FingerPrintLibrary.configFingerprint(phoneData: true, contactList: true, location: true)
         FingerPrintLibrary.getFingerprint()

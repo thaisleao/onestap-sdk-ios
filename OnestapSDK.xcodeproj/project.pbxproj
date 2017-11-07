@@ -30,6 +30,7 @@
 		A14D5D321F510CCF0003A2A4 /* FingerPrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */; };
 		A17E28111F567FCB0071AE76 /* ApiUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E28101F567FCB0071AE76 /* ApiUserTests.swift */; };
 		A17E5EE51F50B8840055EF7B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E5EE41F50B8840055EF7B /* Log.swift */; };
+		A191A4481FB2323E00E70FAB /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A191A4471FB2323D00E70FAB /* FingerPrint_iOS.framework */; };
 		A19CEF621F55EE50006201D6 /* ApiPublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF611F55EE50006201D6 /* ApiPublicProfile.swift */; };
 		A19CEF641F55F0D6006201D6 /* ApiPersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF631F55F0D6006201D6 /* ApiPersonalData.swift */; };
 		A19CEF661F55F5AC006201D6 /* ApiEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF651F55F5AC006201D6 /* ApiEmail.swift */; };
@@ -61,8 +62,6 @@
 		A1B8DA671F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA661F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift */; };
 		A1B8DA6A1F4CB92000EC40F4 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA691F4CB92000EC40F4 /* UserManager.swift */; };
 		A1B8DA6C1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */; };
-		A1BDDD5F1F74ADAD0091E83D /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BDDD5E1F74ADAD0091E83D /* FingerPrint_iOS.framework */; };
-		A1BDDD601F74BCB90091E83D /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BDDD5E1F74ADAD0091E83D /* FingerPrint_iOS.framework */; };
 		A1BDDD621F74C0D20091E83D /* RedirectHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BDDD611F74C0D20091E83D /* RedirectHandlerTests.swift */; };
 		A1D6E4DF1F55DB54002BDE56 /* GetUserApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */; };
 		A1D6E4E11F55E066002BDE56 /* PublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */; };
@@ -108,6 +107,7 @@
 		A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerPrintManager.swift; sourceTree = "<group>"; };
 		A17E28101F567FCB0071AE76 /* ApiUserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiUserTests.swift; sourceTree = "<group>"; };
 		A17E5EE41F50B8840055EF7B /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = OnestapSDK/Log.swift; sourceTree = SOURCE_ROOT; };
+		A191A4471FB2323D00E70FAB /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = Frameworks/FingerPrint_iOS.framework; sourceTree = "<group>"; };
 		A19CEF611F55EE50006201D6 /* ApiPublicProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiPublicProfile.swift; sourceTree = "<group>"; };
 		A19CEF631F55F0D6006201D6 /* ApiPersonalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiPersonalData.swift; sourceTree = "<group>"; };
 		A19CEF651F55F5AC006201D6 /* ApiEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiEmail.swift; sourceTree = "<group>"; };
@@ -139,7 +139,6 @@
 		A1B8DA661F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporaryProfileApiRequest.swift; sourceTree = "<group>"; };
 		A1B8DA691F4CB92000EC40F4 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTemporaryProfile.swift; sourceTree = "<group>"; };
-		A1BDDD5E1F74ADAD0091E83D /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = Frameworks/FingerPrint_iOS.framework; sourceTree = "<group>"; };
 		A1BDDD611F74C0D20091E83D /* RedirectHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedirectHandlerTests.swift; sourceTree = "<group>"; };
 		A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserApiRequest.swift; sourceTree = "<group>"; };
 		A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProfile.swift; sourceTree = "<group>"; };
@@ -153,7 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1BDDD5F1F74ADAD0091E83D /* FingerPrint_iOS.framework in Frameworks */,
+				A191A4481FB2323E00E70FAB /* FingerPrint_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +161,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A141A6431F45FD9100763662 /* OnestapSDK.framework in Frameworks */,
-				A1BDDD601F74BCB90091E83D /* FingerPrint_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +286,7 @@
 		A14D5D2C1F5108CC0003A2A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A1BDDD5E1F74ADAD0091E83D /* FingerPrint_iOS.framework */,
+				A191A4471FB2323D00E70FAB /* FingerPrint_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
