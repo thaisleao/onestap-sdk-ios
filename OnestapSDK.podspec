@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "OnestapSDK"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "one[s]tap Authorization SDK"
   s.description  = <<-DESC
 It connects to one[s]tap API using OAuth
