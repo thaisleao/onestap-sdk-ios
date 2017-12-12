@@ -15,7 +15,7 @@ protocol ApiRequest {
 extension URLRequest {
     /// Adds default headers for one[S]tap API
     mutating func addDefaultHeaders() {
-        let language = Locale.preferredLanguages.first ?? "en-US"
+        let language = Locale.current.languageCode ?? "en-US"
         
         self.addValue(language, forHTTPHeaderField: "Accept-Language")
         self.addValue("application/json", forHTTPHeaderField: "Accept")
