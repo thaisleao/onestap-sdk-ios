@@ -63,6 +63,7 @@
 		A1B8DA6A1F4CB92000EC40F4 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA691F4CB92000EC40F4 /* UserManager.swift */; };
 		A1B8DA6C1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */; };
 		A1BDDD621F74C0D20091E83D /* RedirectHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BDDD611F74C0D20091E83D /* RedirectHandlerTests.swift */; };
+		A1CCE3312057197200D35480 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CCE3302057197200D35480 /* StringExtension.swift */; };
 		A1D6E4DF1F55DB54002BDE56 /* GetUserApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */; };
 		A1D6E4E11F55E066002BDE56 /* PublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */; };
 		A1D6E4E31F55E16D002BDE56 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E21F55E16D002BDE56 /* Account.swift */; };
@@ -140,6 +141,7 @@
 		A1B8DA691F4CB92000EC40F4 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTemporaryProfile.swift; sourceTree = "<group>"; };
 		A1BDDD611F74C0D20091E83D /* RedirectHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedirectHandlerTests.swift; sourceTree = "<group>"; };
+		A1CCE3302057197200D35480 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserApiRequest.swift; sourceTree = "<group>"; };
 		A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProfile.swift; sourceTree = "<group>"; };
 		A1D6E4E21F55E16D002BDE56 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -229,7 +231,7 @@
 		A141A6631F46424500763662 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				A11EDCD81FB249640066D0F7 /* UserDefaultsExtension.swift */,
+				A1CCE32F2057196200D35480 /* Extensions */,
 				A17E5EE31F50B8680055EF7B /* Log */,
 				A141A6601F46420A00763662 /* API */,
 				A1A31CAA1F479B270060C9DC /* Enums */,
@@ -453,6 +455,15 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		A1CCE32F2057196200D35480 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A11EDCD81FB249640066D0F7 /* UserDefaultsExtension.swift */,
+				A1CCE3302057197200D35480 /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A1D6E4E61F55E919002BDE56 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -631,6 +642,7 @@
 				A1A31CD01F47AA850060C9DC /* OST.swift in Sources */,
 				A19CEF661F55F5AC006201D6 /* ApiEmail.swift in Sources */,
 				A14D5D181F4B73940003A2A4 /* AccessTokenApiRequest.swift in Sources */,
+				A1CCE3312057197200D35480 /* StringExtension.swift in Sources */,
 				A1B8DA591F4C8DE100EC40F4 /* PersonalData.swift in Sources */,
 				A11EDCD91FB249640066D0F7 /* UserDefaultsExtension.swift in Sources */,
 				A1A31CB11F47A4D10060C9DC /* ApiReport.swift in Sources */,
