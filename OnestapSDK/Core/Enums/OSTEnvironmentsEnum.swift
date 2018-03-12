@@ -57,16 +57,16 @@ public enum OSTEnvironmentEnum: String {
     /**
      Return API URL to communicate with the Authentication API
      */
-    internal var apiURL: URL {
+    internal var authClientApiURL: URL {
         get {
             switch self {
             case .production:
-                return ApiUrls.onestapProductionApiUrl
+                return ApiUrls.onestapProductionAuthUrl
             case .sandbox:
                 if ApiUrls.isStaging { fallthrough }
-                return ApiUrls.onestapSandboxApiUrl
+                return ApiUrls.onestapSandboxAuthUrl
             default:
-                return ApiUrls.onestapStagingApiUrl
+                return ApiUrls.onestapStagingAuthUrl
             }
         }
     }
@@ -89,18 +89,20 @@ public enum OSTEnvironmentEnum: String {
     }
     
     private struct ApiUrls {
+        private static let version = "v1"
+        
         static var isStaging: Bool = false
         
-        static let onestapStagingWebUrl: URL! = URL(string: "http://flipconnect-signin-develop.herokuapp.com/")
-        static let onestapStagingApiUrl: URL! = URL(string: "http://dlp-qrservices.cloudapp.net:20112/api/")
-        static let onestapStagingUserManagementUrl: URL! = URL(string: "http://dlp-qrservices.cloudapp.net:20115/")
+        static let onestapStagingWebUrl: URL! = URL(string: "https://signin-stg.onestap.com/")
+        static let onestapStagingAuthUrl: URL! = URL(string: "https://authclient-stg.onestap.com/\(version)/")
+        static let onestapStagingUserManagementUrl: URL! = URL(string: "https://api-stg.onestap.com/")
         
         static let onestapSandboxWebUrl: URL! = URL(string: "https://signin-sandbox.onestap.com/")
-        static let onestapSandboxApiUrl: URL! = URL(string: "https://auth-sandbox.onestap.com/api/")
+        static let onestapSandboxAuthUrl: URL! = URL(string: "https://authclient-sandbox.onestap.com/\(version)/")
         static let onestapSandboxUserManagementUrl: URL! = URL(string: "https://api-sandbox.onestap.com/")
         
         static let onestapProductionWebUrl:  URL! = URL(string: "https://signin.onestap.com/")
-        static let onestapProductionApiUrl: URL! = URL(string: "https://auth.onestap.com/api/")
+        static let onestapProductionAuthUrl: URL! = URL(string: "https://authclient.onestap.com/\(version)/")
         static let onestapProductionUserManagementUrl: URL! = URL(string: "https://api.onestap.com/")
     }
 }
