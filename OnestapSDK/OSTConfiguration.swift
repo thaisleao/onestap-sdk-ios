@@ -48,6 +48,12 @@ public struct OSTConfiguration {
     /// Your Client Secret
     public let clientSecret: String
     
+    /// Encoded Client ID and Secret
+    internal var encodedClient: String {
+        let clientIdSecret = "\(self.clientId):\(self.clientSecret)"
+        return clientIdSecret.toBase64()
+    }
+    
     /// Your app host registered on URL Types (e.g.: **somescheme**://somehost), where scheme is everything before `://`.
     public let scheme: String
     
