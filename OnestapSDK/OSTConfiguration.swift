@@ -30,7 +30,8 @@ public struct OSTConfiguration {
                          fingerPrintId: String? = nil,
                          temporaryProfile: TemporaryProfile? = nil,
                          primaryColor: UIColor? = nil,
-                         secondaryColor: UIColor? = nil) {
+                         secondaryColor: UIColor? = nil,
+                         isLogEnabled: Bool = false) {
         self.environment = environment
         self.clientId = clientId
         self.clientSecret = clientSecret
@@ -40,6 +41,7 @@ public struct OSTConfiguration {
         self.temporaryProfile = temporaryProfile
         self.primaryColor = primaryColor
         self.secondaryColor = secondaryColor
+        self.isLogEnabled = isLogEnabled
     }
     
     /// Your Client ID
@@ -84,4 +86,6 @@ public struct OSTConfiguration {
     
     /// If temporaryProfile is set, the DataKey should be filled
     internal var temporaryProfileDataKey: String? = nil
+    
+    internal let isLogEnabled: Bool
 }

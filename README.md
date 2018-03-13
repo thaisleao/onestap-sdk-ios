@@ -42,7 +42,7 @@ end
 
 ### Instalação manual
 
-Para instalar manualmente a SDK é necessário baixar o arquivo [OnestapSDK_Manual.framework.zip](https://github.com/stone-payments/onestap-sdk-ios/releases) e colocar em **Embedded Binaries** como na imagem abaixo:
+Para instalar manualmente a SDK é necessário baixar o arquivo [OnestapSDK.framework.zip](https://github.com/stone-payments/onestap-sdk-ios/releases) e colocar em **Embedded Binaries** como na imagem abaixo:
 
 ![Manual Installation](./img/installManual.png)
 
