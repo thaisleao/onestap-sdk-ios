@@ -20,6 +20,8 @@ class ApiClientTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        let conf = OSTConfiguration(clientId: "", clientSecret: "", scheme: "", host: "", isLogEnabled: true)
+        _ = OST(configuration: conf)
         apiClient = ApiClientImplementation(urlSession: urlSessionStub)
     }
     
