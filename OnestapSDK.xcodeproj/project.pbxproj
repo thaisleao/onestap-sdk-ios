@@ -64,6 +64,7 @@
 		A1B8DA6C1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */; };
 		A1BDDD621F74C0D20091E83D /* RedirectHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BDDD611F74C0D20091E83D /* RedirectHandlerTests.swift */; };
 		A1CCE3312057197200D35480 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CCE3302057197200D35480 /* StringExtension.swift */; };
+		A1CCE333205991F300D35480 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CCE332205991F300D35480 /* BundleExtension.swift */; };
 		A1D6E4DF1F55DB54002BDE56 /* GetUserApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */; };
 		A1D6E4E11F55E066002BDE56 /* PublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */; };
 		A1D6E4E31F55E16D002BDE56 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E4E21F55E16D002BDE56 /* Account.swift */; };
@@ -142,6 +143,7 @@
 		A1B8DA6B1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTemporaryProfile.swift; sourceTree = "<group>"; };
 		A1BDDD611F74C0D20091E83D /* RedirectHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedirectHandlerTests.swift; sourceTree = "<group>"; };
 		A1CCE3302057197200D35480 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		A1CCE332205991F300D35480 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		A1D6E4DE1F55DB54002BDE56 /* GetUserApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserApiRequest.swift; sourceTree = "<group>"; };
 		A1D6E4E01F55E066002BDE56 /* PublicProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProfile.swift; sourceTree = "<group>"; };
 		A1D6E4E21F55E16D002BDE56 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 			children = (
 				A11EDCD81FB249640066D0F7 /* UserDefaultsExtension.swift */,
 				A1CCE3302057197200D35480 /* StringExtension.swift */,
+				A1CCE332205991F300D35480 /* BundleExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				A1CCE3312057197200D35480 /* StringExtension.swift in Sources */,
 				A1B8DA591F4C8DE100EC40F4 /* PersonalData.swift in Sources */,
 				A11EDCD91FB249640066D0F7 /* UserDefaultsExtension.swift in Sources */,
+				A1CCE333205991F300D35480 /* BundleExtension.swift in Sources */,
 				A1A31CB11F47A4D10060C9DC /* ApiReport.swift in Sources */,
 				A1D6E4E81F55E936002BDE56 /* ApiAccount.swift in Sources */,
 				A14D5D1A1F4B76520003A2A4 /* VerifyTokenApiRequest.swift in Sources */,

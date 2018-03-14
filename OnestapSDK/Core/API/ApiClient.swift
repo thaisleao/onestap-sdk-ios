@@ -20,6 +20,9 @@ extension URLRequest {
         self.addValue(language, forHTTPHeaderField: "Accept-Language")
         self.addValue("application/json", forHTTPHeaderField: "Accept")
         self.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let agentString = "\(Bundle.sdkBundle.displayName)/iOS \(Bundle.sdkBundle.versionAndBuild) \(Bundle.main.displayName) \(Bundle.main.versionAndBuild)"
+        self.addValue(agentString, forHTTPHeaderField: "User-Agent")
     }
 }
 
