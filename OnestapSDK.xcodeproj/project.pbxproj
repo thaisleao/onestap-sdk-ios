@@ -10,6 +10,13 @@
 		9F19E08E1F8EB7E6008425B7 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F19E08D1F8EB7E6008425B7 /* RedirectHandler.swift */; };
 		A11EDCD71FB235520066D0F7 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A191A4471FB2323D00E70FAB /* FingerPrint_iOS.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A11EDCD91FB249640066D0F7 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11EDCD81FB249640066D0F7 /* UserDefaultsExtension.swift */; };
+		A1217EDD205AEE5D001FBE37 /* KeychainConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1217EDC205AEE5D001FBE37 /* KeychainConfigurable.swift */; };
+		A1217EDF205AEE9D001FBE37 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1217EDE205AEE9D001FBE37 /* KeychainConfiguration.swift */; };
+		A1217EE1205AEF90001FBE37 /* KeychainDatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1217EE0205AEF90001FBE37 /* KeychainDatabaseProtocol.swift */; };
+		A1217EE3205AF0A4001FBE37 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1217EE2205AF0A4001FBE37 /* Authorization.swift */; };
+		A1217EE5205AF104001FBE37 /* KeychainDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1217EE4205AF104001FBE37 /* KeychainDatabase.swift */; };
+		A1217EE7205AF3E5001FBE37 /* AuthenticationKeychainDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1217EE6205AF3E5001FBE37 /* AuthenticationKeychainDatabase.swift */; };
+		A1217EE9205B0934001FBE37 /* UserKeyKeychainDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1217EE8205B0934001FBE37 /* UserKeyKeychainDatabase.swift */; };
 		A141A6431F45FD9100763662 /* OnestapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A141A6391F45FD9100763662 /* OnestapSDK.framework */; };
 		A141A6481F45FD9100763662 /* OnestapSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141A6471F45FD9100763662 /* OnestapSDKTests.swift */; };
 		A141A64A1F45FD9100763662 /* OnestapSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A141A63C1F45FD9100763662 /* OnestapSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -85,6 +92,13 @@
 /* Begin PBXFileReference section */
 		9F19E08D1F8EB7E6008425B7 /* RedirectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedirectHandler.swift; sourceTree = "<group>"; };
 		A11EDCD81FB249640066D0F7 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		A1217EDC205AEE5D001FBE37 /* KeychainConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainConfigurable.swift; sourceTree = "<group>"; };
+		A1217EDE205AEE9D001FBE37 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
+		A1217EE0205AEF90001FBE37 /* KeychainDatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainDatabaseProtocol.swift; sourceTree = "<group>"; };
+		A1217EE2205AF0A4001FBE37 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
+		A1217EE4205AF104001FBE37 /* KeychainDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainDatabase.swift; sourceTree = "<group>"; };
+		A1217EE6205AF3E5001FBE37 /* AuthenticationKeychainDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationKeychainDatabase.swift; sourceTree = "<group>"; };
+		A1217EE8205B0934001FBE37 /* UserKeyKeychainDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserKeyKeychainDatabase.swift; sourceTree = "<group>"; };
 		A141A6391F45FD9100763662 /* OnestapSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OnestapSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A141A63C1F45FD9100763662 /* OnestapSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnestapSDK.h; sourceTree = "<group>"; };
 		A141A63D1F45FD9100763662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -171,6 +185,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1217EDB205AEE43001FBE37 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				A1217EDC205AEE5D001FBE37 /* KeychainConfigurable.swift */,
+				A1217EDE205AEE9D001FBE37 /* KeychainConfiguration.swift */,
+				A1217EE0205AEF90001FBE37 /* KeychainDatabaseProtocol.swift */,
+				A1217EE4205AF104001FBE37 /* KeychainDatabase.swift */,
+				A1217EE6205AF3E5001FBE37 /* AuthenticationKeychainDatabase.swift */,
+				A1217EE8205B0934001FBE37 /* UserKeyKeychainDatabase.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
 		A141A62F1F45FD9100763662 = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +260,7 @@
 		A141A6631F46424500763662 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A1217EDB205AEE43001FBE37 /* Keychain */,
 				A1CCE32F2057196200D35480 /* Extensions */,
 				A17E5EE31F50B8680055EF7B /* Log */,
 				A141A6601F46420A00763662 /* API */,
@@ -247,6 +275,7 @@
 			children = (
 				A1A31CBF1F47A58A0060C9DC /* Report.swift */,
 				A14D5D1D1F4B7A4E0003A2A4 /* GenericResponse.swift */,
+				A1217EE2205AF0A4001FBE37 /* Authorization.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -617,6 +646,8 @@
 				A1A31CAE1F47A4BD0060C9DC /* RefreshTokenApiRequest.swift in Sources */,
 				A19CEF6C1F55FD37006201D6 /* ApiDocument.swift in Sources */,
 				A17E5EE51F50B8840055EF7B /* Log.swift in Sources */,
+				A1217EE3205AF0A4001FBE37 /* Authorization.swift in Sources */,
+				A1217EE9205B0934001FBE37 /* UserKeyKeychainDatabase.swift in Sources */,
 				A19CEF6A1F55FA2F006201D6 /* ApiAddress.swift in Sources */,
 				A19CEF741F57715E006201D6 /* ApiVehicle.swift in Sources */,
 				A1B8DA6C1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift in Sources */,
@@ -630,11 +661,13 @@
 				A19CEF721F571E2A006201D6 /* OSTAuth.swift in Sources */,
 				A1B8DA5B1F4C8FA400EC40F4 /* Vehicle.swift in Sources */,
 				A1A31CBE1F47A5790060C9DC /* OSTEnvironmentsEnum.swift in Sources */,
+				A1217EE5205AF104001FBE37 /* KeychainDatabase.swift in Sources */,
 				A1A31CB21F47A4D10060C9DC /* ApiToken.swift in Sources */,
 				A1A31CBB1F47A52B0060C9DC /* JSON.swift in Sources */,
 				A1D6E4DF1F55DB54002BDE56 /* GetUserApiRequest.swift in Sources */,
 				A19CEF701F570701006201D6 /* OSTUser.swift in Sources */,
 				A1B8DA631F4CA0C100EC40F4 /* TemporaryProfile.swift in Sources */,
+				A1217EDF205AEE9D001FBE37 /* KeychainConfiguration.swift in Sources */,
 				A1A31CB61F47A4ED0060C9DC /* ApiResponse.swift in Sources */,
 				A14D5D1C1F4B77910003A2A4 /* RevokeTokenApiRequest.swift in Sources */,
 				A14D5D091F4B5F5A0003A2A4 /* AuthManager.swift in Sources */,
@@ -654,11 +687,14 @@
 				A14D5D1A1F4B76520003A2A4 /* VerifyTokenApiRequest.swift in Sources */,
 				A14D5D291F4B9AFE0003A2A4 /* OSTErrors.swift in Sources */,
 				A1B8DA671F4CB7D100EC40F4 /* TemporaryProfileApiRequest.swift in Sources */,
+				A1217EE1205AEF90001FBE37 /* KeychainDatabaseProtocol.swift in Sources */,
 				A1A31CB81F47A5180060C9DC /* OSTConfiguration.swift in Sources */,
 				A1B8DA6A1F4CB92000EC40F4 /* UserManager.swift in Sources */,
 				A1A31CB51F47A4ED0060C9DC /* ApiClient.swift in Sources */,
+				A1217EE7205AF3E5001FBE37 /* AuthenticationKeychainDatabase.swift in Sources */,
 				A19CEF771F58A90E006201D6 /* OSTCategoriesEnum.swift in Sources */,
 				A14D5D0B1F4B600A0003A2A4 /* HttpVerbEnum.swift in Sources */,
+				A1217EDD205AEE5D001FBE37 /* KeychainConfigurable.swift in Sources */,
 				A1A31CC21F47A58A0060C9DC /* Token.swift in Sources */,
 				A14D5D201F4B86270003A2A4 /* OSTButton.swift in Sources */,
 				A14D5D231F4B8B0C0003A2A4 /* OSTAuthButton.swift in Sources */,

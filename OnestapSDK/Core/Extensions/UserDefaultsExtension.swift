@@ -11,10 +11,12 @@ import Foundation
 extension UserDefaults {
     private struct Keys {
         static let AuthorizationCode = "OSTAuthorizationCode"
-        static let AccessToken = "OSTAccessToken"
-        static let RefreshToken = "OSTRefreshToken"
-        static let UserKey = "OSTUserKey"
         static let FingerPrintSessionId = "OSRLFingerPrintSessionId"
+    }
+    
+    private struct KeychainDatabases {
+        static let authorizationDB = AuthenticationKeychainDatabase()
+        static let userKeyDB = UserKeyKeychainDatabase()
     }
     
     internal var authorizationCode: String? {
@@ -25,30 +27,38 @@ extension UserDefaults {
         }
     }
     
+    var authenticationTokens: Authorization? {
+        get {
+            return try? KeychainDatabases.authorizationDB.getTokens()
+        } set {
+            guard let tokens = newValue else { return KeychainDatabases.authorizationDB.deleteTokens() }
+            try? KeychainDatabases.authorizationDB.store(tokens: tokens)
+        }
+    }
+    
     /// Token used to make requests to one[S]tap
     public internal(set) var accessToken: String? {
         get {
-            return UserDefaults.standard.string(forKey: Keys.AccessToken)
+            return authenticationTokens?.accessToken
         } set {
-            UserDefaults.standard.set(newValue, forKey: Keys.AccessToken)
+            guard var tokens = authenticationTokens, let accessToken = newValue else { return }
+            tokens.accessToken = accessToken
+            authenticationTokens = tokens
         }
     }
     
     /// Token used to refresh user session
-    public internal(set) var refreshToken: String? {
-        get {
-            return UserDefaults.standard.string(forKey: Keys.RefreshToken)
-        } set {
-            UserDefaults.standard.set(newValue, forKey: Keys.RefreshToken)
-        }
+    public var refreshToken: String? {
+        return authenticationTokens?.refreshToken
     }
     
     /// UserKey is the key of the User
     public internal(set) var userKey: String? {
         get {
-            return UserDefaults.standard.string(forKey: Keys.UserKey)
+            return try? KeychainDatabases.userKeyDB.getUserKey()
         } set {
-            UserDefaults.standard.set(newValue, forKey: Keys.UserKey)
+            guard let key = newValue else { return KeychainDatabases.userKeyDB.deleteUserKey() }
+            try? KeychainDatabases.userKeyDB.store(key)
         }
     }
     
