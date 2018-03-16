@@ -1,4 +1,8 @@
-## [Unreleased]
+## [1.1.0] - 2018-03-16
+[Full Changelog](https://github.com/stone-payments/onestap-sdk-ios/compare/1.0.2...1.1.0)
+
+## [1.0.2] - 2017-11-07
+[Full Changelog](https://github.com/stone-payments/onestap-sdk-ios/compare/1.0.1...1.0.2)
 
 **Bugs:**
 - Hotfix/redirect | [#12](https://github.com/stone-payments/onestap-sdk-ios/pull/12) | [@munirwanis](https://github.com/munirwanis)
