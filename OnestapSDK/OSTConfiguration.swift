@@ -30,7 +30,8 @@ public struct OSTConfiguration {
                          fingerPrintId: String? = nil,
                          temporaryProfile: TemporaryProfile? = nil,
                          primaryColor: UIColor? = nil,
-                         secondaryColor: UIColor? = nil) {
+                         secondaryColor: UIColor? = nil,
+                         isLogEnabled: Bool = false) {
         self.environment = environment
         self.clientId = clientId
         self.clientSecret = clientSecret
@@ -40,6 +41,7 @@ public struct OSTConfiguration {
         self.temporaryProfile = temporaryProfile
         self.primaryColor = primaryColor
         self.secondaryColor = secondaryColor
+        self.isLogEnabled = isLogEnabled
     }
     
     /// Your Client ID
@@ -47,6 +49,12 @@ public struct OSTConfiguration {
     
     /// Your Client Secret
     public let clientSecret: String
+    
+    /// Encoded Client ID and Secret
+    internal var encodedClient: String {
+        let clientIdSecret = "\(self.clientId):\(self.clientSecret)"
+        return clientIdSecret.toBase64()
+    }
     
     /// Your app host registered on URL Types (e.g.: **somescheme**://somehost), where scheme is everything before `://`.
     public let scheme: String
@@ -78,4 +86,6 @@ public struct OSTConfiguration {
     
     /// If temporaryProfile is set, the DataKey should be filled
     internal var temporaryProfileDataKey: String? = nil
+    
+    internal let isLogEnabled: Bool
 }

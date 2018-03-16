@@ -39,11 +39,6 @@ fastlane tests
 fastlane bitrise
 ```
 
-### publish
-```
-fastlane publish
-```
-
 ### release
 ```
 fastlane release
@@ -62,11 +57,6 @@ fastlane carthage_archive
 ### changelog
 ```
 fastlane changelog
-```
-
-### zip_frameworks
-```
-fastlane zip_frameworks
 ```
 
 ### push

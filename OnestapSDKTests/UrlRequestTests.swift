@@ -21,12 +21,12 @@ class UrlRequestTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testDefaultHeaders() {
         let url = URL(string: "https://www.google.com/")!
         
         var urlRequest = URLRequest(url: url)
         urlRequest.addDefaultHeaders()
         
-        XCTAssertTrue(urlRequest.allHTTPHeaderFields?.count == 3)
+        XCTAssertTrue(urlRequest.allHTTPHeaderFields?.count == 4)
     }
 }

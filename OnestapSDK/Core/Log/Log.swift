@@ -8,43 +8,67 @@
 
 import Foundation
 
-struct Log {
-    static func apiData(request: URLRequest, response: Data?, urlResponse: HTTPURLResponse) {
-        log(message: "\n========== \(request.url?.absoluteString ?? "API CALL") ==========\n")
-        
+public struct Log {
+    private static var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .short
+        return formatter
+    }()
+    
+    private static var logDate: String {
+        return dateFormatter.string(from: Date())
+    }
+    
+    public static func apiData(request: URLRequest, response: Data?, urlResponse: HTTPURLResponse) {
+        message("Start API Call - \(request.url?.absoluteString ?? "") - Status Code: \(urlResponse.statusCode)")
         if let headers = request.allHTTPHeaderFields {
-            log(message: "\n<-- REQUEST HEADERS ->\n")
+            message("Request Headers")
             for header in headers {
-                log(message: "\(header.key): \(header.value)")
+                log(message: "    \(header.key): \(header.value)")
             }
         }
-        
-        if let requestData = request.httpBody {   
-            log(message: "\n<-- REQUEST PAYLOAD ->\n")
+        if let requestData = request.httpBody {
+            message("Request Payload")
             logJson(data: requestData)
         }
-        
-        log(message: "\n<-- RESPONSE HEADERS ->\n")
-        for header in urlResponse.allHeaderFields {
-            log(message: "\(header.key): \(header.value)")
-        }
-        
         if let response = response {
-            log(message: "\n<-- RESPONSE PAYLOAD ->\n")
+            message("Response Headers")
+            for header in urlResponse.allHeaderFields {
+                log(message: "    \(header.key): \(header.value)")
+            }
+            message("Response Payload")
             logJson(data: response)
-            log(message: "")
         }
-        log(message: "\n========== END ==========\n")
+        message("End API Call\n")
     }
     
+    public static func message(_ message: String?) {
+        guard let message = message else { return }
+        log(message: "[one[s]tap - \(logDate)] \(message)")
+    }
+    
+    public static func message(_ error: Error) {
+        message("An error occurred")
+        log(message: error)
+    }
+}
+
+
+// MARK: - Private methods
+extension Log {
     private static func logJson(data: Data) {
-        let json = String(data: data, encoding: .utf8)
-        log(message: json)
+        guard let jsonData = try? JSONSerialization.jsonObject(with: data),
+            let prettyJSON = try? JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted) else {
+                return
+        }
+        let jsonString = String(data: prettyJSON, encoding: .utf8)
+        log(message: jsonString ?? "")
     }
     
-    private static func log(message: String?) {
-        #if DEBUG
-            if let message = message { print(message) }
-        #endif
+    private static func log(message: Any) {
+        if OST.configuration.isLogEnabled {
+            print(message)
+        }
     }
 }

@@ -10,6 +10,6 @@ import Foundation
 
 extension String {
     internal func toBase64() -> String {
-        return Data((self + ":").utf8).base64EncodedString()
+        return Data(self.utf8).base64EncodedString()
     }
 }

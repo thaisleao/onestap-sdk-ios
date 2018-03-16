@@ -34,8 +34,10 @@ public class AuthManagerImplementation: AuthManager {
             switch result {
             case let .success(response):
                 let token = response.entity.token
-                UserDefaults.standard.accessToken = token.accessToken
-                UserDefaults.standard.refreshToken = token.refreshToken
+                if let refreshToken = token.refreshToken, let accessToken = token.accessToken {
+                    let tokens = Authorization(refreshToken: refreshToken, accessToken: accessToken)
+                    UserDefaults.standard.authenticationTokens = tokens
+                }
                 completion(.success(token))
             case let .failure(error):
                 completion(.failure(error))
@@ -50,8 +52,10 @@ public class AuthManagerImplementation: AuthManager {
             switch result {
             case let .success(response):
                 let token = response.entity.token
-                UserDefaults.standard.accessToken = token.accessToken
-                UserDefaults.standard.refreshToken = token.refreshToken
+                if let refreshToken = token.refreshToken, let accessToken = token.accessToken {
+                    let tokens = Authorization(refreshToken: refreshToken, accessToken: accessToken)
+                    UserDefaults.standard.authenticationTokens = tokens
+                }
                 UserDefaults.standard.userKey = token.userKey
                 
                 OST.shared.fingerPrint.sendFingerPrint()
@@ -97,8 +101,7 @@ public class AuthManagerImplementation: AuthManager {
         let tokenApiRequest = RevokeTokenApiRequest()
         
         apiClient.execute(request: tokenApiRequest) { (result: Result<ApiResponse<ApiToken>>) in
-            UserDefaults.standard.accessToken = nil
-            UserDefaults.standard.refreshToken = nil
+            UserDefaults.standard.authenticationTokens = nil
             UserDefaults.standard.userKey = nil
             
             switch result {
