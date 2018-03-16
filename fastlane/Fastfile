@@ -55,6 +55,7 @@ lane :changelog do
     include_unreleased_section: true, # Optional, defaults to false
     output_path: 'CHANGELOG.md' # Optional
   )
+  git_commit(path: ["./CHANGELOG.md"], message: "Updates changelog for version #{version} [skip ci]")
 end
 
 lane :push do
@@ -71,11 +72,10 @@ lane :bump_version do
   sh("git fetch --tags")
   tag = last_git_tag
   version = version_bump_podspec(path: "OnestapSDK.podspec", version_number: tag)
-  increment_version_number(
-    version_number: "#{tag}",      # specify specific version number (optional, omitting it increments patch version number)
-    xcodeproj: "./OnestapSDK.xcodeproj"  # (optional, you must specify the path to your main Xcode project if it is not in the project root directory)
+  increment_version_number_in_plist(
+    version_number: "#{tag}",
+    xcodeproj: './OnestapSDK.xcodeproj'
   )
   git_commit(path: ["./OnestapSDK.xcodeproj", "*.plist"], message: "Update to #{version} on plists [skip ci]")
   git_commit(path: ["./OnestapSDK.podspec"], message: "#{COMMIT_MESSAGE} #{version} [skip ci]")
-  git_commit(path: ["./CHANGELOG.md"], message: "Updates changelog for version #{version} [skip ci]")
 end
