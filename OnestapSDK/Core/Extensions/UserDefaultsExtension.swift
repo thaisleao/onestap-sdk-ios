@@ -12,6 +12,7 @@ extension UserDefaults {
     private struct Keys {
         static let AuthorizationCode = "OSTAuthorizationCode"
         static let FingerPrintSessionId = "OSRLFingerPrintSessionId"
+        static let SavedToKeychain = "ONSTSavedToKeychain"
     }
     
     private struct KeychainDatabases {
@@ -24,6 +25,14 @@ extension UserDefaults {
             return UserDefaults.standard.string(forKey: Keys.AuthorizationCode)
         } set {
             UserDefaults.standard.set(newValue, forKey: Keys.AuthorizationCode)
+        }
+    }
+    
+    var isSavedToKeychain: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: Keys.SavedToKeychain)
+        } set {
+            UserDefaults.standard.set(newValue, forKey: Keys.SavedToKeychain)
         }
     }
     

@@ -19,6 +19,22 @@ public class OST {
         OST.configuration = configuration        
         OST.shared = self
         
+        if UserDefaults.standard.isSavedToKeychain == false {
+            Log.message("Dumping data saved on Keychain")
+            OST.shared.dump()
+        }
+        
+        UserDefaults.standard.isSavedToKeychain = true
         fingerPrint.sendFingerPrint()
+    }
+}
+
+
+// MARK: Private methods
+
+extension OST {
+    private func dump() {
+        UserDefaults.standard.authenticationTokens = nil
+        UserDefaults.standard.userKey = nil
     }
 }
