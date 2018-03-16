@@ -55,7 +55,7 @@ lane :changelog do
     include_unreleased_section: true, # Optional, defaults to false
     output_path: 'CHANGELOG.md' # Optional
   )
-  git_commit(path: ["./CHANGELOG.md"], message: "Updates changelog for version #{version} [skip ci]")
+  git_commit(path: ["./CHANGELOG.md"], message: "Updates changelog [skip ci]")
 end
 
 lane :push do
