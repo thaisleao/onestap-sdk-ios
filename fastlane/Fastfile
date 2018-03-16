@@ -58,6 +58,16 @@ lane :changelog do
 end
 
 lane :push do
+  bump_version
+  push_to_git_remote(remote_branch: 'master', force: false, tags: true)
+  pod_publish
+end
+
+lane :pod_publish do
+  pod_push(path: "OnestapSDK.podspec" , allow_warnings: true, verbose: true)
+end
+
+lane :bump_version do
   sh("git fetch --tags")
   tag = last_git_tag
   version = version_bump_podspec(path: "OnestapSDK.podspec", version_number: tag)
@@ -68,6 +78,4 @@ lane :push do
   git_commit(path: ["./OnestapSDK.xcodeproj", "*.plist"], message: "Update to #{version} on plists [skip ci]")
   git_commit(path: ["./OnestapSDK.podspec"], message: "#{COMMIT_MESSAGE} #{version} [skip ci]")
   git_commit(path: ["./CHANGELOG.md"], message: "Updates changelog for version #{version} [skip ci]")
-  push_to_git_remote(remote_branch: 'master', force: false, tags: true)
-  pod_push(path: "OnestapSDK.podspec" , allow_warnings: true, verbose: true)
 end

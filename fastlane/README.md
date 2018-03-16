@@ -64,6 +64,16 @@ fastlane changelog
 fastlane push
 ```
 
+### pod_publish
+```
+fastlane pod_publish
+```
+
+### bump_version
+```
+fastlane bump_version
+```
+
 
 ----
 
