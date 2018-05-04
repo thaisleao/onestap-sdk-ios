@@ -19,7 +19,7 @@ Com essas informações você será capaz de acessar as informações do usuári
 Coloque isto no seu Cartfile:
 
 ```yaml
-github "stone-payments/onestap-sdk-ios" ~> 1.1
+github "stone-payments/onestap-sdk-ios" ~> 1.2
 ```
 
 e então rode o seguinte comando:
@@ -35,7 +35,7 @@ Acrescente ao seu  `Podfile`
 ```ruby
 target 'MyApplication' do
   use_frameworks!
-  pod 'OnestapSDK', '~> 1.1'
+  pod 'OnestapSDK', '~> 1.2'
 end
 ```
 
