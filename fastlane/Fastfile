@@ -23,7 +23,7 @@ lane :release do
     name: "#{COMMIT_MESSAGE} v#{tag}",
     tag_name: tag,
     description: changelog_from_git_commits,
-    upload_assets: ["OnestapSDK.framework.zip"]
+    upload_assets: ["OnestapSDK_Manual.framework.zip"]
   )
 end
 
@@ -40,8 +40,8 @@ end
 
 lane :carthage_archive do
   carthage(
-    frameworks: ["OnestapSDK", "FingerPrint_iOS"],   # Specify which frameworks to archive (only for the archive command)
-    output: "OnestapSDK.framework.zip",      # Specify the output archive name (only for the archive command)
+    frameworks: ["OnestapSDK"],   # Specify which frameworks to archive (only for the archive command)
+    output: "OnestapSDK_Manual.framework.zip",      # Specify the output archive name (only for the archive command)
     command: "archive"       # One of: build, bootstrap, update, archive. (default: bootstrap)
   )
 end

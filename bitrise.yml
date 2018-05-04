@@ -8,8 +8,6 @@ app:
   - opts:
       is_expand: false
     FASTLANE_WORK_DIR: "."
-  - BITRISE_PROJECT_PATH: "./OnestapSDK.xcodeproj"
-  - BITRISE_SCHEME: OnestapSDK
 trigger_map:
 - push_branch: feature/*
   workflow: tests
@@ -18,7 +16,7 @@ trigger_map:
 - push_branch: fix/*
   workflow: tests
 - pull_request_source_branch: "*"
-  workflow: master
+  workflow: tests
 - tag: "*.*.*"
   workflow: master
 workflows:
@@ -32,16 +30,8 @@ workflows:
         inputs:
         - lane: "$FASTLANE_LANE"
         - work_dir: "$FASTLANE_WORK_DIR"
-    - script@1.1.4:
-        title: Do anything with Script step
-        inputs:
-        - content: "#!/bin/bash\nset -e\nset -x\n\nMESSAGE=\"\U0001F494 <b>$BITRISE_APP_TITLE</b>
-            build $BITRISE_BUILD_NUMBER failed<br/>URL: $BITRISE_APP_URL<br/>Commit:
-            $BITRISE_GIT_COMMIT - $BITRISE_GIT_MESSAGE <br/>Git URL: $GIT_REPOSITORY_URL
-            <br/>\"\n\nif [ $BITRISE_BUILD_STATUS -eq 0 ] ; then MESSAGE=\"✅ <b>$BITRISE_APP_TITLE</b>
-            build $BITRISE_BUILD_NUMBER passed! ❤️<br/>URL: $BITRISE_APP_URL<br/>\"
-            ; fi \n\ncurl -X POST -H \"Content-Type: application/json\" -d \"{\\\"value1\\\":\\\"$MESSAGE\\\"}\"
-            https://maker.ifttt.com/trigger/build_failed/with/key/$IFTTT_TOKEN\n"
+    - deploy-to-bitrise-io@1.3.8: {}
+    - telegram-notifier@1.0.0: {}
     envs:
     - FASTLANE_LANE: bitrise
       opts:
@@ -52,21 +42,12 @@ workflows:
         run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
     - git-clone@3.5.1: {}
     - certificate-and-profile-installer@1.8.8: {}
-    - xcode-test@1.18.7: {}
     - fastlane@2.3.9:
         inputs:
         - lane: "$FASTLANE_LANE"
         - work_dir: "$FASTLANE_WORK_DIR"
-    - script@1.1.4:
-        title: Do anything with Script step
-        inputs:
-        - content: "#!/bin/bash\nset -e\nset -x\n\nMESSAGE=\"\U0001F494 <b>$BITRISE_APP_TITLE</b>
-            build $BITRISE_BUILD_NUMBER failed<br/>URL: $BITRISE_APP_URL<br/>Commit:
-            $BITRISE_GIT_COMMIT - $BITRISE_GIT_MESSAGE <br/>Git URL: $GIT_REPOSITORY_URL
-            <br/>\"\n\nif [ $BITRISE_BUILD_STATUS -eq 0 ] ; then MESSAGE=\"✅ <b>$BITRISE_APP_TITLE</b>
-            build $BITRISE_BUILD_NUMBER passed! ❤️<br/>URL: $BITRISE_APP_URL<br/>\"
-            ; fi \n\ncurl -X POST -H \"Content-Type: application/json\" -d \"{\\\"value1\\\":\\\"$MESSAGE\\\"}\"
-            https://maker.ifttt.com/trigger/build_failed/with/key/$IFTTT_TOKEN\n"
+    - deploy-to-bitrise-io@1.3.8: {}
+    - telegram-notifier@1.0.0: {}
     envs:
     - FASTLANE_LANE: tests
       opts:

@@ -27,7 +27,6 @@ e então rode o seguinte comando:
 ```sh
 carthage update
 ```
-**OBS:** O Carthage irá baixar dois frameworks o `OnestapSDK.framework` e `FingerPrint_iOS.framework`, ambos devem ser colocados no seu app para que funcione corretamente.
 
 ### Cocoapods
 
@@ -68,7 +67,7 @@ Se a Merchant URI registrada é `onestap://application` sua Url Schemes deve ser
 
 ### Inicialização
 
-É necessário inicializar a classe de login na abertura do app no `AppDelegate.swift`, e colar o código abaixo. O parâmetro fingerPrintID é opcional, deve ser passado apenas se quiser utilizar o anti-fraude.
+É necessário inicializar a classe de login na abertura do app no `AppDelegate.swift`, e colar o código abaixo.
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -77,7 +76,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
                                                            clientSecret: "{SEU_CLIENT_SECRET}",
                                                            scheme: "{SEU_SCHEME}", // ex: onestap
                                                            host: "{SEU_HOST}", // ex: ios -- a url final ficaria onestap://ios
-                                                           fingerPrintId: "{SEU_FINGERPRINT_ID}") // opcional
                                                            primaryColor: UIColor(), // OPCIONAL cor primária para abrir no SafariViewController
                                                            secondaryColor: UIColor()) // // OPCIONAL cor sencundária para abrir no SafariViewController
     _ = OST(configuration: configuration)
@@ -89,14 +87,6 @@ Para usar os métodos da SDK basta chamar ela desta forma pois contém a instân
 
 ```swift
 OST.shared
-```
-
-Após esta inicialização, se for passado o `fingerPrintId`, o `fingerPrintSessionId` será criado e você poderá acessá-lo chamando o `UserDefaults` como no exemplo abaixo:
-
-```swift
-if let fingerPrintSessionId = UserDefaults.standard.fingerPrintSessionId {
-    print(fingerPrintSessionId)
-}
 ```
 
 ### ViewController
@@ -163,16 +153,6 @@ A página ficará desta maneira:
 
 ![](./img/loginPage.png)
 
-### Enviando dados de FingerPrint para o anti-fraude (opcional)
-
-Com o FingerPrintID sendo enviado na inicialização da classe `OST`, enviar dados para o anti-fraude é muito simples, basta colocar permissões no seu app para o usuário liberar acesso aos contatos e o mesmo para localização.
-
-**OBS:** Lembre-se que a Apple pode encrencar com a publicação do seu app se ele pedir permissão ao usuário de dados que são desnecessários para o app, não vale pedir acesso aos contatos do seu usuário se o seu app não faz nada com os contatos dele, não é mesmo?
-
-Para pedir as permissões de acesso para o usuário basta acrescentar estas linhas no `Info.plist`:
-
-![Privacy Access](./img/privacyAccess.png)
-
 ### Transferência de Dados para Perfil temporário
 
 Se desejar transferir os dados de cadastro que já tem em sua base para facilitar o cadastro e a transição do usuário para o nosso sistema, você pode usar a variável `temporaryProfile` para preencher os dados cadastrais do usuário.
@@ -213,7 +193,6 @@ let configuration: OSTConfiguration = OSTConfiguration(environment: .sandbox,
                                                         clientSecret: "{SEU_CLIENT_SECRET}",
                                                         scheme: "{SEU_SCHEME}",
                                                         host: "{SEU_HOST}",
-                                                        fingerPrintId: "{SEU_FINGERPRINT}",
                                                         temporaryProfile: tempProfile)
 _ = OST(configuration: configuration)
 ```
