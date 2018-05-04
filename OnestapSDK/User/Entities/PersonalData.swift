@@ -29,8 +29,14 @@ extension PersonalData: Encondable {
 
 /// Gender of the Person
 public enum GenderTypeEnum: String {
+    @available(*, deprecated, renamed: "male")
     case masculine
+    
+    @available(*, deprecated, renamed: "female")
     case feminine
+    
+    case male
+    case female
     case unmentioned
 }
 

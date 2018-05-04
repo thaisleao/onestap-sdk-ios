@@ -47,23 +47,23 @@ struct ApiAccount: InitializableWithData, InitializableWithJson {
         }
         
         if let emailsJSON = json["emails"] as? [JSON] {
-            self.emails = try emailsJSON.flatMap { try ApiEmail(json: $0) }
+            self.emails = try emailsJSON.compactMap { try ApiEmail(json: $0) }
         }
         
         if let phonesJSON = json["phones"] as? [JSON] {
-            self.phones = try phonesJSON.flatMap { try ApiPhone(json: $0) }
+            self.phones = try phonesJSON.compactMap { try ApiPhone(json: $0) }
         }
         
         if let addressesJSON = json["addresses"] as? [JSON] {
-            self.addresses = try addressesJSON.flatMap { try ApiAddress(json: $0) }
+            self.addresses = try addressesJSON.compactMap { try ApiAddress(json: $0) }
         }
         
         if let documentsJSON = json["documents"] as? [JSON] {
-            self.documents = try documentsJSON.flatMap { try ApiDocument(json: $0) }
+            self.documents = try documentsJSON.compactMap { try ApiDocument(json: $0) }
         }
         
         if let vehiclesJSON = json["vehicles"] as? [JSON] {
-            self.vehicles = try vehiclesJSON.flatMap { try ApiVehicle(json: $0) }
+            self.vehicles = try vehiclesJSON.compactMap { try ApiVehicle(json: $0) }
         }
         
         self.accountKey = accountKey
@@ -77,10 +77,10 @@ extension ApiAccount {
                        isNewsLetterEnabled: self.isNewsLetterAllowed,
                        publicProfile: self.publicProfile?.publicProfile,
                        personalData: self.personalData?.personalData,
-                       emails: self.emails?.flatMap { $0.email },
-                       phones: self.phones?.flatMap { $0.phone },
-                       addresses: self.addresses?.flatMap { $0.address },
-                       documents: self.documents?.flatMap { $0.document },
-                       vehicles: self.vehicles?.flatMap { $0.vehicle })
+                       emails: self.emails?.compactMap { $0.email },
+                       phones: self.phones?.compactMap { $0.phone },
+                       addresses: self.addresses?.compactMap { $0.address },
+                       documents: self.documents?.compactMap { $0.document },
+                       vehicles: self.vehicles?.compactMap { $0.vehicle })
     }
 }

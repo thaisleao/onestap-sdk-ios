@@ -19,5 +19,4 @@ It connects to one[s]tap API using OAuth
   s.platform     = :ios, "10.0"
   s.source       = { :git => "https://github.com/stone-payments/onestap-sdk-ios.git", :tag => "#{s.version}" }
   s.source_files  = "OnestapSDK", "OnestapSDK/**/*.{h,swift}"
-  s.vendored_frameworks = "Frameworks/FingerPrint_iOS.framework"
 end

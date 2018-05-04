@@ -13,7 +13,7 @@ public class OST {
     
     public static var shared: OST!
     
-    let fingerPrint = FingerPrintManagerImplementation()
+//    let fingerPrint = FingerPrintManagerImplementation()
     
     public required init(configuration: OSTConfiguration) {
         OST.configuration = configuration        
@@ -25,7 +25,7 @@ public class OST {
         }
         
         UserDefaults.standard.isSavedToKeychain = true
-        fingerPrint.sendFingerPrint()
+//        fingerPrint.sendFingerPrint()
     }
 }
 

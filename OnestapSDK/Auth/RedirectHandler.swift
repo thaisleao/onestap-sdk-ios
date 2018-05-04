@@ -49,7 +49,7 @@ struct RedirectHandlerImplementation: RedirectHandler {
     
     private static func getScheme(from cfBundleURLTypes: [JSON]) throws -> String {
         
-        let scheme: String = cfBundleURLTypes.flatMap {
+        let scheme: String = cfBundleURLTypes.compactMap {
             if ($0[urlNameKey] as? String) == sdkIdentifier {
                 return ($0[urlSchemeKey] as? [String])?.first
             }

@@ -39,7 +39,7 @@ extension Response {
             return
         }
         
-        let operationReport = try operationReportJSON.flatMap({ operationReport in
+        let operationReport = try operationReportJSON.compactMap({ operationReport in
             return try ApiReport(json: operationReport)
         })
         

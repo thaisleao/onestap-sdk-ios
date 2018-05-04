@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9F19E08E1F8EB7E6008425B7 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F19E08D1F8EB7E6008425B7 /* RedirectHandler.swift */; };
-		A11EDCD71FB235520066D0F7 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A191A4471FB2323D00E70FAB /* FingerPrint_iOS.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A11EDCD91FB249640066D0F7 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11EDCD81FB249640066D0F7 /* UserDefaultsExtension.swift */; };
 		A1217EDD205AEE5D001FBE37 /* KeychainConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1217EDC205AEE5D001FBE37 /* KeychainConfigurable.swift */; };
 		A1217EDF205AEE9D001FBE37 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1217EDE205AEE9D001FBE37 /* KeychainConfiguration.swift */; };
@@ -35,7 +34,6 @@
 		A14D5D201F4B86270003A2A4 /* OSTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D1F1F4B86270003A2A4 /* OSTButton.swift */; };
 		A14D5D231F4B8B0C0003A2A4 /* OSTAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D221F4B8B0C0003A2A4 /* OSTAuthButton.swift */; };
 		A14D5D291F4B9AFE0003A2A4 /* OSTErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D281F4B9AFE0003A2A4 /* OSTErrors.swift */; };
-		A14D5D321F510CCF0003A2A4 /* FingerPrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */; };
 		A17E28111F567FCB0071AE76 /* ApiUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E28101F567FCB0071AE76 /* ApiUserTests.swift */; };
 		A17E5EE51F50B8840055EF7B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E5EE41F50B8840055EF7B /* Log.swift */; };
 		A19CEF621F55EE50006201D6 /* ApiPublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CEF611F55EE50006201D6 /* ApiPublicProfile.swift */; };
@@ -120,10 +118,8 @@
 		A14D5D1F1F4B86270003A2A4 /* OSTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTButton.swift; sourceTree = "<group>"; };
 		A14D5D221F4B8B0C0003A2A4 /* OSTAuthButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSTAuthButton.swift; sourceTree = "<group>"; };
 		A14D5D281F4B9AFE0003A2A4 /* OSTErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OSTErrors.swift; path = OnestapSDK/Core/Enums/OSTErrors.swift; sourceTree = SOURCE_ROOT; };
-		A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerPrintManager.swift; sourceTree = "<group>"; };
 		A17E28101F567FCB0071AE76 /* ApiUserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiUserTests.swift; sourceTree = "<group>"; };
 		A17E5EE41F50B8840055EF7B /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = OnestapSDK/Core/Log/Log.swift; sourceTree = SOURCE_ROOT; };
-		A191A4471FB2323D00E70FAB /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = Frameworks/FingerPrint_iOS.framework; sourceTree = "<group>"; };
 		A19CEF611F55EE50006201D6 /* ApiPublicProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiPublicProfile.swift; sourceTree = "<group>"; };
 		A19CEF631F55F0D6006201D6 /* ApiPersonalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiPersonalData.swift; sourceTree = "<group>"; };
 		A19CEF651F55F5AC006201D6 /* ApiEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiEmail.swift; sourceTree = "<group>"; };
@@ -170,7 +166,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A11EDCD71FB235520066D0F7 /* FingerPrint_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +217,6 @@
 			children = (
 				A1A31CCD1F47A9560060C9DC /* Auth */,
 				A1B8DA561F4C8B6900EC40F4 /* User */,
-				A14D5D2F1F510C970003A2A4 /* FingerPrint */,
 				A141A6631F46424500763662 /* Core */,
 				A1A31CCC1F47A9450060C9DC /* Resources */,
 				A14D5D1F1F4B86270003A2A4 /* OSTButton.swift */,
@@ -319,25 +313,8 @@
 		A14D5D2C1F5108CC0003A2A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A191A4471FB2323D00E70FAB /* FingerPrint_iOS.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A14D5D2F1F510C970003A2A4 /* FingerPrint */ = {
-			isa = PBXGroup;
-			children = (
-				A14D5D301F510CBE0003A2A4 /* Manager */,
-			);
-			path = FingerPrint;
-			sourceTree = "<group>";
-		};
-		A14D5D301F510CBE0003A2A4 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				A14D5D311F510CCF0003A2A4 /* FingerPrintManager.swift */,
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		A17E280F1F567F740071AE76 /* Entities */ = {
@@ -652,7 +629,6 @@
 				A19CEF741F57715E006201D6 /* ApiVehicle.swift in Sources */,
 				A1B8DA6C1F4CBEB800EC40F4 /* ApiTemporaryProfile.swift in Sources */,
 				9F19E08E1F8EB7E6008425B7 /* RedirectHandler.swift in Sources */,
-				A14D5D321F510CCF0003A2A4 /* FingerPrintManager.swift in Sources */,
 				A1B8DA5D1F4C9C1E00EC40F4 /* Address.swift in Sources */,
 				A1D6E4E51F55E230002BDE56 /* Email.swift in Sources */,
 				A1A31CBC1F47A52B0060C9DC /* Result.swift in Sources */,
@@ -848,8 +824,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -878,8 +855,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
