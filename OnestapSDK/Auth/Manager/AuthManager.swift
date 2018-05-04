@@ -58,7 +58,7 @@ public class AuthManagerImplementation: AuthManager {
                 }
                 UserDefaults.standard.userKey = token.userKey
                 
-                OST.shared.fingerPrint.sendFingerPrint()
+//                OST.shared.fingerPrint.sendFingerPrint()
                 
                 completion(.success(token))
             case let .failure(error):
